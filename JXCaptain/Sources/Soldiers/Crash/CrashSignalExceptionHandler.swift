@@ -37,56 +37,6 @@ class CrashSignalExceptionHandler {
             var tempHandler = handler
             backupSingleHandler(signal: signal, preHandler: &tempHandler)
         }
-        /*
-        let empty: UnsafeMutablePointer<sigaction>? = nil
-        var old_action_abrt = sigaction()
-        sigaction(SIGABRT, empty, &old_action_abrt)
-        if old_action_abrt.__sigaction_u.__sa_sigaction != nil {
-            previousABRTSignalHandler = old_action_abrt.__sigaction_u.__sa_sigaction
-        }
-
-        var old_action_bus = sigaction()
-        sigaction(SIGBUS, empty, &old_action_bus)
-        if old_action_bus.__sigaction_u.__sa_sigaction != nil {
-            previousBUSSignalHandler = old_action_bus.__sigaction_u.__sa_sigaction
-        }
-
-        var old_action_fpe = sigaction()
-        sigaction(SIGFPE, empty, &old_action_fpe)
-        if old_action_fpe.__sigaction_u.__sa_sigaction != nil {
-            previousFPESignalHandler = old_action_fpe.__sigaction_u.__sa_sigaction
-        }
-
-        var old_action_ill = sigaction()
-        sigaction(SIGILL, empty, &old_action_ill)
-        if old_action_ill.__sigaction_u.__sa_sigaction != nil {
-            previousILLSignalHandler = old_action_ill.__sigaction_u.__sa_sigaction
-        }
-
-        var old_action_pipe = sigaction()
-        sigaction(SIGPIPE, empty, &old_action_pipe)
-        if old_action_pipe.__sigaction_u.__sa_sigaction != nil {
-            previousPIPESignalHandler = old_action_pipe.__sigaction_u.__sa_sigaction
-        }
-
-        var old_action_segv = sigaction()
-        sigaction(SIGSEGV, empty, &old_action_segv)
-        if old_action_segv.__sigaction_u.__sa_sigaction != nil {
-            previousSEGVSignalHandler = old_action_segv.__sigaction_u.__sa_sigaction
-        }
-
-        var old_action_sys = sigaction()
-        sigaction(SIGSYS, empty, &old_action_sys)
-        if old_action_sys.__sigaction_u.__sa_sigaction != nil {
-            previousSYSSignalHandler = old_action_sys.__sigaction_u.__sa_sigaction
-        }
-
-        var old_action_trap = sigaction()
-        sigaction(SIGTRAP, empty, &old_action_trap)
-        if old_action_trap.__sigaction_u.__sa_sigaction != nil {
-            previousTRAPSignalHandler = old_action_trap.__sigaction_u.__sa_sigaction
-        }
- */
     }
 
     func backupSingleHandler(signal: Int32, preHandler: inout SignalHandler?) {

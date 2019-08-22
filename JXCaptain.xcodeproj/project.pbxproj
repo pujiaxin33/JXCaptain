@@ -20,6 +20,9 @@
 		1949BEFD230E349500B43CDB /* CrashSoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BEFC230E349500B43CDB /* CrashSoldier.swift */; };
 		1954C672230E3EFC00360FC0 /* SoldierListSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954C671230E3EFC00360FC0 /* SoldierListSectionModel.swift */; };
 		1954C676230E45E300360FC0 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954C675230E45E300360FC0 /* ImageManager.swift */; };
+		1954C679230E724A00360FC0 /* AppInfoSoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954C678230E724A00360FC0 /* AppInfoSoldier.swift */; };
+		1954C67E230E732800360FC0 /* AppInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954C67D230E732800360FC0 /* AppInfoViewController.swift */; };
+		1954C680230E737600360FC0 /* AppInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954C67F230E737600360FC0 /* AppInfoManager.swift */; };
 		19C1F4AE230BEC8C00189B88 /* JXCaptain.h in Headers */ = {isa = PBXBuildFile; fileRef = 19C1F4AC230BEC8C00189B88 /* JXCaptain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		19C1F4DD230BEDBD00189B88 /* Captain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1F4DC230BEDBD00189B88 /* Captain.swift */; };
 		19C1F4DF230BF34E00189B88 /* CrashUncaughtExceptionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1F4DE230BF34E00189B88 /* CrashUncaughtExceptionHandler.swift */; };
@@ -41,6 +44,9 @@
 		1949BEFC230E349500B43CDB /* CrashSoldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashSoldier.swift; sourceTree = "<group>"; };
 		1954C671230E3EFC00360FC0 /* SoldierListSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldierListSectionModel.swift; sourceTree = "<group>"; };
 		1954C675230E45E300360FC0 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		1954C678230E724A00360FC0 /* AppInfoSoldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoSoldier.swift; sourceTree = "<group>"; };
+		1954C67D230E732800360FC0 /* AppInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoViewController.swift; sourceTree = "<group>"; };
+		1954C67F230E737600360FC0 /* AppInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoManager.swift; sourceTree = "<group>"; };
 		19C1F4A9230BEC8C00189B88 /* JXCaptain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JXCaptain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C1F4AC230BEC8C00189B88 /* JXCaptain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXCaptain.h; sourceTree = "<group>"; };
 		19C1F4AD230BEC8C00189B88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,7 +86,8 @@
 		1949BEF2230D3F9600B43CDB /* Soldiers */ = {
 			isa = PBXGroup;
 			children = (
-				1949BEF9230D4BDD00B43CDB /* BundleBrowser */,
+				1954C677230E723900360FC0 /* AppInfo */,
+				1949BEF9230D4BDD00B43CDB /* SanboxBrowser */,
 				19C1F4E0230CDE0500189B88 /* Crash */,
 			);
 			path = Soldiers;
@@ -89,10 +96,9 @@
 		1949BEF3230D3FA700B43CDB /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				1949BEF7230D4A5200B43CDB /* JXFileBrowserController.swift */,
-				1930F3A7230D244F00610DFB /* CaptainFloatingWindow.swift */,
-				1949BEF5230D41AE00B43CDB /* CaptainFloatingViewController.swift */,
-				1930F3B0230D349100610DFB /* SoldierListViewController.swift */,
+				1954C67B230E730200360FC0 /* Main */,
+				1954C67C230E730C00360FC0 /* AppInfo */,
+				1954C67A230E72D300360FC0 /* SanboxBrowser */,
 				1949BEF4230D3FDE00B43CDB /* Crash */,
 				1930F3AD230D2B8100610DFB /* Model */,
 			);
@@ -108,12 +114,12 @@
 			path = Crash;
 			sourceTree = "<group>";
 		};
-		1949BEF9230D4BDD00B43CDB /* BundleBrowser */ = {
+		1949BEF9230D4BDD00B43CDB /* SanboxBrowser */ = {
 			isa = PBXGroup;
 			children = (
 				1949BEFA230D4C1200B43CDB /* SanboxBrowserSoldier.swift */,
 			);
-			path = BundleBrowser;
+			path = SanboxBrowser;
 			sourceTree = "<group>";
 		};
 		1954C673230E45AA00360FC0 /* Manager */ = {
@@ -130,6 +136,41 @@
 				1954C675230E45E300360FC0 /* ImageManager.swift */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		1954C677230E723900360FC0 /* AppInfo */ = {
+			isa = PBXGroup;
+			children = (
+				1954C678230E724A00360FC0 /* AppInfoSoldier.swift */,
+				1954C67F230E737600360FC0 /* AppInfoManager.swift */,
+			);
+			path = AppInfo;
+			sourceTree = "<group>";
+		};
+		1954C67A230E72D300360FC0 /* SanboxBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				1949BEF7230D4A5200B43CDB /* JXFileBrowserController.swift */,
+			);
+			path = SanboxBrowser;
+			sourceTree = "<group>";
+		};
+		1954C67B230E730200360FC0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1930F3A7230D244F00610DFB /* CaptainFloatingWindow.swift */,
+				1949BEF5230D41AE00B43CDB /* CaptainFloatingViewController.swift */,
+				1930F3B0230D349100610DFB /* SoldierListViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1954C67C230E730C00360FC0 /* AppInfo */ = {
+			isa = PBXGroup;
+			children = (
+				1954C67D230E732800360FC0 /* AppInfoViewController.swift */,
+			);
+			path = AppInfo;
 			sourceTree = "<group>";
 		};
 		19C1F49F230BEC8C00189B88 = {
@@ -262,8 +303,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1954C67E230E732800360FC0 /* AppInfoViewController.swift in Sources */,
 				1930F3AF230D2B9800610DFB /* SanboxModel.swift in Sources */,
 				1949BEFB230D4C1200B43CDB /* SanboxBrowserSoldier.swift in Sources */,
+				1954C680230E737600360FC0 /* AppInfoManager.swift in Sources */,
 				1954C672230E3EFC00360FC0 /* SoldierListSectionModel.swift in Sources */,
 				1949BEFD230E349500B43CDB /* CrashSoldier.swift in Sources */,
 				1930F3B1230D349100610DFB /* SoldierListViewController.swift in Sources */,
@@ -276,6 +319,7 @@
 				1930F3A6230D1C9F00610DFB /* CrashFileManager.swift in Sources */,
 				1930F3AC230D26FB00610DFB /* CrashListViewController.swift in Sources */,
 				19C1F4DD230BEDBD00189B88 /* Captain.swift in Sources */,
+				1954C679230E724A00360FC0 /* AppInfoSoldier.swift in Sources */,
 				19C1F4E2230CDF5B00189B88 /* CrashSignalExceptionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,8 +22,8 @@ public class Captain {
     internal let floatingWindow = CaptainFloatingWindow()
 
     init() {
-        soldiers.append(CrashSoldier())
-        soldiers.append(SanboxBrowserSoldier())
+        let defaultSoldiers: [Soldier] = [AppInfoSoldier(), SanboxBrowserSoldier(), CrashSoldier()]
+        soldiers.append(contentsOf: defaultSoldiers)
     }
 
     public func show() {
