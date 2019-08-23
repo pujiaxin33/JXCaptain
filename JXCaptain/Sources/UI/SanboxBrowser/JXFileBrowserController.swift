@@ -115,12 +115,21 @@ extension JXFileBrowserController: UITableViewDataSource, UITableViewDelegate {
         }
         do {
             let attributes = try FileManager.default.attributesOfItem(atPath: fullPath)
-            if attributes[FileAttributeKey.type] as! String == FileAttributeType.typeDirectory.rawValue {
+            if attributes[FileAttributeKey.type] as? String == FileAttributeType.typeDirectory.rawValue {
                 let fileBrowserController = JXFileBrowserController(path: fullPath)
                 self.navigationController?.pushViewController(fileBrowserController, animated: true)
             }else {
-                let activityController = UIActivityViewController(activityItems: [URL(fileURLWithPath: fullPath)], applicationActivities: nil)
-                self.present(activityController, animated: true, completion: nil)
+                let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+                sheet.addAction(UIAlertAction(title: "Preview", style: .default, handler: { (action) in
+                    let previewVC = JXFilePreviewViewController(filePath: fullPath)
+                    self.navigationController?.pushViewController(previewVC, animated: true)
+                }))
+                sheet.addAction(UIAlertAction(title: "Share", style: .default, handler: { (action) in
+                    let activityController = UIActivityViewController(activityItems: [URL(fileURLWithPath: fullPath)], applicationActivities: nil)
+                    self.present(activityController, animated: true, completion: nil)
+                }))
+                sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                present(sheet, animated: true, completion: nil)
             }
         } catch let error {
             let alert = UIAlertController(title: "The error of 'FileManager.default.attributesOfItem'", message: error.localizedDescription, preferredStyle: .alert)

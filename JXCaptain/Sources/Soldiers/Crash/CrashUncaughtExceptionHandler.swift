@@ -25,7 +25,7 @@ func SoldierUncaughtExceptionHandler(exception: NSException) -> Void {
     let stackInfo = stackArray.reduce("") { (result, item) -> String in
         return result + "\n\(item)"
     }
-    let exceptionInfo = name + (reason ?? "no reason") + stackInfo
+    let exceptionInfo = name + "\n" + (reason ?? "no reason") + "\n" + stackInfo
     CrashFileManager.saveCrashInfo(exceptionInfo, crashTypeName: "Crash(uncaught)")
     preUncaughtExceptionHandler?(exception)
     kill(getpid(), SIGKILL)

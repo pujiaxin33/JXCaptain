@@ -72,14 +72,13 @@ func SoldierSignalRegister(signal: Int32) {
 func SoldierSignalHandler(signal: Int32, info: UnsafeMutablePointer<__siginfo>?, context: UnsafeMutableRawPointer?) {
     var exceptionInfo = "Signal Exception:\n"
     exceptionInfo.append("Signal \(SignalName(signal)) was raised.\n")
+    exceptionInfo.append("threadInfo:\n")
     exceptionInfo.append("Call Stack:\n")
     let callStackSymbols = Thread.callStackSymbols
     for index in 0..<callStackSymbols.count {
         exceptionInfo.append("\(callStackSymbols[index])\n")
     }
-    exceptionInfo.append("threadInfo:\n")
     exceptionInfo.append(Thread.current.description)
-    UserDefaults.standard.set("signal:\(exceptionInfo)", forKey: "ksignal")
     CrashFileManager.saveCrashInfo(exceptionInfo, crashTypeName: "Crash(Signal)")
     ClearSignalRigister()
     //调用之前的handler

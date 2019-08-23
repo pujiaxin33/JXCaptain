@@ -33,4 +33,18 @@ class CrashListViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = dataSource[indexPath.row]
+        let sheet = UIAlertController(title: nil, message: "请选择操作方式", preferredStyle: .actionSheet)
+        sheet.addAction(UIAlertAction(title: "本地预览", style: .default, handler: { (action) in
+            let previewVC = JXFilePreviewViewController(filePath: model.fileURL.path)
+            self.navigationController?.pushViewController(previewVC, animated: true)
+        }))
+        sheet.addAction(UIAlertAction(title: "分享", style: .default, handler: { (action) in
+            let activityController = UIActivityViewController(activityItems: [model.fileURL], applicationActivities: nil)
+            self.present(activityController, animated: true, completion: nil)
+        }))
+        sheet.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+        present(sheet, animated: true, completion: nil)
+    }
 }

@@ -11,7 +11,8 @@ import Foundation
 public protocol Soldier {
     var name: String { get }
     var team: String { get }
-    var icon: UIImage { get }
+    var icon: UIImage? { get }
+    var contentView: UIView? { get }
     func action()
     func moveToDashboard(naviController: UINavigationController)
 }
@@ -36,6 +37,7 @@ public class Captain {
     }
 
     public func action() {
+        soldiers.forEach { $0.action() }
     }
 
     public func enqueueSoldier(_ soldier: Soldier) {

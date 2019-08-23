@@ -11,14 +11,15 @@ import Foundation
 public class CrashSoldier: Soldier {
     public var name: String
     public var team: String
-    public var icon: UIImage
+    public var icon: UIImage?
+    public var contentView: UIView?
     let uncaughtExceptionHandler = CrashUncaughtExceptionHandler()
     let signalExceptionHandler = CrashSignalExceptionHandler()
 
     public init() {
         name = "Crash日志"
         team = "常用工具"
-        icon = ImageManager.imageWithName("icon_crash")!
+        icon = ImageManager.imageWithName("icon_crash")
     }
 
     public func action() {

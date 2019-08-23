@@ -23,6 +23,7 @@
 		1954C679230E724A00360FC0 /* AppInfoSoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954C678230E724A00360FC0 /* AppInfoSoldier.swift */; };
 		1954C67E230E732800360FC0 /* AppInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954C67D230E732800360FC0 /* AppInfoViewController.swift */; };
 		1954C680230E737600360FC0 /* AppInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954C67F230E737600360FC0 /* AppInfoManager.swift */; };
+		19ABA2A2230FABC100BF07A0 /* JXFilePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA2A1230FABC100BF07A0 /* JXFilePreviewViewController.swift */; };
 		19C1F4AE230BEC8C00189B88 /* JXCaptain.h in Headers */ = {isa = PBXBuildFile; fileRef = 19C1F4AC230BEC8C00189B88 /* JXCaptain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		19C1F4DD230BEDBD00189B88 /* Captain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1F4DC230BEDBD00189B88 /* Captain.swift */; };
 		19C1F4DF230BF34E00189B88 /* CrashUncaughtExceptionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1F4DE230BF34E00189B88 /* CrashUncaughtExceptionHandler.swift */; };
@@ -47,6 +48,7 @@
 		1954C678230E724A00360FC0 /* AppInfoSoldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoSoldier.swift; sourceTree = "<group>"; };
 		1954C67D230E732800360FC0 /* AppInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoViewController.swift; sourceTree = "<group>"; };
 		1954C67F230E737600360FC0 /* AppInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoManager.swift; sourceTree = "<group>"; };
+		19ABA2A1230FABC100BF07A0 /* JXFilePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXFilePreviewViewController.swift; sourceTree = "<group>"; };
 		19C1F4A9230BEC8C00189B88 /* JXCaptain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JXCaptain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C1F4AC230BEC8C00189B88 /* JXCaptain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXCaptain.h; sourceTree = "<group>"; };
 		19C1F4AD230BEC8C00189B88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				1949BEF7230D4A5200B43CDB /* JXFileBrowserController.swift */,
+				19ABA2A1230FABC100BF07A0 /* JXFilePreviewViewController.swift */,
 			);
 			path = SanboxBrowser;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				1930F3A8230D244F00610DFB /* CaptainFloatingWindow.swift in Sources */,
 				1954C676230E45E300360FC0 /* ImageManager.swift in Sources */,
 				1949BEF6230D41AE00B43CDB /* CaptainFloatingViewController.swift in Sources */,
+				19ABA2A2230FABC100BF07A0 /* JXFilePreviewViewController.swift in Sources */,
 				1930F3AA230D25FE00610DFB /* CrashDashboardViewController.swift in Sources */,
 				19C1F4DF230BF34E00189B88 /* CrashUncaughtExceptionHandler.swift in Sources */,
 				1949BEF8230D4A5200B43CDB /* JXFileBrowserController.swift in Sources */,

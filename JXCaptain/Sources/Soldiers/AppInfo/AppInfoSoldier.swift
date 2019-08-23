@@ -11,11 +11,12 @@ import Foundation
 class AppInfoSoldier: Soldier {
     public var name: String
     public var team: String
-    public var icon: UIImage
+    public var icon: UIImage?
+    public var contentView: UIView?
     public init() {
         name = "APP信息"
         team = "常用工具"
-        icon = ImageManager.imageWithName("icon_app_info")!
+        icon = ImageManager.imageWithName("icon_app_info")
     }
 
     public func action() {

@@ -21,24 +21,26 @@ class SoldierListViewController: UIViewController, UICollectionViewDataSource, U
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "完成", style: .plain, target: self, action: #selector(naviRightItemDidClick))
 
         var soldiersTeamDict = [String: [Soldier]]()
+        var sortedTeams = [String]()
         for soldier in Captain.default.soldiers {
             if soldiersTeamDict[soldier.team] == nil {
                 soldiersTeamDict[soldier.team] = [soldier]
+                sortedTeams.append(soldier.team)
             }else {
                 soldiersTeamDict[soldier.team]?.append(soldier)
             }
         }
-        for team in soldiersTeamDict.keys {
+        for team in sortedTeams {
             let model = SoldierListSectionModel(teamName: team, soldiers: soldiersTeamDict[team]!)
             dataSource.append(model)
         }
 
-        let itemWidth = UIScreen.main.bounds.size.width/4
+        let itemWidth = CGFloat(floor(UIScreen.main.bounds.size.width/4))
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 0
+        layout.minimumLineSpacing = 12
         layout.minimumInteritemSpacing = 0
         layout.itemSize = CGSize(width: itemWidth, height: 62)
-        layout.sectionInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        layout.sectionInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
         layout.headerReferenceSize = CGSize(width: view.bounds.size.width, height: 30)
         collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
@@ -92,6 +94,7 @@ class SoldierListViewController: UIViewController, UICollectionViewDataSource, U
         let soldier = dataSource[indexPath.section].soldiers[indexPath.item]
         cell.iconImageView.image = soldier.icon
         cell.nameLabel.text = soldier.name
+        cell.customContentView = soldier.contentView
         return cell
     }
 
@@ -113,6 +116,15 @@ class SoldierListViewController: UIViewController, UICollectionViewDataSource, U
 class SoldierListCell: UICollectionViewCell {
     let iconImageView: UIImageView
     let nameLabel: UILabel
+    var customContentView: UIView? {
+        didSet {
+            iconImageView.isHidden = customContentView != nil
+            nameLabel.isHidden = customContentView != nil
+            if customContentView != nil {
+                contentView.addSubview(customContentView!)
+            }
+        }
+    }
 
     override init(frame: CGRect) {
         iconImageView = UIImageView()
@@ -140,6 +152,18 @@ class SoldierListCell: UICollectionViewCell {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        customContentView?.removeFromSuperview()
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        customContentView?.frame = contentView.bounds
     }
 }
 
