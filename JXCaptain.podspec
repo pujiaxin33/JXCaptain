@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/pujiaxin33/JXCaptain.git", :tag => "#{s.version}" }
   s.framework    = "UIKit"
   s.source_files  = "Sources", "Sources/*.{swift}"
-  ss.resource = 'Resource.bundle'
+  s.resource = 'Resource.bundle'
   s.requires_arc = true
 end
