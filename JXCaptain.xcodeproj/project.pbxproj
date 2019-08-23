@@ -24,6 +24,10 @@
 		1954C67E230E732800360FC0 /* AppInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954C67D230E732800360FC0 /* AppInfoViewController.swift */; };
 		1954C680230E737600360FC0 /* AppInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954C67F230E737600360FC0 /* AppInfoManager.swift */; };
 		19ABA2A2230FABC100BF07A0 /* JXFilePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA2A1230FABC100BF07A0 /* JXFilePreviewViewController.swift */; };
+		19ABA41C230FD4BB00BF07A0 /* WebsiteEntrySoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA41B230FD4BB00BF07A0 /* WebsiteEntrySoldier.swift */; };
+		19ABA41F230FD59800BF07A0 /* WebsiteEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA41E230FD59800BF07A0 /* WebsiteEntryViewController.swift */; };
+		19ABA421230FDCF000BF07A0 /* WebDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA420230FDCF000BF07A0 /* WebDetailViewController.swift */; };
+		19ABA423230FE05D00BF07A0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA422230FE05D00BF07A0 /* BaseViewController.swift */; };
 		19C1F4AE230BEC8C00189B88 /* JXCaptain.h in Headers */ = {isa = PBXBuildFile; fileRef = 19C1F4AC230BEC8C00189B88 /* JXCaptain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		19C1F4DD230BEDBD00189B88 /* Captain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1F4DC230BEDBD00189B88 /* Captain.swift */; };
 		19C1F4DF230BF34E00189B88 /* CrashUncaughtExceptionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1F4DE230BF34E00189B88 /* CrashUncaughtExceptionHandler.swift */; };
@@ -49,6 +53,10 @@
 		1954C67D230E732800360FC0 /* AppInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoViewController.swift; sourceTree = "<group>"; };
 		1954C67F230E737600360FC0 /* AppInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoManager.swift; sourceTree = "<group>"; };
 		19ABA2A1230FABC100BF07A0 /* JXFilePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXFilePreviewViewController.swift; sourceTree = "<group>"; };
+		19ABA41B230FD4BB00BF07A0 /* WebsiteEntrySoldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteEntrySoldier.swift; sourceTree = "<group>"; };
+		19ABA41E230FD59800BF07A0 /* WebsiteEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteEntryViewController.swift; sourceTree = "<group>"; };
+		19ABA420230FDCF000BF07A0 /* WebDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDetailViewController.swift; sourceTree = "<group>"; };
+		19ABA422230FE05D00BF07A0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		19C1F4A9230BEC8C00189B88 /* JXCaptain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JXCaptain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C1F4AC230BEC8C00189B88 /* JXCaptain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXCaptain.h; sourceTree = "<group>"; };
 		19C1F4AD230BEC8C00189B88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +96,7 @@
 		1949BEF2230D3F9600B43CDB /* Soldiers */ = {
 			isa = PBXGroup;
 			children = (
+				19ABA41A230FD46C00BF07A0 /* WebsiteEntry */,
 				1954C677230E723900360FC0 /* AppInfo */,
 				1949BEF9230D4BDD00B43CDB /* SanboxBrowser */,
 				19C1F4E0230CDE0500189B88 /* Crash */,
@@ -99,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				1954C67B230E730200360FC0 /* Main */,
+				19ABA41D230FD54A00BF07A0 /* WebsiteEntry */,
 				1954C67C230E730C00360FC0 /* AppInfo */,
 				1954C67A230E72D300360FC0 /* SanboxBrowser */,
 				1949BEF4230D3FDE00B43CDB /* Crash */,
@@ -162,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				1930F3A7230D244F00610DFB /* CaptainFloatingWindow.swift */,
+				19ABA422230FE05D00BF07A0 /* BaseViewController.swift */,
 				1949BEF5230D41AE00B43CDB /* CaptainFloatingViewController.swift */,
 				1930F3B0230D349100610DFB /* SoldierListViewController.swift */,
 			);
@@ -174,6 +185,23 @@
 				1954C67D230E732800360FC0 /* AppInfoViewController.swift */,
 			);
 			path = AppInfo;
+			sourceTree = "<group>";
+		};
+		19ABA41A230FD46C00BF07A0 /* WebsiteEntry */ = {
+			isa = PBXGroup;
+			children = (
+				19ABA41B230FD4BB00BF07A0 /* WebsiteEntrySoldier.swift */,
+			);
+			path = WebsiteEntry;
+			sourceTree = "<group>";
+		};
+		19ABA41D230FD54A00BF07A0 /* WebsiteEntry */ = {
+			isa = PBXGroup;
+			children = (
+				19ABA41E230FD59800BF07A0 /* WebsiteEntryViewController.swift */,
+				19ABA420230FDCF000BF07A0 /* WebDetailViewController.swift */,
+			);
+			path = WebsiteEntry;
 			sourceTree = "<group>";
 		};
 		19C1F49F230BEC8C00189B88 = {
@@ -309,6 +337,7 @@
 				1954C67E230E732800360FC0 /* AppInfoViewController.swift in Sources */,
 				1930F3AF230D2B9800610DFB /* SanboxModel.swift in Sources */,
 				1949BEFB230D4C1200B43CDB /* SanboxBrowserSoldier.swift in Sources */,
+				19ABA423230FE05D00BF07A0 /* BaseViewController.swift in Sources */,
 				1954C680230E737600360FC0 /* AppInfoManager.swift in Sources */,
 				1954C672230E3EFC00360FC0 /* SoldierListSectionModel.swift in Sources */,
 				1949BEFD230E349500B43CDB /* CrashSoldier.swift in Sources */,
@@ -316,14 +345,17 @@
 				1930F3A8230D244F00610DFB /* CaptainFloatingWindow.swift in Sources */,
 				1954C676230E45E300360FC0 /* ImageManager.swift in Sources */,
 				1949BEF6230D41AE00B43CDB /* CaptainFloatingViewController.swift in Sources */,
+				19ABA41F230FD59800BF07A0 /* WebsiteEntryViewController.swift in Sources */,
 				19ABA2A2230FABC100BF07A0 /* JXFilePreviewViewController.swift in Sources */,
 				1930F3AA230D25FE00610DFB /* CrashDashboardViewController.swift in Sources */,
 				19C1F4DF230BF34E00189B88 /* CrashUncaughtExceptionHandler.swift in Sources */,
 				1949BEF8230D4A5200B43CDB /* JXFileBrowserController.swift in Sources */,
 				1930F3A6230D1C9F00610DFB /* CrashFileManager.swift in Sources */,
 				1930F3AC230D26FB00610DFB /* CrashListViewController.swift in Sources */,
+				19ABA41C230FD4BB00BF07A0 /* WebsiteEntrySoldier.swift in Sources */,
 				19C1F4DD230BEDBD00189B88 /* Captain.swift in Sources */,
 				1954C679230E724A00360FC0 /* AppInfoSoldier.swift in Sources */,
+				19ABA421230FDCF000BF07A0 /* WebDetailViewController.swift in Sources */,
 				19C1F4E2230CDF5B00189B88 /* CrashSignalExceptionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

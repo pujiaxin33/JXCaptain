@@ -9,7 +9,7 @@
 import UIKit
 
 
-class SoldierListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class SoldierListViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var collectionView: UICollectionView!
     var dataSource = [SoldierListSectionModel]()
 

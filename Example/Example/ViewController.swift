@@ -18,6 +18,12 @@ class ViewController: UITableViewController {
 
         Captain.default.enqueueSoldier(ServerEnvironmentSoldier())
         Captain.default.action()
+        //设置H5任意门默认网址
+//        WebsiteEntrySoldier.defaultWebsite = "https://www.baidu.com"
+        //设置H5任意门自定义落地页面，比如项目有自定义WKWebView、有JS交互逻辑等
+//        WebsiteEntrySoldier.webDetailControllerClosure = { (website) in
+//            return UIViewController()
+//        }
     }
 
     @objc func naviRightItemDidClick() {

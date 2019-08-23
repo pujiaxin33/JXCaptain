@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CaptainFloatingViewController: UIViewController {
+class CaptainFloatingViewController: BaseViewController {
     var shieldButton: UIButton!
     let shieldWidth: CGFloat = 50
 

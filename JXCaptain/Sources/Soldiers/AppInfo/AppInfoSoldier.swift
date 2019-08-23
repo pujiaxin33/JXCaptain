@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AppInfoSoldier: Soldier {
+public class AppInfoSoldier: Soldier {
     public var name: String
     public var team: String
     public var icon: UIImage?
