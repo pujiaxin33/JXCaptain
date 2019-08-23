@@ -7,62 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1930F3A6230D1C9F00610DFB /* CrashFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930F3A5230D1C9F00610DFB /* CrashFileManager.swift */; };
-		1930F3A8230D244F00610DFB /* CaptainFloatingWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930F3A7230D244F00610DFB /* CaptainFloatingWindow.swift */; };
-		1930F3AA230D25FE00610DFB /* CrashDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930F3A9230D25FE00610DFB /* CrashDashboardViewController.swift */; };
-		1930F3AC230D26FB00610DFB /* CrashListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930F3AB230D26FB00610DFB /* CrashListViewController.swift */; };
-		1930F3AF230D2B9800610DFB /* SanboxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930F3AE230D2B9800610DFB /* SanboxModel.swift */; };
-		1930F3B1230D349100610DFB /* SoldierListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930F3B0230D349100610DFB /* SoldierListViewController.swift */; };
-		1949BEF1230D39E800B43CDB /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1949BEF0230D39E800B43CDB /* Resource.bundle */; };
-		1949BEF6230D41AE00B43CDB /* CaptainFloatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BEF5230D41AE00B43CDB /* CaptainFloatingViewController.swift */; };
-		1949BEF8230D4A5200B43CDB /* JXFileBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BEF7230D4A5200B43CDB /* JXFileBrowserController.swift */; };
-		1949BEFB230D4C1200B43CDB /* SanboxBrowserSoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BEFA230D4C1200B43CDB /* SanboxBrowserSoldier.swift */; };
-		1949BEFD230E349500B43CDB /* CrashSoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949BEFC230E349500B43CDB /* CrashSoldier.swift */; };
-		1954C672230E3EFC00360FC0 /* SoldierListSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954C671230E3EFC00360FC0 /* SoldierListSectionModel.swift */; };
-		1954C676230E45E300360FC0 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954C675230E45E300360FC0 /* ImageManager.swift */; };
-		1954C679230E724A00360FC0 /* AppInfoSoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954C678230E724A00360FC0 /* AppInfoSoldier.swift */; };
-		1954C67E230E732800360FC0 /* AppInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954C67D230E732800360FC0 /* AppInfoViewController.swift */; };
-		1954C680230E737600360FC0 /* AppInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954C67F230E737600360FC0 /* AppInfoManager.swift */; };
-		19ABA2A2230FABC100BF07A0 /* JXFilePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA2A1230FABC100BF07A0 /* JXFilePreviewViewController.swift */; };
-		19ABA41C230FD4BB00BF07A0 /* WebsiteEntrySoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA41B230FD4BB00BF07A0 /* WebsiteEntrySoldier.swift */; };
-		19ABA41F230FD59800BF07A0 /* WebsiteEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA41E230FD59800BF07A0 /* WebsiteEntryViewController.swift */; };
-		19ABA421230FDCF000BF07A0 /* WebDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA420230FDCF000BF07A0 /* WebDetailViewController.swift */; };
-		19ABA423230FE05D00BF07A0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA422230FE05D00BF07A0 /* BaseViewController.swift */; };
+		19ABA44B230FEBB200BF07A0 /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 19ABA424230FEBB200BF07A0 /* Resource.bundle */; };
+		19ABA44C230FEBB200BF07A0 /* JXFileBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA428230FEBB200BF07A0 /* JXFileBrowserController.swift */; };
+		19ABA44D230FEBB200BF07A0 /* JXFilePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA429230FEBB200BF07A0 /* JXFilePreviewViewController.swift */; };
+		19ABA44E230FEBB200BF07A0 /* CrashListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA42B230FEBB200BF07A0 /* CrashListViewController.swift */; };
+		19ABA44F230FEBB200BF07A0 /* CrashDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA42C230FEBB200BF07A0 /* CrashDashboardViewController.swift */; };
+		19ABA450230FEBB200BF07A0 /* WebsiteEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA42E230FEBB200BF07A0 /* WebsiteEntryViewController.swift */; };
+		19ABA451230FEBB200BF07A0 /* WebDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA42F230FEBB200BF07A0 /* WebDetailViewController.swift */; };
+		19ABA452230FEBB200BF07A0 /* SanboxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA431230FEBB200BF07A0 /* SanboxModel.swift */; };
+		19ABA453230FEBB200BF07A0 /* SoldierListSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA432230FEBB200BF07A0 /* SoldierListSectionModel.swift */; };
+		19ABA454230FEBB200BF07A0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA434230FEBB200BF07A0 /* BaseViewController.swift */; };
+		19ABA455230FEBB200BF07A0 /* SoldierListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA435230FEBB200BF07A0 /* SoldierListViewController.swift */; };
+		19ABA456230FEBB200BF07A0 /* CaptainFloatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA436230FEBB200BF07A0 /* CaptainFloatingViewController.swift */; };
+		19ABA457230FEBB200BF07A0 /* CaptainFloatingWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA437230FEBB200BF07A0 /* CaptainFloatingWindow.swift */; };
+		19ABA458230FEBB200BF07A0 /* AppInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA439230FEBB200BF07A0 /* AppInfoViewController.swift */; };
+		19ABA459230FEBB200BF07A0 /* Captain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA43A230FEBB200BF07A0 /* Captain.swift */; };
+		19ABA45A230FEBB200BF07A0 /* SanboxBrowserSoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA43D230FEBB200BF07A0 /* SanboxBrowserSoldier.swift */; };
+		19ABA45B230FEBB200BF07A0 /* CrashUncaughtExceptionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA43F230FEBB200BF07A0 /* CrashUncaughtExceptionHandler.swift */; };
+		19ABA45C230FEBB200BF07A0 /* CrashFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA440230FEBB200BF07A0 /* CrashFileManager.swift */; };
+		19ABA45D230FEBB200BF07A0 /* CrashSoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA441230FEBB200BF07A0 /* CrashSoldier.swift */; };
+		19ABA45E230FEBB200BF07A0 /* CrashSignalExceptionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA442230FEBB200BF07A0 /* CrashSignalExceptionHandler.swift */; };
+		19ABA45F230FEBB200BF07A0 /* WebsiteEntrySoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA444230FEBB200BF07A0 /* WebsiteEntrySoldier.swift */; };
+		19ABA460230FEBB200BF07A0 /* AppInfoSoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA446230FEBB200BF07A0 /* AppInfoSoldier.swift */; };
+		19ABA461230FEBB200BF07A0 /* AppInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA447230FEBB200BF07A0 /* AppInfoManager.swift */; };
+		19ABA462230FEBB200BF07A0 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA44A230FEBB200BF07A0 /* ImageManager.swift */; };
 		19C1F4AE230BEC8C00189B88 /* JXCaptain.h in Headers */ = {isa = PBXBuildFile; fileRef = 19C1F4AC230BEC8C00189B88 /* JXCaptain.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		19C1F4DD230BEDBD00189B88 /* Captain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1F4DC230BEDBD00189B88 /* Captain.swift */; };
-		19C1F4DF230BF34E00189B88 /* CrashUncaughtExceptionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1F4DE230BF34E00189B88 /* CrashUncaughtExceptionHandler.swift */; };
-		19C1F4E2230CDF5B00189B88 /* CrashSignalExceptionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1F4E1230CDF5B00189B88 /* CrashSignalExceptionHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1930F3A5230D1C9F00610DFB /* CrashFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashFileManager.swift; sourceTree = "<group>"; };
-		1930F3A7230D244F00610DFB /* CaptainFloatingWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptainFloatingWindow.swift; sourceTree = "<group>"; };
-		1930F3A9230D25FE00610DFB /* CrashDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashDashboardViewController.swift; sourceTree = "<group>"; };
-		1930F3AB230D26FB00610DFB /* CrashListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashListViewController.swift; sourceTree = "<group>"; };
-		1930F3AE230D2B9800610DFB /* SanboxModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanboxModel.swift; sourceTree = "<group>"; };
-		1930F3B0230D349100610DFB /* SoldierListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldierListViewController.swift; sourceTree = "<group>"; };
 		1930F3BD230D385F00610DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1949BEF0230D39E800B43CDB /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
-		1949BEF5230D41AE00B43CDB /* CaptainFloatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptainFloatingViewController.swift; sourceTree = "<group>"; };
-		1949BEF7230D4A5200B43CDB /* JXFileBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFileBrowserController.swift; sourceTree = "<group>"; };
-		1949BEFA230D4C1200B43CDB /* SanboxBrowserSoldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanboxBrowserSoldier.swift; sourceTree = "<group>"; };
-		1949BEFC230E349500B43CDB /* CrashSoldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashSoldier.swift; sourceTree = "<group>"; };
-		1954C671230E3EFC00360FC0 /* SoldierListSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldierListSectionModel.swift; sourceTree = "<group>"; };
-		1954C675230E45E300360FC0 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
-		1954C678230E724A00360FC0 /* AppInfoSoldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoSoldier.swift; sourceTree = "<group>"; };
-		1954C67D230E732800360FC0 /* AppInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoViewController.swift; sourceTree = "<group>"; };
-		1954C67F230E737600360FC0 /* AppInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoManager.swift; sourceTree = "<group>"; };
-		19ABA2A1230FABC100BF07A0 /* JXFilePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXFilePreviewViewController.swift; sourceTree = "<group>"; };
-		19ABA41B230FD4BB00BF07A0 /* WebsiteEntrySoldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteEntrySoldier.swift; sourceTree = "<group>"; };
-		19ABA41E230FD59800BF07A0 /* WebsiteEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteEntryViewController.swift; sourceTree = "<group>"; };
-		19ABA420230FDCF000BF07A0 /* WebDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDetailViewController.swift; sourceTree = "<group>"; };
-		19ABA422230FE05D00BF07A0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		19ABA424230FEBB200BF07A0 /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = SOURCE_ROOT; };
+		19ABA428230FEBB200BF07A0 /* JXFileBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFileBrowserController.swift; sourceTree = "<group>"; };
+		19ABA429230FEBB200BF07A0 /* JXFilePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFilePreviewViewController.swift; sourceTree = "<group>"; };
+		19ABA42B230FEBB200BF07A0 /* CrashListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashListViewController.swift; sourceTree = "<group>"; };
+		19ABA42C230FEBB200BF07A0 /* CrashDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashDashboardViewController.swift; sourceTree = "<group>"; };
+		19ABA42E230FEBB200BF07A0 /* WebsiteEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebsiteEntryViewController.swift; sourceTree = "<group>"; };
+		19ABA42F230FEBB200BF07A0 /* WebDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebDetailViewController.swift; sourceTree = "<group>"; };
+		19ABA431230FEBB200BF07A0 /* SanboxModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SanboxModel.swift; sourceTree = "<group>"; };
+		19ABA432230FEBB200BF07A0 /* SoldierListSectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoldierListSectionModel.swift; sourceTree = "<group>"; };
+		19ABA434230FEBB200BF07A0 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		19ABA435230FEBB200BF07A0 /* SoldierListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoldierListViewController.swift; sourceTree = "<group>"; };
+		19ABA436230FEBB200BF07A0 /* CaptainFloatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptainFloatingViewController.swift; sourceTree = "<group>"; };
+		19ABA437230FEBB200BF07A0 /* CaptainFloatingWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptainFloatingWindow.swift; sourceTree = "<group>"; };
+		19ABA439230FEBB200BF07A0 /* AppInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoViewController.swift; sourceTree = "<group>"; };
+		19ABA43A230FEBB200BF07A0 /* Captain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Captain.swift; sourceTree = "<group>"; };
+		19ABA43D230FEBB200BF07A0 /* SanboxBrowserSoldier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SanboxBrowserSoldier.swift; sourceTree = "<group>"; };
+		19ABA43F230FEBB200BF07A0 /* CrashUncaughtExceptionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashUncaughtExceptionHandler.swift; sourceTree = "<group>"; };
+		19ABA440230FEBB200BF07A0 /* CrashFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashFileManager.swift; sourceTree = "<group>"; };
+		19ABA441230FEBB200BF07A0 /* CrashSoldier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashSoldier.swift; sourceTree = "<group>"; };
+		19ABA442230FEBB200BF07A0 /* CrashSignalExceptionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashSignalExceptionHandler.swift; sourceTree = "<group>"; };
+		19ABA444230FEBB200BF07A0 /* WebsiteEntrySoldier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebsiteEntrySoldier.swift; sourceTree = "<group>"; };
+		19ABA446230FEBB200BF07A0 /* AppInfoSoldier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoSoldier.swift; sourceTree = "<group>"; };
+		19ABA447230FEBB200BF07A0 /* AppInfoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoManager.swift; sourceTree = "<group>"; };
+		19ABA44A230FEBB200BF07A0 /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		19C1F4A9230BEC8C00189B88 /* JXCaptain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JXCaptain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C1F4AC230BEC8C00189B88 /* JXCaptain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXCaptain.h; sourceTree = "<group>"; };
 		19C1F4AD230BEC8C00189B88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19C1F4DC230BEDBD00189B88 /* Captain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Captain.swift; sourceTree = "<group>"; };
-		19C1F4DE230BF34E00189B88 /* CrashUncaughtExceptionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashUncaughtExceptionHandler.swift; sourceTree = "<group>"; };
-		19C1F4E1230CDF5B00189B88 /* CrashSignalExceptionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashSignalExceptionHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,15 +76,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1930F3AD230D2B8100610DFB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				1930F3AE230D2B9800610DFB /* SanboxModel.swift */,
-				1954C671230E3EFC00360FC0 /* SoldierListSectionModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		1930F3BC230D385F00610DFB /* ResourceBundle */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,115 +84,146 @@
 			path = ResourceBundle;
 			sourceTree = "<group>";
 		};
-		1949BEF2230D3F9600B43CDB /* Soldiers */ = {
+		19ABA425230FEBB200BF07A0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				19ABA41A230FD46C00BF07A0 /* WebsiteEntry */,
-				1954C677230E723900360FC0 /* AppInfo */,
-				1949BEF9230D4BDD00B43CDB /* SanboxBrowser */,
-				19C1F4E0230CDE0500189B88 /* Crash */,
+				19ABA426230FEBB200BF07A0 /* UI */,
+				19ABA43A230FEBB200BF07A0 /* Captain.swift */,
+				19ABA43B230FEBB200BF07A0 /* Soldiers */,
+				19ABA448230FEBB200BF07A0 /* Manager */,
 			);
-			path = Soldiers;
-			sourceTree = "<group>";
+			path = Sources;
+			sourceTree = SOURCE_ROOT;
 		};
-		1949BEF3230D3FA700B43CDB /* UI */ = {
+		19ABA426230FEBB200BF07A0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				1954C67B230E730200360FC0 /* Main */,
-				19ABA41D230FD54A00BF07A0 /* WebsiteEntry */,
-				1954C67C230E730C00360FC0 /* AppInfo */,
-				1954C67A230E72D300360FC0 /* SanboxBrowser */,
-				1949BEF4230D3FDE00B43CDB /* Crash */,
-				1930F3AD230D2B8100610DFB /* Model */,
+				19ABA427230FEBB200BF07A0 /* SanboxBrowser */,
+				19ABA42A230FEBB200BF07A0 /* Crash */,
+				19ABA42D230FEBB200BF07A0 /* WebsiteEntry */,
+				19ABA430230FEBB200BF07A0 /* Model */,
+				19ABA433230FEBB200BF07A0 /* Main */,
+				19ABA438230FEBB200BF07A0 /* AppInfo */,
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
-		1949BEF4230D3FDE00B43CDB /* Crash */ = {
+		19ABA427230FEBB200BF07A0 /* SanboxBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				1930F3A9230D25FE00610DFB /* CrashDashboardViewController.swift */,
-				1930F3AB230D26FB00610DFB /* CrashListViewController.swift */,
+				19ABA428230FEBB200BF07A0 /* JXFileBrowserController.swift */,
+				19ABA429230FEBB200BF07A0 /* JXFilePreviewViewController.swift */,
+			);
+			path = SanboxBrowser;
+			sourceTree = "<group>";
+		};
+		19ABA42A230FEBB200BF07A0 /* Crash */ = {
+			isa = PBXGroup;
+			children = (
+				19ABA42B230FEBB200BF07A0 /* CrashListViewController.swift */,
+				19ABA42C230FEBB200BF07A0 /* CrashDashboardViewController.swift */,
 			);
 			path = Crash;
 			sourceTree = "<group>";
 		};
-		1949BEF9230D4BDD00B43CDB /* SanboxBrowser */ = {
+		19ABA42D230FEBB200BF07A0 /* WebsiteEntry */ = {
 			isa = PBXGroup;
 			children = (
-				1949BEFA230D4C1200B43CDB /* SanboxBrowserSoldier.swift */,
+				19ABA42E230FEBB200BF07A0 /* WebsiteEntryViewController.swift */,
+				19ABA42F230FEBB200BF07A0 /* WebDetailViewController.swift */,
 			);
-			path = SanboxBrowser;
+			path = WebsiteEntry;
 			sourceTree = "<group>";
 		};
-		1954C673230E45AA00360FC0 /* Manager */ = {
+		19ABA430230FEBB200BF07A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1954C674230E45BD00360FC0 /* Image */,
+				19ABA431230FEBB200BF07A0 /* SanboxModel.swift */,
+				19ABA432230FEBB200BF07A0 /* SoldierListSectionModel.swift */,
 			);
-			path = Manager;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		1954C674230E45BD00360FC0 /* Image */ = {
+		19ABA433230FEBB200BF07A0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				1954C675230E45E300360FC0 /* ImageManager.swift */,
-			);
-			path = Image;
-			sourceTree = "<group>";
-		};
-		1954C677230E723900360FC0 /* AppInfo */ = {
-			isa = PBXGroup;
-			children = (
-				1954C678230E724A00360FC0 /* AppInfoSoldier.swift */,
-				1954C67F230E737600360FC0 /* AppInfoManager.swift */,
-			);
-			path = AppInfo;
-			sourceTree = "<group>";
-		};
-		1954C67A230E72D300360FC0 /* SanboxBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				1949BEF7230D4A5200B43CDB /* JXFileBrowserController.swift */,
-				19ABA2A1230FABC100BF07A0 /* JXFilePreviewViewController.swift */,
-			);
-			path = SanboxBrowser;
-			sourceTree = "<group>";
-		};
-		1954C67B230E730200360FC0 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				1930F3A7230D244F00610DFB /* CaptainFloatingWindow.swift */,
-				19ABA422230FE05D00BF07A0 /* BaseViewController.swift */,
-				1949BEF5230D41AE00B43CDB /* CaptainFloatingViewController.swift */,
-				1930F3B0230D349100610DFB /* SoldierListViewController.swift */,
+				19ABA434230FEBB200BF07A0 /* BaseViewController.swift */,
+				19ABA435230FEBB200BF07A0 /* SoldierListViewController.swift */,
+				19ABA436230FEBB200BF07A0 /* CaptainFloatingViewController.swift */,
+				19ABA437230FEBB200BF07A0 /* CaptainFloatingWindow.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
 		};
-		1954C67C230E730C00360FC0 /* AppInfo */ = {
+		19ABA438230FEBB200BF07A0 /* AppInfo */ = {
 			isa = PBXGroup;
 			children = (
-				1954C67D230E732800360FC0 /* AppInfoViewController.swift */,
+				19ABA439230FEBB200BF07A0 /* AppInfoViewController.swift */,
 			);
 			path = AppInfo;
 			sourceTree = "<group>";
 		};
-		19ABA41A230FD46C00BF07A0 /* WebsiteEntry */ = {
+		19ABA43B230FEBB200BF07A0 /* Soldiers */ = {
 			isa = PBXGroup;
 			children = (
-				19ABA41B230FD4BB00BF07A0 /* WebsiteEntrySoldier.swift */,
+				19ABA43C230FEBB200BF07A0 /* SanboxBrowser */,
+				19ABA43E230FEBB200BF07A0 /* Crash */,
+				19ABA443230FEBB200BF07A0 /* WebsiteEntry */,
+				19ABA445230FEBB200BF07A0 /* AppInfo */,
+			);
+			path = Soldiers;
+			sourceTree = "<group>";
+		};
+		19ABA43C230FEBB200BF07A0 /* SanboxBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				19ABA43D230FEBB200BF07A0 /* SanboxBrowserSoldier.swift */,
+			);
+			path = SanboxBrowser;
+			sourceTree = "<group>";
+		};
+		19ABA43E230FEBB200BF07A0 /* Crash */ = {
+			isa = PBXGroup;
+			children = (
+				19ABA43F230FEBB200BF07A0 /* CrashUncaughtExceptionHandler.swift */,
+				19ABA440230FEBB200BF07A0 /* CrashFileManager.swift */,
+				19ABA441230FEBB200BF07A0 /* CrashSoldier.swift */,
+				19ABA442230FEBB200BF07A0 /* CrashSignalExceptionHandler.swift */,
+			);
+			path = Crash;
+			sourceTree = "<group>";
+		};
+		19ABA443230FEBB200BF07A0 /* WebsiteEntry */ = {
+			isa = PBXGroup;
+			children = (
+				19ABA444230FEBB200BF07A0 /* WebsiteEntrySoldier.swift */,
 			);
 			path = WebsiteEntry;
 			sourceTree = "<group>";
 		};
-		19ABA41D230FD54A00BF07A0 /* WebsiteEntry */ = {
+		19ABA445230FEBB200BF07A0 /* AppInfo */ = {
 			isa = PBXGroup;
 			children = (
-				19ABA41E230FD59800BF07A0 /* WebsiteEntryViewController.swift */,
-				19ABA420230FDCF000BF07A0 /* WebDetailViewController.swift */,
+				19ABA446230FEBB200BF07A0 /* AppInfoSoldier.swift */,
+				19ABA447230FEBB200BF07A0 /* AppInfoManager.swift */,
 			);
-			path = WebsiteEntry;
+			path = AppInfo;
+			sourceTree = "<group>";
+		};
+		19ABA448230FEBB200BF07A0 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				19ABA449230FEBB200BF07A0 /* Image */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		19ABA449230FEBB200BF07A0 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				19ABA44A230FEBB200BF07A0 /* ImageManager.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		19C1F49F230BEC8C00189B88 = {
@@ -224,34 +246,12 @@
 		19C1F4AB230BEC8C00189B88 /* JXCaptain */ = {
 			isa = PBXGroup;
 			children = (
-				1949BEF0230D39E800B43CDB /* Resource.bundle */,
-				19C1F4B4230BEC9500189B88 /* Sources */,
+				19ABA424230FEBB200BF07A0 /* Resource.bundle */,
+				19ABA425230FEBB200BF07A0 /* Sources */,
 				19C1F4AC230BEC8C00189B88 /* JXCaptain.h */,
 				19C1F4AD230BEC8C00189B88 /* Info.plist */,
 			);
 			path = JXCaptain;
-			sourceTree = "<group>";
-		};
-		19C1F4B4230BEC9500189B88 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				19C1F4DC230BEDBD00189B88 /* Captain.swift */,
-				1949BEF2230D3F9600B43CDB /* Soldiers */,
-				1954C673230E45AA00360FC0 /* Manager */,
-				1949BEF3230D3FA700B43CDB /* UI */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		19C1F4E0230CDE0500189B88 /* Crash */ = {
-			isa = PBXGroup;
-			children = (
-				1949BEFC230E349500B43CDB /* CrashSoldier.swift */,
-				19C1F4DE230BF34E00189B88 /* CrashUncaughtExceptionHandler.swift */,
-				19C1F4E1230CDF5B00189B88 /* CrashSignalExceptionHandler.swift */,
-				1930F3A5230D1C9F00610DFB /* CrashFileManager.swift */,
-			);
-			path = Crash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,7 +323,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1949BEF1230D39E800B43CDB /* Resource.bundle in Resources */,
+				19ABA44B230FEBB200BF07A0 /* Resource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,29 +334,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1954C67E230E732800360FC0 /* AppInfoViewController.swift in Sources */,
-				1930F3AF230D2B9800610DFB /* SanboxModel.swift in Sources */,
-				1949BEFB230D4C1200B43CDB /* SanboxBrowserSoldier.swift in Sources */,
-				19ABA423230FE05D00BF07A0 /* BaseViewController.swift in Sources */,
-				1954C680230E737600360FC0 /* AppInfoManager.swift in Sources */,
-				1954C672230E3EFC00360FC0 /* SoldierListSectionModel.swift in Sources */,
-				1949BEFD230E349500B43CDB /* CrashSoldier.swift in Sources */,
-				1930F3B1230D349100610DFB /* SoldierListViewController.swift in Sources */,
-				1930F3A8230D244F00610DFB /* CaptainFloatingWindow.swift in Sources */,
-				1954C676230E45E300360FC0 /* ImageManager.swift in Sources */,
-				1949BEF6230D41AE00B43CDB /* CaptainFloatingViewController.swift in Sources */,
-				19ABA41F230FD59800BF07A0 /* WebsiteEntryViewController.swift in Sources */,
-				19ABA2A2230FABC100BF07A0 /* JXFilePreviewViewController.swift in Sources */,
-				1930F3AA230D25FE00610DFB /* CrashDashboardViewController.swift in Sources */,
-				19C1F4DF230BF34E00189B88 /* CrashUncaughtExceptionHandler.swift in Sources */,
-				1949BEF8230D4A5200B43CDB /* JXFileBrowserController.swift in Sources */,
-				1930F3A6230D1C9F00610DFB /* CrashFileManager.swift in Sources */,
-				1930F3AC230D26FB00610DFB /* CrashListViewController.swift in Sources */,
-				19ABA41C230FD4BB00BF07A0 /* WebsiteEntrySoldier.swift in Sources */,
-				19C1F4DD230BEDBD00189B88 /* Captain.swift in Sources */,
-				1954C679230E724A00360FC0 /* AppInfoSoldier.swift in Sources */,
-				19ABA421230FDCF000BF07A0 /* WebDetailViewController.swift in Sources */,
-				19C1F4E2230CDF5B00189B88 /* CrashSignalExceptionHandler.swift in Sources */,
+				19ABA45D230FEBB200BF07A0 /* CrashSoldier.swift in Sources */,
+				19ABA461230FEBB200BF07A0 /* AppInfoManager.swift in Sources */,
+				19ABA45E230FEBB200BF07A0 /* CrashSignalExceptionHandler.swift in Sources */,
+				19ABA44C230FEBB200BF07A0 /* JXFileBrowserController.swift in Sources */,
+				19ABA44F230FEBB200BF07A0 /* CrashDashboardViewController.swift in Sources */,
+				19ABA45A230FEBB200BF07A0 /* SanboxBrowserSoldier.swift in Sources */,
+				19ABA45B230FEBB200BF07A0 /* CrashUncaughtExceptionHandler.swift in Sources */,
+				19ABA451230FEBB200BF07A0 /* WebDetailViewController.swift in Sources */,
+				19ABA462230FEBB200BF07A0 /* ImageManager.swift in Sources */,
+				19ABA458230FEBB200BF07A0 /* AppInfoViewController.swift in Sources */,
+				19ABA44D230FEBB200BF07A0 /* JXFilePreviewViewController.swift in Sources */,
+				19ABA460230FEBB200BF07A0 /* AppInfoSoldier.swift in Sources */,
+				19ABA45C230FEBB200BF07A0 /* CrashFileManager.swift in Sources */,
+				19ABA453230FEBB200BF07A0 /* SoldierListSectionModel.swift in Sources */,
+				19ABA45F230FEBB200BF07A0 /* WebsiteEntrySoldier.swift in Sources */,
+				19ABA459230FEBB200BF07A0 /* Captain.swift in Sources */,
+				19ABA455230FEBB200BF07A0 /* SoldierListViewController.swift in Sources */,
+				19ABA454230FEBB200BF07A0 /* BaseViewController.swift in Sources */,
+				19ABA452230FEBB200BF07A0 /* SanboxModel.swift in Sources */,
+				19ABA450230FEBB200BF07A0 /* WebsiteEntryViewController.swift in Sources */,
+				19ABA44E230FEBB200BF07A0 /* CrashListViewController.swift in Sources */,
+				19ABA457230FEBB200BF07A0 /* CaptainFloatingWindow.swift in Sources */,
+				19ABA456230FEBB200BF07A0 /* CaptainFloatingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
