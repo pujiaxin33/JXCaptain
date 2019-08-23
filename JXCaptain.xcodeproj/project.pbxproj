@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		19ABA44B230FEBB200BF07A0 /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 19ABA424230FEBB200BF07A0 /* Resource.bundle */; };
 		19ABA44C230FEBB200BF07A0 /* JXFileBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA428230FEBB200BF07A0 /* JXFileBrowserController.swift */; };
 		19ABA44D230FEBB200BF07A0 /* JXFilePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA429230FEBB200BF07A0 /* JXFilePreviewViewController.swift */; };
 		19ABA44E230FEBB200BF07A0 /* CrashListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA42B230FEBB200BF07A0 /* CrashListViewController.swift */; };
@@ -31,12 +30,12 @@
 		19ABA460230FEBB200BF07A0 /* AppInfoSoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA446230FEBB200BF07A0 /* AppInfoSoldier.swift */; };
 		19ABA461230FEBB200BF07A0 /* AppInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA447230FEBB200BF07A0 /* AppInfoManager.swift */; };
 		19ABA462230FEBB200BF07A0 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA44A230FEBB200BF07A0 /* ImageManager.swift */; };
+		19ABA466230FF3F500BF07A0 /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 19ABA464230FF3F500BF07A0 /* Resource.bundle */; };
+		19ABA467230FF3F500BF07A0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19ABA465230FF3F500BF07A0 /* Info.plist */; };
 		19C1F4AE230BEC8C00189B88 /* JXCaptain.h in Headers */ = {isa = PBXBuildFile; fileRef = 19C1F4AC230BEC8C00189B88 /* JXCaptain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1930F3BD230D385F00610DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19ABA424230FEBB200BF07A0 /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = SOURCE_ROOT; };
 		19ABA428230FEBB200BF07A0 /* JXFileBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFileBrowserController.swift; sourceTree = "<group>"; };
 		19ABA429230FEBB200BF07A0 /* JXFilePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFilePreviewViewController.swift; sourceTree = "<group>"; };
 		19ABA42B230FEBB200BF07A0 /* CrashListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashListViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +59,8 @@
 		19ABA446230FEBB200BF07A0 /* AppInfoSoldier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoSoldier.swift; sourceTree = "<group>"; };
 		19ABA447230FEBB200BF07A0 /* AppInfoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoManager.swift; sourceTree = "<group>"; };
 		19ABA44A230FEBB200BF07A0 /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		19ABA464230FF3F500BF07A0 /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
+		19ABA465230FF3F500BF07A0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19C1F4A9230BEC8C00189B88 /* JXCaptain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JXCaptain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C1F4AC230BEC8C00189B88 /* JXCaptain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXCaptain.h; sourceTree = "<group>"; };
 		19C1F4AD230BEC8C00189B88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,14 +77,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1930F3BC230D385F00610DFB /* ResourceBundle */ = {
-			isa = PBXGroup;
-			children = (
-				1930F3BD230D385F00610DFB /* Info.plist */,
-			);
-			path = ResourceBundle;
-			sourceTree = "<group>";
-		};
 		19ABA425230FEBB200BF07A0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,11 +219,19 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		19ABA463230FF3F500BF07A0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				19ABA464230FF3F500BF07A0 /* Resource.bundle */,
+				19ABA465230FF3F500BF07A0 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = SOURCE_ROOT;
+		};
 		19C1F49F230BEC8C00189B88 = {
 			isa = PBXGroup;
 			children = (
 				19C1F4AB230BEC8C00189B88 /* JXCaptain */,
-				1930F3BC230D385F00610DFB /* ResourceBundle */,
 				19C1F4AA230BEC8C00189B88 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -246,7 +247,7 @@
 		19C1F4AB230BEC8C00189B88 /* JXCaptain */ = {
 			isa = PBXGroup;
 			children = (
-				19ABA424230FEBB200BF07A0 /* Resource.bundle */,
+				19ABA463230FF3F500BF07A0 /* Resources */,
 				19ABA425230FEBB200BF07A0 /* Sources */,
 				19C1F4AC230BEC8C00189B88 /* JXCaptain.h */,
 				19C1F4AD230BEC8C00189B88 /* Info.plist */,
@@ -323,7 +324,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19ABA44B230FEBB200BF07A0 /* Resource.bundle in Resources */,
+				19ABA467230FF3F500BF07A0 /* Info.plist in Resources */,
+				19ABA466230FF3F500BF07A0 /* Resource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
