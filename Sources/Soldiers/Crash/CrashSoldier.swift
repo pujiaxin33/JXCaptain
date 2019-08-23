@@ -19,7 +19,7 @@ public class CrashSoldier: Soldier {
     public init() {
         name = "Crash日志"
         team = "常用工具"
-        icon = ImageManager.imageWithName("icon_crash")
+        icon = ImageManager.imageWithName("JXCaptain_icon_crash")
     }
 
     public func action() {

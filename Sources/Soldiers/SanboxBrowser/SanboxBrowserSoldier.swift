@@ -16,7 +16,7 @@ public class SanboxBrowserSoldier: Soldier {
     public init() {
         name = "沙盒浏览"
         team = "常用工具"
-        icon = ImageManager.imageWithName("icon_sanbox")
+        icon = ImageManager.imageWithName("JXCaptain_icon_sanbox")
     }
 
     public func action() {

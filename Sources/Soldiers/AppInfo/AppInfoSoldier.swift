@@ -16,7 +16,7 @@ public class AppInfoSoldier: Soldier {
     public init() {
         name = "APP信息"
         team = "常用工具"
-        icon = ImageManager.imageWithName("icon_app_info")
+        icon = ImageManager.imageWithName("JXCaptain_icon_app_info")
     }
 
     public func action() {

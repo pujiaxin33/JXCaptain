@@ -23,7 +23,7 @@ public class WebsiteEntrySoldier: Soldier {
     public init() {
         name = "H5任意门"
         team = "常用工具"
-        icon = ImageManager.imageWithName("icon_h5")
+        icon = ImageManager.imageWithName("JXCaptain_icon_h5")
     }
 
     public func action() {
