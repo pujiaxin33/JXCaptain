@@ -31,7 +31,6 @@
 		19ABA461230FEBB200BF07A0 /* AppInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA447230FEBB200BF07A0 /* AppInfoManager.swift */; };
 		19ABA462230FEBB200BF07A0 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA44A230FEBB200BF07A0 /* ImageManager.swift */; };
 		19ABA466230FF3F500BF07A0 /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 19ABA464230FF3F500BF07A0 /* Resource.bundle */; };
-		19ABA467230FF3F500BF07A0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19ABA465230FF3F500BF07A0 /* Info.plist */; };
 		19C1F4AE230BEC8C00189B88 /* JXCaptain.h in Headers */ = {isa = PBXBuildFile; fileRef = 19C1F4AC230BEC8C00189B88 /* JXCaptain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -60,7 +59,6 @@
 		19ABA447230FEBB200BF07A0 /* AppInfoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoManager.swift; sourceTree = "<group>"; };
 		19ABA44A230FEBB200BF07A0 /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		19ABA464230FF3F500BF07A0 /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
-		19ABA465230FF3F500BF07A0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19C1F4A9230BEC8C00189B88 /* JXCaptain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JXCaptain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C1F4AC230BEC8C00189B88 /* JXCaptain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXCaptain.h; sourceTree = "<group>"; };
 		19C1F4AD230BEC8C00189B88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -223,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				19ABA464230FF3F500BF07A0 /* Resource.bundle */,
-				19ABA465230FF3F500BF07A0 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = SOURCE_ROOT;
@@ -324,7 +321,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19ABA467230FF3F500BF07A0 /* Info.plist in Resources */,
 				19ABA466230FF3F500BF07A0 /* Resource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
