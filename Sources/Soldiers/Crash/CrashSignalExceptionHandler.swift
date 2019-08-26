@@ -27,7 +27,7 @@ private let preHandlers = [SIGABRT : previousABRTSignalHandler,
                            SIGTRAP : previousTRAPSignalHandler]
 
 class CrashSignalExceptionHandler {
-    func action() {
+    func prepare() {
         backupOriginalHandler()
         signalNewRegister()
     }

@@ -26,10 +26,10 @@ public class WebsiteEntrySoldier: Soldier {
         icon = ImageManager.imageWithName("JXCaptain_icon_h5")
     }
 
-    public func action() {
+    public func prepare() {
     }
 
-    public func moveToDashboard(naviController: UINavigationController) {
+    public func action(naviController: UINavigationController) {
         naviController.pushViewController(WebsiteEntryViewController(), animated: true)
     }
 }

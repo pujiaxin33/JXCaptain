@@ -17,7 +17,8 @@ class ViewController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "呼叫队长", style: .plain, target: self, action: #selector(naviRightItemDidClick))
 
         Captain.default.enqueueSoldier(ServerEnvironmentSoldier())
-        Captain.default.action()
+        //enqueueSoldier完之后再调用prepare
+        Captain.default.prepare()
         //设置H5任意门默认网址
 //        WebsiteEntrySoldier.defaultWebsite = "https://www.baidu.com"
         //设置H5任意门自定义落地页面，比如项目有自定义WKWebView、有JS交互逻辑等

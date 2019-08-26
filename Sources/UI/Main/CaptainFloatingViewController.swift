@@ -20,9 +20,12 @@ class CaptainFloatingViewController: BaseViewController {
         shieldButton = UIButton(type: .custom)
         shieldButton.setImage(ImageManager.imageWithName("JXCaptain_icon_shield"), for: .normal)
         shieldButton.layer.shadowOpacity = 0.6
+        shieldButton.layer.shadowColor = UIColor.black.cgColor
         shieldButton.layer.shadowRadius = 3
         shieldButton.layer.shadowOffset = CGSize.zero
-        shieldButton.frame = CGRect(x: 12, y: (view.bounds.size.height - shieldWidth)/2, width: shieldWidth, height: shieldWidth)
+        let screenEdgeInsets = Captain.default.screenEdgeInsets
+        let y = screenEdgeInsets.top + (view.bounds.size.height - screenEdgeInsets.top - screenEdgeInsets.bottom - shieldWidth)/2
+        shieldButton.frame = CGRect(x: screenEdgeInsets.left, y: y, width: shieldWidth, height: shieldWidth)
         shieldButton.addTarget(self, action: #selector(shieldButtonDidClick), for: .touchUpInside)
         view.addSubview(shieldButton)
 
@@ -36,22 +39,11 @@ class CaptainFloatingViewController: BaseViewController {
 
     @objc func processPan(_ gesture: UIPanGestureRecognizer) {
         let point = gesture.location(in: view)
-        let screenEdge: CGFloat = 12
-        var screenTopEdge: CGFloat = 20
-        var screenBottomEdge: CGFloat = 12
-        if #available(iOS 11.0, *) {
-            let safeAreaInsets = Captain.default.floatingWindow.safeAreaInsets
-            if safeAreaInsets.top > 0 {
-                screenTopEdge = safeAreaInsets.top
-            }
-            if safeAreaInsets.bottom > 0 {
-                screenBottomEdge = safeAreaInsets.bottom
-            }
-        }
-        let minCenterX = screenEdge + shieldWidth/2
-        let maxCenterX = view.bounds.size.width - screenEdge - shieldWidth/2
-        let minCenterY = screenTopEdge + shieldWidth/2
-        let maxCenterY = view.bounds.size.height - screenBottomEdge - shieldWidth/2
+        let screenEdgeInsets = Captain.default.screenEdgeInsets
+        let minCenterX = screenEdgeInsets.left + shieldWidth/2
+        let maxCenterX = view.bounds.size.width - screenEdgeInsets.right - shieldWidth/2
+        let minCenterY = screenEdgeInsets.top + shieldWidth/2
+        let maxCenterY = view.bounds.size.height - screenEdgeInsets.bottom - shieldWidth/2
         let centerX = min(maxCenterX, max(minCenterX, point.x))
         let centerY = min(maxCenterY, max(minCenterY, point.y))
         if gesture.state == .began {

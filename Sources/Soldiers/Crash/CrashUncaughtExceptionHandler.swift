@@ -11,7 +11,7 @@ import Foundation
 private var preUncaughtExceptionHandler: NSUncaughtExceptionHandler?
 
 class CrashUncaughtExceptionHandler {
-    func action() {
+    func prepare() {
         preUncaughtExceptionHandler = NSGetUncaughtExceptionHandler()
         NSSetUncaughtExceptionHandler(SoldierUncaughtExceptionHandler)
     }

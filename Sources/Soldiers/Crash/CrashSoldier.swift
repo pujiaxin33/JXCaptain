@@ -22,12 +22,12 @@ public class CrashSoldier: Soldier {
         icon = ImageManager.imageWithName("JXCaptain_icon_crash")
     }
 
-    public func action() {
-        uncaughtExceptionHandler.action()
-        signalExceptionHandler.action()
+    public func prepare() {
+        uncaughtExceptionHandler.prepare()
+        signalExceptionHandler.prepare()
     }
 
-    public func moveToDashboard(naviController: UINavigationController) {
+    public func action(naviController: UINavigationController) {
         naviController.pushViewController(CrashDashboardViewController(style: .plain), animated: true)
     }
 }

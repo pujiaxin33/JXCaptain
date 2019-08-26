@@ -24,10 +24,10 @@ class ServerEnvironmentSoldier: Soldier {
         contentView = myContentView
     }
 
-    public func action() {
+    public func prepare() {
     }
 
-    public func moveToDashboard(naviController: UINavigationController) {
+    public func action(naviController: UINavigationController) {
     }
 }
 
@@ -44,7 +44,7 @@ class ServerEnvironmentContentView: UIView {
         toggle.translatesAutoresizingMaskIntoConstraints = false
         toggle.addTarget(self, action: #selector(toggleDidClick), for: .valueChanged)
         addSubview(toggle)
-        toggle.topAnchor.constraint(equalTo: self.topAnchor, constant: 3).isActive = true
+        toggle.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
         toggle.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
 
         nameLabel.textColor = .gray
@@ -52,7 +52,7 @@ class ServerEnvironmentContentView: UIView {
         nameLabel.textAlignment = .center
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(nameLabel)
-        nameLabel.topAnchor.constraint(equalTo: toggle.bottomAnchor, constant: 5).isActive = true
+        nameLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
     }

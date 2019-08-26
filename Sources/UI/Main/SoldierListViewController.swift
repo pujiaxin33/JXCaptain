@@ -39,7 +39,7 @@ class SoldierListViewController: BaseViewController, UICollectionViewDataSource,
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 12
         layout.minimumInteritemSpacing = 0
-        layout.itemSize = CGSize(width: itemWidth, height: 62)
+        layout.itemSize = CGSize(width: itemWidth, height: 60)
         layout.sectionInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
         layout.headerReferenceSize = CGSize(width: view.bounds.size.width, height: 30)
         collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
@@ -100,7 +100,7 @@ class SoldierListViewController: BaseViewController, UICollectionViewDataSource,
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let soldier = dataSource[indexPath.section].soldiers[indexPath.item]
-        soldier.moveToDashboard(naviController: self.navigationController!)
+        soldier.action(naviController: self.navigationController!)
     }
 
     //MARK: - UICollectionViewDelegateFlowLayout
@@ -113,6 +113,11 @@ class SoldierListViewController: BaseViewController, UICollectionViewDataSource,
     }
 }
 
+/// UI标准
+/// Cell布局：高度=60，宽度=屏幕宽度/4
+/// nameLabel布局：leading、trailing、bottom都对齐父视图
+/// nameLabel属性：textColor = .gray、font = .systemFont(ofSize: 12)、extAlignment = .center
+/// iconImageView布局：width = height = 35、top和centerX对齐父视图
 class SoldierListCell: UICollectionViewCell {
     let iconImageView: UIImageView
     let nameLabel: UILabel
@@ -137,7 +142,7 @@ class SoldierListCell: UICollectionViewCell {
         contentView.addSubview(iconImageView)
         iconImageView.widthAnchor.constraint(equalToConstant: 35).isActive = true
         iconImageView.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
         iconImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
 
         nameLabel.textColor = .gray
@@ -145,7 +150,7 @@ class SoldierListCell: UICollectionViewCell {
         nameLabel.textAlignment = .center
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(nameLabel)
-        nameLabel.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: 3).isActive = true
+        nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
     }

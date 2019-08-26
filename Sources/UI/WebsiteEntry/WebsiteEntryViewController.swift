@@ -33,7 +33,6 @@ class WebsiteEntryViewController: BaseViewController {
         inputTextView.keyboardType = .URL
         inputTextView.layer.borderColor = UIColor.lightGray.cgColor
         inputTextView.layer.borderWidth = 1
-        inputTextView.becomeFirstResponder()
         view.addSubview(inputTextView)
 
         confirmButton = UIButton(type: .custom)
@@ -45,8 +44,10 @@ class WebsiteEntryViewController: BaseViewController {
         view.addSubview(confirmButton)
     }
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        inputTextView.endEditing(true)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        inputTextView.becomeFirstResponder()
     }
     
     override func viewDidLayoutSubviews() {
@@ -55,6 +56,10 @@ class WebsiteEntryViewController: BaseViewController {
         tipsLabel.frame = CGRect(x: 12, y: 12, width: 200, height: 20)
         inputTextView.frame = CGRect(x: 12, y: tipsLabel.frame.maxY + 3, width: view.bounds.size.width - 12*2, height: 200)
         confirmButton.frame = CGRect(x: 12, y: inputTextView.frame.maxY + 10, width: inputTextView.bounds.size.width, height: 50)
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        inputTextView.endEditing(true)
     }
 
     @objc func confirmButtonDidClick() {

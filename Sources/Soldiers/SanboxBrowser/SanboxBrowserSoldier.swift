@@ -19,10 +19,10 @@ public class SanboxBrowserSoldier: Soldier {
         icon = ImageManager.imageWithName("JXCaptain_icon_sanbox")
     }
 
-    public func action() {
+    public func prepare() {
     }
 
-    public func moveToDashboard(naviController: UINavigationController) {
+    public func action(naviController: UINavigationController) {
         naviController.pushViewController(JXFileBrowserController(path: NSHomeDirectory()), animated: true)
     }
 }

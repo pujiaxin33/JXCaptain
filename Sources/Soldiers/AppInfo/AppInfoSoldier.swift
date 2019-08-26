@@ -19,10 +19,10 @@ public class AppInfoSoldier: Soldier {
         icon = ImageManager.imageWithName("JXCaptain_icon_app_info")
     }
 
-    public func action() {
+    public func prepare() {
     }
 
-    public func moveToDashboard(naviController: UINavigationController) {
+    public func action(naviController: UINavigationController) {
         naviController.pushViewController(AppInfoViewController(style: .grouped), animated: true)
     }
 }

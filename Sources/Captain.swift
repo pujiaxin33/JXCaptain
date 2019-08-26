@@ -13,18 +13,31 @@ public protocol Soldier {
     var team: String { get }
     var icon: UIImage? { get }
     var contentView: UIView? { get }
-    func action()
-    func moveToDashboard(naviController: UINavigationController)
+    func prepare()
+    func action(naviController: UINavigationController)
 }
 
 public class Captain {
     public static let `default` = Captain()
+    public var screenEdgeInsets: UIEdgeInsets
     internal var soldiers = [Soldier]()
     internal let floatingWindow = CaptainFloatingWindow()
 
     init() {
         let defaultSoldiers: [Soldier] = [AppInfoSoldier(), SanboxBrowserSoldier(), CrashSoldier(), WebsiteEntrySoldier()]
         soldiers.append(contentsOf: defaultSoldiers)
+        var topEdgeInset: CGFloat = 20
+        var bottomEdgeInset: CGFloat = 12
+        if #available(iOS 11.0, *) {
+            let safeAreaInsets = floatingWindow.safeAreaInsets
+            if safeAreaInsets.top > 0 {
+                topEdgeInset = safeAreaInsets.top
+            }
+            if safeAreaInsets.bottom > 0 {
+                bottomEdgeInset = safeAreaInsets.bottom
+            }
+        }
+        screenEdgeInsets = UIEdgeInsets(top: topEdgeInset, left: 12, bottom: bottomEdgeInset, right: 12)
     }
 
     public func show() {
@@ -36,8 +49,8 @@ public class Captain {
         floatingWindow.isHidden = true
     }
 
-    public func action() {
-        soldiers.forEach { $0.action() }
+    public func prepare() {
+        soldiers.forEach { $0.prepare() }
     }
 
     public func enqueueSoldier(_ soldier: Soldier) {
