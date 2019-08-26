@@ -14,6 +14,9 @@
 		199ACB0A2313ABEA00E616CA /* CaptainDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACB092313ABEA00E616CA /* CaptainDefines.swift */; };
 		199ACB0C2313AE1A00E616CA /* MonitorListWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACB0B2313AE1A00E616CA /* MonitorListWindow.swift */; };
 		199ACB0E2313B45100E616CA /* MonitorConsoleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACB0D2313B45100E616CA /* MonitorConsoleLabel.swift */; };
+		199ACB5F2313CECE00E616CA /* MemorySoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACB5E2313CECE00E616CA /* MemorySoldier.swift */; };
+		199ACB622313CF9100E616CA /* MemoryDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACB612313CF9100E616CA /* MemoryDashboardViewController.swift */; };
+		199ACB642313CFAC00E616CA /* MemoryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACB632313CFAC00E616CA /* MemoryMonitor.swift */; };
 		19ABA44C230FEBB200BF07A0 /* JXFileBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA428230FEBB200BF07A0 /* JXFileBrowserController.swift */; };
 		19ABA44D230FEBB200BF07A0 /* JXFilePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA429230FEBB200BF07A0 /* JXFilePreviewViewController.swift */; };
 		19ABA44E230FEBB200BF07A0 /* CrashListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA42B230FEBB200BF07A0 /* CrashListViewController.swift */; };
@@ -49,6 +52,9 @@
 		199ACB092313ABEA00E616CA /* CaptainDefines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptainDefines.swift; sourceTree = "<group>"; };
 		199ACB0B2313AE1A00E616CA /* MonitorListWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorListWindow.swift; sourceTree = "<group>"; };
 		199ACB0D2313B45100E616CA /* MonitorConsoleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorConsoleLabel.swift; sourceTree = "<group>"; };
+		199ACB5E2313CECE00E616CA /* MemorySoldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySoldier.swift; sourceTree = "<group>"; };
+		199ACB612313CF9100E616CA /* MemoryDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryDashboardViewController.swift; sourceTree = "<group>"; };
+		199ACB632313CFAC00E616CA /* MemoryMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryMonitor.swift; sourceTree = "<group>"; };
 		19ABA428230FEBB200BF07A0 /* JXFileBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFileBrowserController.swift; sourceTree = "<group>"; };
 		19ABA429230FEBB200BF07A0 /* JXFilePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFilePreviewViewController.swift; sourceTree = "<group>"; };
 		19ABA42B230FEBB200BF07A0 /* CrashListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashListViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +122,23 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		199ACB5D2313CEB600E616CA /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				199ACB5E2313CECE00E616CA /* MemorySoldier.swift */,
+				199ACB632313CFAC00E616CA /* MemoryMonitor.swift */,
+			);
+			path = Memory;
+			sourceTree = "<group>";
+		};
+		199ACB602313CF7700E616CA /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				199ACB612313CF9100E616CA /* MemoryDashboardViewController.swift */,
+			);
+			path = Memory;
+			sourceTree = "<group>";
+		};
 		19ABA425230FEBB200BF07A0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +158,7 @@
 				19ABA433230FEBB200BF07A0 /* Main */,
 				19ABA430230FEBB200BF07A0 /* Model */,
 				199ACB0123138BA300E616CA /* FPS */,
+				199ACB602313CF7700E616CA /* Memory */,
 				19ABA427230FEBB200BF07A0 /* SanboxBrowser */,
 				19ABA42A230FEBB200BF07A0 /* Crash */,
 				19ABA42D230FEBB200BF07A0 /* WebsiteEntry */,
@@ -201,6 +225,7 @@
 		19ABA43B230FEBB200BF07A0 /* Soldiers */ = {
 			isa = PBXGroup;
 			children = (
+				199ACB5D2313CEB600E616CA /* Memory */,
 				199ACAFE23138B0500E616CA /* FPS */,
 				19ABA43C230FEBB200BF07A0 /* SanboxBrowser */,
 				19ABA43E230FEBB200BF07A0 /* Crash */,
@@ -380,6 +405,7 @@
 				19ABA45D230FEBB200BF07A0 /* CrashSoldier.swift in Sources */,
 				199ACB0323138C0000E616CA /* FPSDashboardViewController.swift in Sources */,
 				199ACB0C2313AE1A00E616CA /* MonitorListWindow.swift in Sources */,
+				199ACB5F2313CECE00E616CA /* MemorySoldier.swift in Sources */,
 				199ACB0623138C8100E616CA /* DashboardCell.swift in Sources */,
 				19ABA461230FEBB200BF07A0 /* AppInfoManager.swift in Sources */,
 				19ABA45E230FEBB200BF07A0 /* CrashSignalExceptionHandler.swift in Sources */,
@@ -390,9 +416,11 @@
 				19ABA451230FEBB200BF07A0 /* WebDetailViewController.swift in Sources */,
 				19ABA462230FEBB200BF07A0 /* ImageManager.swift in Sources */,
 				19ABA458230FEBB200BF07A0 /* AppInfoViewController.swift in Sources */,
+				199ACB622313CF9100E616CA /* MemoryDashboardViewController.swift in Sources */,
 				199ACB0E2313B45100E616CA /* MonitorConsoleLabel.swift in Sources */,
 				19ABA44D230FEBB200BF07A0 /* JXFilePreviewViewController.swift in Sources */,
 				19ABA460230FEBB200BF07A0 /* AppInfoSoldier.swift in Sources */,
+				199ACB642313CFAC00E616CA /* MemoryMonitor.swift in Sources */,
 				19ABA45C230FEBB200BF07A0 /* CrashFileManager.swift in Sources */,
 				19ABA453230FEBB200BF07A0 /* SoldierListSectionModel.swift in Sources */,
 				19ABA45F230FEBB200BF07A0 /* WebsiteEntrySoldier.swift in Sources */,

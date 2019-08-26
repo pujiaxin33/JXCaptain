@@ -44,7 +44,7 @@ class FPSMonitor: Monitor {
             return
         }
         let fps = CFTimeInterval(periodCount)/duration
-        valueDidUpdateClosure?(Int(fps))
+        valueDidUpdateClosure?(Int(fps + 0.5))
         periodStartTime = link!.timestamp
         periodCount = 0
     }
