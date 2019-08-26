@@ -16,6 +16,7 @@ class CrashListViewController: UITableViewController {
 
         title = "Crash日志列表"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.tableFooterView = UIView()
         dataSource = CrashFileManager.allCrashFiles()
         tableView.reloadData()
     }

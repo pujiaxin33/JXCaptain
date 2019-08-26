@@ -17,6 +17,7 @@ class AppInfoViewController: UITableViewController {
         title = "APP基本信息"
 
         tableView.register(AppInfoCell.self, forCellReuseIdentifier: "cell")
+        tableView.tableFooterView = UIView()
 
         let phoneCellModels = [AppInfoCellModel(title: "手机型号", info: AppInfoManager.iphoneName()),
                                AppInfoCellModel(title: "系统版本", info: AppInfoManager.iOSVersion())]

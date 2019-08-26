@@ -14,6 +14,7 @@ class SanboxTestViewController: UITableViewController {
         super.viewDidLoad()
 
         title = "沙盒测试"
+        tableView.tableFooterView = UIView()
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -15,6 +15,7 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "呼叫队长", style: .plain, target: self, action: #selector(naviRightItemDidClick))
+        tableView.tableFooterView = UIView()
 
         Captain.default.enqueueSoldier(ServerEnvironmentSoldier())
         //enqueueSoldier完之后再调用prepare

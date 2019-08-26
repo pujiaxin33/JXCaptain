@@ -8,15 +8,6 @@
 
 import Foundation
 
-public protocol Soldier {
-    var name: String { get }
-    var team: String { get }
-    var icon: UIImage? { get }
-    var contentView: UIView? { get }
-    func prepare()
-    func action(naviController: UINavigationController)
-}
-
 public class Captain {
     public static let `default` = Captain()
     public var screenEdgeInsets: UIEdgeInsets
@@ -24,7 +15,7 @@ public class Captain {
     internal let floatingWindow = CaptainFloatingWindow()
 
     init() {
-        let defaultSoldiers: [Soldier] = [AppInfoSoldier(), SanboxBrowserSoldier(), CrashSoldier(), WebsiteEntrySoldier()]
+        let defaultSoldiers: [Soldier] = [AppInfoSoldier(), SanboxBrowserSoldier(), CrashSoldier(), WebsiteEntrySoldier(), FPSSoldier()]
         soldiers.append(contentsOf: defaultSoldiers)
         var topEdgeInset: CGFloat = 20
         var bottomEdgeInset: CGFloat = 12

@@ -15,6 +15,7 @@ class CrashDashboardViewController: UITableViewController {
 
         title = "Crash日志操作中心"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.tableFooterView = UIView()
     }
 
     //MARK: - UITableViewDataSource & UITableViewDelegate

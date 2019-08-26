@@ -14,6 +14,7 @@ class CrashTestViewController: UITableViewController {
         super.viewDidLoad()
 
         title = "Crash测试"
+        tableView.tableFooterView = UIView()
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
