@@ -8,6 +8,11 @@
 
 import UIKit
 
+class BaseNavigationController: UINavigationController {
+    override var childForStatusBarStyle: UIViewController? {
+        return viewControllers.first
+    }
+}
 
 class SoldierListViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var collectionView: UICollectionView!
@@ -53,14 +58,18 @@ class SoldierListViewController: BaseViewController, UICollectionViewDataSource,
         view.addSubview(collectionView)
     }
 
-    @objc func naviRightItemDidClick() {
-        dismiss(animated: true, completion: nil)
-    }
-
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
         collectionView.frame = view.bounds
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
+
+    @objc func naviRightItemDidClick() {
+        dismiss(animated: true, completion: nil)
     }
 
     //MARK: - UICollectionViewDataSource, UICollectionViewDelegate

@@ -34,7 +34,7 @@ class CaptainFloatingViewController: BaseViewController {
     }
 
     @objc func shieldButtonDidClick() {
-        present(UINavigationController(rootViewController: SoldierListViewController()), animated: true, completion: nil)
+        present(BaseNavigationController(rootViewController: SoldierListViewController()), animated: true, completion: nil)
     }
 
     @objc func processPan(_ gesture: UIPanGestureRecognizer) {
