@@ -17,6 +17,9 @@
 		199ACB5F2313CECE00E616CA /* MemorySoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACB5E2313CECE00E616CA /* MemorySoldier.swift */; };
 		199ACB622313CF9100E616CA /* MemoryDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACB612313CF9100E616CA /* MemoryDashboardViewController.swift */; };
 		199ACB642313CFAC00E616CA /* MemoryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACB632313CFAC00E616CA /* MemoryMonitor.swift */; };
+		199ACB672313ED7E00E616CA /* CPUSoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACB662313ED7E00E616CA /* CPUSoldier.swift */; };
+		199ACB69231629D300E616CA /* CPUMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACB68231629D300E616CA /* CPUMonitor.swift */; };
+		199ACBBA23162CFA00E616CA /* CPUDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACBB923162CFA00E616CA /* CPUDashboardViewController.swift */; };
 		19ABA44C230FEBB200BF07A0 /* JXFileBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA428230FEBB200BF07A0 /* JXFileBrowserController.swift */; };
 		19ABA44D230FEBB200BF07A0 /* JXFilePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA429230FEBB200BF07A0 /* JXFilePreviewViewController.swift */; };
 		19ABA44E230FEBB200BF07A0 /* CrashListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA42B230FEBB200BF07A0 /* CrashListViewController.swift */; };
@@ -55,6 +58,9 @@
 		199ACB5E2313CECE00E616CA /* MemorySoldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySoldier.swift; sourceTree = "<group>"; };
 		199ACB612313CF9100E616CA /* MemoryDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryDashboardViewController.swift; sourceTree = "<group>"; };
 		199ACB632313CFAC00E616CA /* MemoryMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryMonitor.swift; sourceTree = "<group>"; };
+		199ACB662313ED7E00E616CA /* CPUSoldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUSoldier.swift; sourceTree = "<group>"; };
+		199ACB68231629D300E616CA /* CPUMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUMonitor.swift; sourceTree = "<group>"; };
+		199ACBB923162CFA00E616CA /* CPUDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUDashboardViewController.swift; sourceTree = "<group>"; };
 		19ABA428230FEBB200BF07A0 /* JXFileBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFileBrowserController.swift; sourceTree = "<group>"; };
 		19ABA429230FEBB200BF07A0 /* JXFilePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFilePreviewViewController.swift; sourceTree = "<group>"; };
 		19ABA42B230FEBB200BF07A0 /* CrashListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashListViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +145,23 @@
 			path = Memory;
 			sourceTree = "<group>";
 		};
+		199ACB652313ED6B00E616CA /* CPU */ = {
+			isa = PBXGroup;
+			children = (
+				199ACB662313ED7E00E616CA /* CPUSoldier.swift */,
+				199ACB68231629D300E616CA /* CPUMonitor.swift */,
+			);
+			path = CPU;
+			sourceTree = "<group>";
+		};
+		199ACBB823162CC500E616CA /* CPU */ = {
+			isa = PBXGroup;
+			children = (
+				199ACBB923162CFA00E616CA /* CPUDashboardViewController.swift */,
+			);
+			path = CPU;
+			sourceTree = "<group>";
+		};
 		19ABA425230FEBB200BF07A0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +177,7 @@
 		19ABA426230FEBB200BF07A0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				199ACBB823162CC500E616CA /* CPU */,
 				199ACB0423138C4E00E616CA /* Common */,
 				19ABA433230FEBB200BF07A0 /* Main */,
 				19ABA430230FEBB200BF07A0 /* Model */,
@@ -225,6 +249,7 @@
 		19ABA43B230FEBB200BF07A0 /* Soldiers */ = {
 			isa = PBXGroup;
 			children = (
+				199ACB652313ED6B00E616CA /* CPU */,
 				199ACB5D2313CEB600E616CA /* Memory */,
 				199ACAFE23138B0500E616CA /* FPS */,
 				19ABA43C230FEBB200BF07A0 /* SanboxBrowser */,
@@ -402,6 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				199ACB69231629D300E616CA /* CPUMonitor.swift in Sources */,
 				19ABA45D230FEBB200BF07A0 /* CrashSoldier.swift in Sources */,
 				199ACB0323138C0000E616CA /* FPSDashboardViewController.swift in Sources */,
 				199ACB0C2313AE1A00E616CA /* MonitorListWindow.swift in Sources */,
@@ -409,6 +435,7 @@
 				199ACB0623138C8100E616CA /* DashboardCell.swift in Sources */,
 				19ABA461230FEBB200BF07A0 /* AppInfoManager.swift in Sources */,
 				19ABA45E230FEBB200BF07A0 /* CrashSignalExceptionHandler.swift in Sources */,
+				199ACBBA23162CFA00E616CA /* CPUDashboardViewController.swift in Sources */,
 				19ABA44C230FEBB200BF07A0 /* JXFileBrowserController.swift in Sources */,
 				19ABA44F230FEBB200BF07A0 /* CrashDashboardViewController.swift in Sources */,
 				19ABA45A230FEBB200BF07A0 /* SanboxBrowserSoldier.swift in Sources */,
@@ -433,6 +460,7 @@
 				19ABA44E230FEBB200BF07A0 /* CrashListViewController.swift in Sources */,
 				19ABA457230FEBB200BF07A0 /* CaptainFloatingWindow.swift in Sources */,
 				199ACB0A2313ABEA00E616CA /* CaptainDefines.swift in Sources */,
+				199ACB672313ED7E00E616CA /* CPUSoldier.swift in Sources */,
 				199ACB0023138B1700E616CA /* FPSSoldier.swift in Sources */,
 				19ABA456230FEBB200BF07A0 /* CaptainFloatingViewController.swift in Sources */,
 			);

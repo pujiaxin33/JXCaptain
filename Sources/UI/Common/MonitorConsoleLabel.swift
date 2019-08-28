@@ -39,7 +39,7 @@ class MonitorConsoleLabel: UILabel {
         case .cpu:
             let percent = CGFloat(value/100)
             let valueColor = color(percent: percent)
-            let contentText = "\(round(value)) CPU"
+            let contentText = String(format: "%.lf%% CPU", round(value))
             let attrText = NSMutableAttributedString(string: contentText, attributes: [.foregroundColor : valueColor, .font : UIFont.systemFont(ofSize: 16)])
             attrText.addAttribute(.foregroundColor, value: UIColor.white, range: NSString(string: contentText).range(of: "CPU"))
             attributedText = attrText

@@ -13,26 +13,27 @@ class MemoryMonitor: Monitor {
     static let shared = MemoryMonitor()
     typealias ValueType = Double
     var valueDidUpdateClosure: ((ValueType) -> Void)?
-    var link: CADisplayLink?
-
+    private var timer: Timer?
 
     deinit {
-        link?.invalidate()
-        link = nil
+        timer?.invalidate()
+        timer = nil
         valueDidUpdateClosure = nil
     }
 
     func start() {
-        link = CADisplayLink(target: self, selector: #selector(processLink))
-        link?.add(to: RunLoop.main, forMode: .common)
+        end()
+        timer = Timer(timeInterval: 0.5, target: self, selector: #selector(processTimer), userInfo: nil, repeats: true)
+        timer?.fire()
+        RunLoop.current.add(timer!, forMode: .common)
     }
 
     func end() {
-        link?.invalidate()
-        link = nil
+        timer?.invalidate()
+        timer = nil
     }
 
-    @objc func processLink() {
+    @objc func processTimer() {
         valueDidUpdateClosure?(memory())
     }
 
@@ -46,7 +47,7 @@ class MemoryMonitor: Monitor {
             }
         }
         if kerr == KERN_SUCCESS {
-            return Double(vmInfo.phys_footprint/1024/1024)
+            return Double(vmInfo.phys_footprint)/1024/1024
         }else {
             return -1
         }

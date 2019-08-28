@@ -74,6 +74,7 @@ class MonitorListWindow: UIWindow {
                 break
             }
         }
+        relayoutMonitorViews()
         if monitorViews.isEmpty {
             hide()
         }
