@@ -20,6 +20,12 @@
 		199ACB672313ED7E00E616CA /* CPUSoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACB662313ED7E00E616CA /* CPUSoldier.swift */; };
 		199ACB69231629D300E616CA /* CPUMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACB68231629D300E616CA /* CPUMonitor.swift */; };
 		199ACBBA23162CFA00E616CA /* CPUDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACBB923162CFA00E616CA /* CPUDashboardViewController.swift */; };
+		199ACBBD23165BE100E616CA /* ANRSoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACBBC23165BE100E616CA /* ANRSoldier.swift */; };
+		199ACBBF23165C2200E616CA /* ANRMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACBBE23165C2200E616CA /* ANRMonitor.swift */; };
+		199ACBC123165C8C00E616CA /* ANRPingThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACBC023165C8C00E616CA /* ANRPingThread.swift */; };
+		199ACBC4231660A800E616CA /* ANRDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACBC3231660A800E616CA /* ANRDashboardViewController.swift */; };
+		199ACBC6231661FC00E616CA /* ANRFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACBC5231661FC00E616CA /* ANRFileManager.swift */; };
+		199ACBC82316635A00E616CA /* ANRListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACBC72316635A00E616CA /* ANRListViewController.swift */; };
 		19ABA44C230FEBB200BF07A0 /* JXFileBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA428230FEBB200BF07A0 /* JXFileBrowserController.swift */; };
 		19ABA44D230FEBB200BF07A0 /* JXFilePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA429230FEBB200BF07A0 /* JXFilePreviewViewController.swift */; };
 		19ABA44E230FEBB200BF07A0 /* CrashListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA42B230FEBB200BF07A0 /* CrashListViewController.swift */; };
@@ -61,6 +67,12 @@
 		199ACB662313ED7E00E616CA /* CPUSoldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUSoldier.swift; sourceTree = "<group>"; };
 		199ACB68231629D300E616CA /* CPUMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUMonitor.swift; sourceTree = "<group>"; };
 		199ACBB923162CFA00E616CA /* CPUDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUDashboardViewController.swift; sourceTree = "<group>"; };
+		199ACBBC23165BE100E616CA /* ANRSoldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANRSoldier.swift; sourceTree = "<group>"; };
+		199ACBBE23165C2200E616CA /* ANRMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANRMonitor.swift; sourceTree = "<group>"; };
+		199ACBC023165C8C00E616CA /* ANRPingThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANRPingThread.swift; sourceTree = "<group>"; };
+		199ACBC3231660A800E616CA /* ANRDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANRDashboardViewController.swift; sourceTree = "<group>"; };
+		199ACBC5231661FC00E616CA /* ANRFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANRFileManager.swift; sourceTree = "<group>"; };
+		199ACBC72316635A00E616CA /* ANRListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANRListViewController.swift; sourceTree = "<group>"; };
 		19ABA428230FEBB200BF07A0 /* JXFileBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFileBrowserController.swift; sourceTree = "<group>"; };
 		19ABA429230FEBB200BF07A0 /* JXFilePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFilePreviewViewController.swift; sourceTree = "<group>"; };
 		19ABA42B230FEBB200BF07A0 /* CrashListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashListViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +174,26 @@
 			path = CPU;
 			sourceTree = "<group>";
 		};
+		199ACBBB2316598400E616CA /* ANR */ = {
+			isa = PBXGroup;
+			children = (
+				199ACBBC23165BE100E616CA /* ANRSoldier.swift */,
+				199ACBBE23165C2200E616CA /* ANRMonitor.swift */,
+				199ACBC023165C8C00E616CA /* ANRPingThread.swift */,
+				199ACBC5231661FC00E616CA /* ANRFileManager.swift */,
+			);
+			path = ANR;
+			sourceTree = "<group>";
+		};
+		199ACBC22316608F00E616CA /* ANR */ = {
+			isa = PBXGroup;
+			children = (
+				199ACBC3231660A800E616CA /* ANRDashboardViewController.swift */,
+				199ACBC72316635A00E616CA /* ANRListViewController.swift */,
+			);
+			path = ANR;
+			sourceTree = "<group>";
+		};
 		19ABA425230FEBB200BF07A0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +212,7 @@
 				199ACB0423138C4E00E616CA /* Common */,
 				19ABA433230FEBB200BF07A0 /* Main */,
 				19ABA430230FEBB200BF07A0 /* Model */,
+				199ACBC22316608F00E616CA /* ANR */,
 				199ACBB823162CC500E616CA /* CPU */,
 				199ACB0123138BA300E616CA /* FPS */,
 				199ACB602313CF7700E616CA /* Memory */,
@@ -203,8 +236,8 @@
 		19ABA42A230FEBB200BF07A0 /* Crash */ = {
 			isa = PBXGroup;
 			children = (
-				19ABA42B230FEBB200BF07A0 /* CrashListViewController.swift */,
 				19ABA42C230FEBB200BF07A0 /* CrashDashboardViewController.swift */,
+				19ABA42B230FEBB200BF07A0 /* CrashListViewController.swift */,
 			);
 			path = Crash;
 			sourceTree = "<group>";
@@ -249,6 +282,7 @@
 		19ABA43B230FEBB200BF07A0 /* Soldiers */ = {
 			isa = PBXGroup;
 			children = (
+				199ACBBB2316598400E616CA /* ANR */,
 				199ACB652313ED6B00E616CA /* CPU */,
 				199ACB5D2313CEB600E616CA /* Memory */,
 				199ACAFE23138B0500E616CA /* FPS */,
@@ -271,9 +305,9 @@
 		19ABA43E230FEBB200BF07A0 /* Crash */ = {
 			isa = PBXGroup;
 			children = (
+				19ABA441230FEBB200BF07A0 /* CrashSoldier.swift */,
 				19ABA43F230FEBB200BF07A0 /* CrashUncaughtExceptionHandler.swift */,
 				19ABA440230FEBB200BF07A0 /* CrashFileManager.swift */,
-				19ABA441230FEBB200BF07A0 /* CrashSoldier.swift */,
 				19ABA442230FEBB200BF07A0 /* CrashSignalExceptionHandler.swift */,
 			);
 			path = Crash;
@@ -435,16 +469,20 @@
 				199ACB0623138C8100E616CA /* DashboardCell.swift in Sources */,
 				19ABA461230FEBB200BF07A0 /* AppInfoManager.swift in Sources */,
 				19ABA45E230FEBB200BF07A0 /* CrashSignalExceptionHandler.swift in Sources */,
+				199ACBBF23165C2200E616CA /* ANRMonitor.swift in Sources */,
 				199ACBBA23162CFA00E616CA /* CPUDashboardViewController.swift in Sources */,
 				19ABA44C230FEBB200BF07A0 /* JXFileBrowserController.swift in Sources */,
 				19ABA44F230FEBB200BF07A0 /* CrashDashboardViewController.swift in Sources */,
 				19ABA45A230FEBB200BF07A0 /* SanboxBrowserSoldier.swift in Sources */,
 				19ABA45B230FEBB200BF07A0 /* CrashUncaughtExceptionHandler.swift in Sources */,
+				199ACBC82316635A00E616CA /* ANRListViewController.swift in Sources */,
+				199ACBC4231660A800E616CA /* ANRDashboardViewController.swift in Sources */,
 				19ABA451230FEBB200BF07A0 /* WebDetailViewController.swift in Sources */,
 				19ABA462230FEBB200BF07A0 /* ImageManager.swift in Sources */,
 				19ABA458230FEBB200BF07A0 /* AppInfoViewController.swift in Sources */,
 				199ACB622313CF9100E616CA /* MemoryDashboardViewController.swift in Sources */,
 				199ACB0E2313B45100E616CA /* MonitorConsoleLabel.swift in Sources */,
+				199ACBBD23165BE100E616CA /* ANRSoldier.swift in Sources */,
 				19ABA44D230FEBB200BF07A0 /* JXFilePreviewViewController.swift in Sources */,
 				19ABA460230FEBB200BF07A0 /* AppInfoSoldier.swift in Sources */,
 				199ACB642313CFAC00E616CA /* MemoryMonitor.swift in Sources */,
@@ -457,10 +495,12 @@
 				19ABA454230FEBB200BF07A0 /* BaseViewController.swift in Sources */,
 				19ABA452230FEBB200BF07A0 /* SanboxModel.swift in Sources */,
 				19ABA450230FEBB200BF07A0 /* WebsiteEntryViewController.swift in Sources */,
+				199ACBC123165C8C00E616CA /* ANRPingThread.swift in Sources */,
 				19ABA44E230FEBB200BF07A0 /* CrashListViewController.swift in Sources */,
 				19ABA457230FEBB200BF07A0 /* CaptainFloatingWindow.swift in Sources */,
 				199ACB0A2313ABEA00E616CA /* CaptainDefines.swift in Sources */,
 				199ACB672313ED7E00E616CA /* CPUSoldier.swift in Sources */,
+				199ACBC6231661FC00E616CA /* ANRFileManager.swift in Sources */,
 				199ACB0023138B1700E616CA /* FPSSoldier.swift in Sources */,
 				19ABA456230FEBB200BF07A0 /* CaptainFloatingViewController.swift in Sources */,
 			);

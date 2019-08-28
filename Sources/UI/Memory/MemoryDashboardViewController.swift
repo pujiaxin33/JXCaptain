@@ -9,10 +9,10 @@
 import UIKit
 
 class MemoryDashboardViewController: UITableViewController {
-    let memorySoldier: MemorySoldier
+    let soldier: MemorySoldier
 
-    init(memorySoldier: MemorySoldier) {
-        self.memorySoldier = memorySoldier
+    init(soldier: MemorySoldier) {
+        self.soldier = soldier
         super.init(style: .plain)
     }
 
@@ -23,6 +23,7 @@ class MemoryDashboardViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "内存"
         tableView.register(DashboardCell.self, forCellReuseIdentifier: "cell")
         tableView.tableFooterView = UIView()
     }
@@ -34,12 +35,12 @@ class MemoryDashboardViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DashboardCell
         cell.textLabel?.text = "FPS检测开关"
-        cell.toggle.isOn = memorySoldier.isActive
+        cell.toggle.isOn = soldier.isActive
         cell.toggleValueDidChange = {[weak self] (isOn) in
             if isOn {
-                self?.memorySoldier.start()
+                self?.soldier.start()
             }else {
-                self?.memorySoldier.end()
+                self?.soldier.end()
             }
         }
         return cell

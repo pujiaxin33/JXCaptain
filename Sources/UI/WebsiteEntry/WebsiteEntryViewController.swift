@@ -9,9 +9,19 @@
 import UIKit
 
 class WebsiteEntryViewController: BaseViewController {
+    let soldier: WebsiteEntrySoldier
     var tipsLabel: UILabel!
     var inputTextView: UITextView!
     var confirmButton: UIButton!
+
+    init(soldier: WebsiteEntrySoldier) {
+        self.soldier = soldier
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +34,8 @@ class WebsiteEntryViewController: BaseViewController {
         view.addSubview(tipsLabel)
 
         inputTextView = UITextView()
-        if WebsiteEntrySoldier.defaultWebsite != nil {
-            inputTextView.text = WebsiteEntrySoldier.defaultWebsite
+        if soldier.defaultWebsite != nil {
+            inputTextView.text = soldier.defaultWebsite
         }else {
             inputTextView.text = "http://"
         }
@@ -70,10 +80,10 @@ class WebsiteEntryViewController: BaseViewController {
             return
         }
         inputTextView.endEditing(true)
-        if WebsiteEntrySoldier.webDetailControllerClosure == nil {
+        if soldier.webDetailControllerClosure == nil {
             navigationController?.pushViewController(WebDetailViewController(website: inputTextView.text), animated: true)
         }else {
-            navigationController?.pushViewController(WebsiteEntrySoldier.webDetailControllerClosure!(inputTextView.text), animated: true)
+            navigationController?.pushViewController(soldier.webDetailControllerClosure!(inputTextView.text), animated: true)
         }
     }
 }

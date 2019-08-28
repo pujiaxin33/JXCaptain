@@ -10,13 +10,14 @@ import Foundation
 
 public class Captain {
     public static let `default` = Captain()
+    public var configSoldierClosure: ((Soldier)->())?
     public var screenEdgeInsets: UIEdgeInsets
     public var logoImage: UIImage 
     internal var soldiers = [Soldier]()
     internal let floatingWindow = CaptainFloatingWindow()
 
     init() {
-        let defaultSoldiers: [Soldier] = [AppInfoSoldier(), SanboxBrowserSoldier(), CrashSoldier(), WebsiteEntrySoldier(), FPSSoldier(), MemorySoldier(), CPUSoldier()]
+        let defaultSoldiers: [Soldier] = [AppInfoSoldier(), SanboxBrowserSoldier(), CrashSoldier(), WebsiteEntrySoldier(), FPSSoldier(), MemorySoldier(), CPUSoldier(), ANRSoldier()]
         soldiers.append(contentsOf: defaultSoldiers)
         var topEdgeInset: CGFloat = 20
         var bottomEdgeInset: CGFloat = 12
@@ -43,6 +44,7 @@ public class Captain {
     }
 
     public func prepare() {
+        soldiers.forEach { configSoldierClosure?($0) }
         soldiers.forEach { $0.prepare() }
     }
 

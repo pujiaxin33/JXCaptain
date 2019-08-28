@@ -9,15 +9,15 @@
 import Foundation
 
 public class WebsiteEntrySoldier: Soldier {
-    public static var defaultWebsite: String?
-    public static var webDetailControllerClosure: ((String)->(UIViewController))?
     public var name: String
     public var team: String
     public var icon: UIImage?
     public var contentView: UIView?
+    public var defaultWebsite: String?
+    public var webDetailControllerClosure: ((String)->(UIViewController))?
 
     deinit {
-        WebsiteEntrySoldier.webDetailControllerClosure = nil
+        webDetailControllerClosure = nil
     }
 
     public init() {
@@ -30,6 +30,6 @@ public class WebsiteEntrySoldier: Soldier {
     }
 
     public func action(naviController: UINavigationController) {
-        naviController.pushViewController(WebsiteEntryViewController(), animated: true)
+        naviController.pushViewController(WebsiteEntryViewController(soldier: self), animated: true)
     }
 }

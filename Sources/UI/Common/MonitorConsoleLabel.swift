@@ -43,6 +43,7 @@ class MonitorConsoleLabel: UILabel {
             let attrText = NSMutableAttributedString(string: contentText, attributes: [.foregroundColor : valueColor, .font : UIFont.systemFont(ofSize: 16)])
             attrText.addAttribute(.foregroundColor, value: UIColor.white, range: NSString(string: contentText).range(of: "CPU"))
             attributedText = attrText
+        default: break
         }
     }
 

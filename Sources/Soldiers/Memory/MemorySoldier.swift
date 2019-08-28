@@ -24,11 +24,13 @@ class MemorySoldier: Soldier {
         }
     }
     var monitorView: MonitorConsoleLabel?
+    let monitor: MemoryMonitor
 
     public init() {
         name = "内存"
         team = "性能检测"
         icon = ImageManager.imageWithName("JXCaptain_icon_memory")
+        monitor = MemoryMonitor()
     }
 
     public func prepare() {
@@ -38,13 +40,13 @@ class MemorySoldier: Soldier {
     }
 
     public func action(naviController: UINavigationController) {
-        naviController.pushViewController(MemoryDashboardViewController(memorySoldier: self), animated: true)
+        naviController.pushViewController(MemoryDashboardViewController(soldier: self), animated: true)
     }
 
     func start() {
-        MemoryMonitor.shared.start()
+        monitor.start()
         monitorView = MonitorConsoleLabel()
-        MemoryMonitor.shared.valueDidUpdateClosure = {[weak self] (value) in
+        monitor.valueDidUpdateClosure = {[weak self] (value) in
             self?.monitorView?.update(type: .memory, value: value)
         }
         MonitorListWindow.shared.enqueue(monitorView: monitorView!)
@@ -52,7 +54,7 @@ class MemorySoldier: Soldier {
     }
 
     func end() {
-        MemoryMonitor.shared.end()
+        monitor.end()
         MonitorListWindow.shared.dequeue(monitorView: monitorView!)
         isActive = false
     }

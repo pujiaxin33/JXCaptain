@@ -26,8 +26,10 @@ private let preHandlers = [SIGABRT : previousABRTSignalHandler,
                            SIGSYS : previousSYSSignalHandler,
                            SIGTRAP : previousTRAPSignalHandler]
 
-class CrashSignalExceptionHandler {
-    func prepare() {
+public class CrashSignalExceptionHandler {
+    public static var exceptionReceiveClosure: ((Int32?, NSException?, String?)->())?
+
+    public func prepare() {
         backupOriginalHandler()
         signalNewRegister()
     }
@@ -79,6 +81,7 @@ func SoldierSignalHandler(signal: Int32, info: UnsafeMutablePointer<__siginfo>?,
         exceptionInfo.append("\(callStackSymbols[index])\n")
     }
     exceptionInfo.append(Thread.current.description)
+    CrashSignalExceptionHandler.exceptionReceiveClosure?(signal, nil, exceptionInfo)
     CrashFileManager.saveCrashInfo(exceptionInfo, crashTypeName: "Crash(Signal)")
     ClearSignalRigister()
     //调用之前的handler

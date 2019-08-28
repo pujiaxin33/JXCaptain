@@ -9,10 +9,10 @@
 import UIKit
 
 class CPUDashboardViewController: UITableViewController {
-    let cpuSoldier: CPUSoldier
+    let soldier: CPUSoldier
 
-    init(cpuSoldier: CPUSoldier) {
-        self.cpuSoldier = cpuSoldier
+    init(soldier: CPUSoldier) {
+        self.soldier = soldier
         super.init(style: .plain)
     }
 
@@ -23,6 +23,7 @@ class CPUDashboardViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "CPU"
         tableView.register(DashboardCell.self, forCellReuseIdentifier: "cell")
         tableView.tableFooterView = UIView()
     }
@@ -34,12 +35,12 @@ class CPUDashboardViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DashboardCell
         cell.textLabel?.text = "CPU检测开关"
-        cell.toggle.isOn = cpuSoldier.isActive
+        cell.toggle.isOn = soldier.isActive
         cell.toggleValueDidChange = {[weak self] (isOn) in
             if isOn {
-                self?.cpuSoldier.start()
+                self?.soldier.start()
             }else {
-                self?.cpuSoldier.end()
+                self?.soldier.end()
             }
         }
         return cell

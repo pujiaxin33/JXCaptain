@@ -10,7 +10,6 @@ import Foundation
 import MachO
 
 class CPUMonitor: Monitor {
-    static let shared = MemoryMonitor()
     typealias ValueType = Double
     var valueDidUpdateClosure: ((ValueType) -> Void)?
     private var timer: Timer?

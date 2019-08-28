@@ -9,10 +9,10 @@
 import UIKit
 
 class FPSDashboardViewController: UITableViewController {
-    let fpsSoldier: FPSSoldier
+    let soldier: FPSSoldier
 
-    init(fpsSoldier: FPSSoldier) {
-        self.fpsSoldier = fpsSoldier
+    init(soldier: FPSSoldier) {
+        self.soldier = soldier
         super.init(style: .plain)
     }
 
@@ -23,6 +23,7 @@ class FPSDashboardViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "FPS"
         tableView.register(DashboardCell.self, forCellReuseIdentifier: "cell")
         tableView.tableFooterView = UIView()
     }
@@ -34,12 +35,12 @@ class FPSDashboardViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DashboardCell
         cell.textLabel?.text = "FPS检测开关"
-        cell.toggle.isOn = fpsSoldier.isActive
+        cell.toggle.isOn = soldier.isActive
         cell.toggleValueDidChange = {[weak self] (isOn) in
             if isOn {
-                self?.fpsSoldier.start()
+                self?.soldier.start()
             }else {
-                self?.fpsSoldier.end()
+                self?.soldier.end()
             }
         }
         return cell

@@ -24,11 +24,13 @@ public class FPSSoldier: Soldier {
         }
     }
     var monitorView: MonitorConsoleLabel?
+    let monitor: FPSMonitor
 
     public init() {
         name = "FPS"
         team = "性能检测"
         icon = ImageManager.imageWithName("JXCaptain_icon_fps")
+        monitor = FPSMonitor()
     }
 
     public func prepare() {
@@ -38,13 +40,13 @@ public class FPSSoldier: Soldier {
     }
 
     public func action(naviController: UINavigationController) {
-        naviController.pushViewController(FPSDashboardViewController(fpsSoldier: self), animated: true)
+        naviController.pushViewController(FPSDashboardViewController(soldier: self), animated: true)
     }
 
     func start() {
-        FPSMonitor.shared.start()
+        monitor.start()
         monitorView = MonitorConsoleLabel()
-        FPSMonitor.shared.valueDidUpdateClosure = {[weak self] (value) in
+        monitor.valueDidUpdateClosure = {[weak self] (value) in
             self?.monitorView?.update(type: .fps, value: Double(value))
         }
         MonitorListWindow.shared.enqueue(monitorView: monitorView!)
@@ -52,7 +54,7 @@ public class FPSSoldier: Soldier {
     }
 
     func end() {
-        FPSMonitor.shared.end()
+        monitor.end()
         MonitorListWindow.shared.dequeue(monitorView: monitorView!)
         isActive = false
     }

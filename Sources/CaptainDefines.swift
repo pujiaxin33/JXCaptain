@@ -27,5 +27,6 @@ protocol Monitor {
 enum MonitorType {
     case fps
     case memory
-    case cpu   
+    case cpu
+    case anr
 }

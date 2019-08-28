@@ -9,7 +9,6 @@
 import Foundation
 
 class FPSMonitor: Monitor {
-    static let shared = FPSMonitor()
     typealias ValueType = Int
     var valueDidUpdateClosure: ((ValueType) -> Void)?
     var link: CADisplayLink?

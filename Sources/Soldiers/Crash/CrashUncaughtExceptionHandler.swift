@@ -10,8 +10,10 @@ import Foundation
 
 private var preUncaughtExceptionHandler: NSUncaughtExceptionHandler?
 
-class CrashUncaughtExceptionHandler {
-    func prepare() {
+public class CrashUncaughtExceptionHandler {
+    public static var exceptionReceiveClosure: ((Int32?, NSException?, String?)->())?
+
+    public func prepare() {
         preUncaughtExceptionHandler = NSGetUncaughtExceptionHandler()
         NSSetUncaughtExceptionHandler(SoldierUncaughtExceptionHandler)
     }
@@ -26,6 +28,7 @@ func SoldierUncaughtExceptionHandler(exception: NSException) -> Void {
         return result + "\n\(item)"
     }
     let exceptionInfo = name + "\n" + (reason ?? "no reason") + "\n" + stackInfo
+    CrashUncaughtExceptionHandler.exceptionReceiveClosure?(nil, exception, exceptionInfo)
     CrashFileManager.saveCrashInfo(exceptionInfo, crashTypeName: "Crash(uncaught)")
     preUncaughtExceptionHandler?(exception)
     kill(getpid(), SIGKILL)

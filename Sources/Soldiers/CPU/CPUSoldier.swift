@@ -24,11 +24,13 @@ class CPUSoldier: Soldier {
         }
     }
     var monitorView: MonitorConsoleLabel?
+    let monitor: CPUMonitor
 
     public init() {
         name = "CPU"
         team = "性能检测"
         icon = ImageManager.imageWithName("JXCaptain_icon_cpu")
+        monitor = CPUMonitor()
     }
 
     public func prepare() {
@@ -38,13 +40,13 @@ class CPUSoldier: Soldier {
     }
 
     public func action(naviController: UINavigationController) {
-        naviController.pushViewController(CPUDashboardViewController(cpuSoldier: self), animated: true)
+        naviController.pushViewController(CPUDashboardViewController(soldier: self), animated: true)
     }
 
     func start() {
-        CPUMonitor.shared.start()
+        monitor.start()
         monitorView = MonitorConsoleLabel()
-        CPUMonitor.shared.valueDidUpdateClosure = {[weak self] (value) in
+        monitor.valueDidUpdateClosure = {[weak self] (value) in
             self?.monitorView?.update(type: .cpu, value: value)
         }
         MonitorListWindow.shared.enqueue(monitorView: monitorView!)
@@ -52,7 +54,7 @@ class CPUSoldier: Soldier {
     }
 
     func end() {
-        CPUMonitor.shared.end()
+        monitor.end()
         MonitorListWindow.shared.dequeue(monitorView: monitorView!)
         isActive = false
     }

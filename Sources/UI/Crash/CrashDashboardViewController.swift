@@ -13,7 +13,7 @@ class CrashDashboardViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Crash日志操作中心"
+        title = "Crash操作中心"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.tableFooterView = UIView()
     }
