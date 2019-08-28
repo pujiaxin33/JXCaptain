@@ -11,6 +11,7 @@ import Foundation
 public class Captain {
     public static let `default` = Captain()
     public var screenEdgeInsets: UIEdgeInsets
+    public var logoImage: UIImage 
     internal var soldiers = [Soldier]()
     internal let floatingWindow = CaptainFloatingWindow()
 
@@ -29,6 +30,7 @@ public class Captain {
             }
         }
         screenEdgeInsets = UIEdgeInsets(top: topEdgeInset, left: 12, bottom: bottomEdgeInset, right: 12)
+        logoImage = ImageManager.imageWithName("JXCaptain_icon_shield")!
     }
 
     public func show() {

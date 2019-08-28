@@ -18,7 +18,7 @@ class CaptainFloatingViewController: BaseViewController {
         view.backgroundColor = .clear
 
         shieldButton = UIButton(type: .custom)
-        shieldButton.setImage(ImageManager.imageWithName("JXCaptain_icon_shield"), for: .normal)
+        shieldButton.setImage(Captain.default.logoImage, for: .normal)
         shieldButton.layer.shadowOpacity = 0.6
         shieldButton.layer.shadowColor = UIColor.black.cgColor
         shieldButton.layer.shadowRadius = 3
