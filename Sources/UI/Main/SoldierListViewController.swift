@@ -56,12 +56,20 @@ class SoldierListViewController: BaseViewController, UICollectionViewDataSource,
         collectionView.register(SoldierListSectionFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "footer")
         collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "emptyFooter")
         view.addSubview(collectionView)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(soldierNewEventDidChange), name: .JXCaptainSoldierNewEventDidChange, object: nil)
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
         collectionView.frame = view.bounds
+    }
+
+    @objc func soldierNewEventDidChange() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -104,6 +112,7 @@ class SoldierListViewController: BaseViewController, UICollectionViewDataSource,
         cell.iconImageView.image = soldier.icon
         cell.nameLabel.text = soldier.name
         cell.customContentView = soldier.contentView
+        cell.newEventView.isHidden = !soldier.hasNewEvent
         return cell
     }
 
@@ -130,6 +139,7 @@ class SoldierListViewController: BaseViewController, UICollectionViewDataSource,
 class SoldierListCell: UICollectionViewCell {
     let iconImageView: UIImageView
     let nameLabel: UILabel
+    let newEventView: UIView
     var customContentView: UIView? {
         didSet {
             iconImageView.isHidden = customContentView != nil
@@ -143,6 +153,7 @@ class SoldierListCell: UICollectionViewCell {
     override init(frame: CGRect) {
         iconImageView = UIImageView()
         nameLabel = UILabel()
+        newEventView = UIView()
         super.init(frame: frame)
 
         iconImageView.contentMode = .scaleToFill
@@ -162,6 +173,16 @@ class SoldierListCell: UICollectionViewCell {
         nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+
+        newEventView.isHidden = true
+        newEventView.backgroundColor = UIColor.red
+        newEventView.layer.cornerRadius = 4
+        newEventView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(newEventView)
+        newEventView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        newEventView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 20).isActive = true
+        newEventView.widthAnchor.constraint(equalToConstant: 8).isActive = true
+        newEventView.heightAnchor.constraint(equalToConstant: 8).isActive = true
     }
 
     required init?(coder aDecoder: NSCoder) {

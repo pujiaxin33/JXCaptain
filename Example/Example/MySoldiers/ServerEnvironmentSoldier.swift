@@ -14,6 +14,7 @@ class ServerEnvironmentSoldier: Soldier {
     public var team: String
     public var icon: UIImage?
     public var contentView: UIView?
+    public var hasNewEvent: Bool = false
 
     public init() {
         name = "线上环境"

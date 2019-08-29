@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct SanboxModel {
-    let fileURL: URL
-    let name: String
+public struct SanboxModel {
+    public let fileURL: URL
+    public let name: String
+    public init(fileURL: URL, name: String) {
+        self.fileURL = fileURL
+        self.name = name
+    }
 }

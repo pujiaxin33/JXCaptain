@@ -15,6 +15,7 @@ public class FPSSoldier: Soldier {
     public var team: String
     public var icon: UIImage?
     public var contentView: UIView?
+    public var hasNewEvent: Bool = false
     var isActive: Bool {
         set(new) {
             UserDefaults.standard.set(new, forKey: kFPSSoldierIsActive)

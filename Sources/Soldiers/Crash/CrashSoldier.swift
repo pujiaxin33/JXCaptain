@@ -8,15 +8,20 @@
 
 import Foundation
 
+private let kCrashSoldierHasNewEvent = "kCrashSoldierHasNewEvent"
+
 public class CrashSoldier: Soldier {
     public var name: String
     public var team: String
     public var icon: UIImage?
     public var contentView: UIView?
-    public var exceptionReceiveClosure: ((Int32?, NSException?, String?)->())? {
-        didSet {
-            CrashUncaughtExceptionHandler.exceptionReceiveClosure = exceptionReceiveClosure
-            CrashSignalExceptionHandler.exceptionReceiveClosure = exceptionReceiveClosure
+    public var exceptionReceiveClosure: ((Int32?, NSException?, String?)->())?
+    public var hasNewEvent: Bool {
+        set(new) {
+            UserDefaults.standard.set(new, forKey: kCrashSoldierHasNewEvent)
+        }
+        get {
+            return UserDefaults.standard.bool(forKey: kCrashSoldierHasNewEvent)
         }
     }
     let uncaughtExceptionHandler: CrashUncaughtExceptionHandler
@@ -28,6 +33,20 @@ public class CrashSoldier: Soldier {
         icon = ImageManager.imageWithName("JXCaptain_icon_crash")
         uncaughtExceptionHandler = CrashUncaughtExceptionHandler()
         signalExceptionHandler = CrashSignalExceptionHandler()
+        CrashUncaughtExceptionHandler.exceptionReceiveClosure = {[weak self] (signal, exception, info) in
+            self?.exceptionReceiveClosure?(signal, exception, info)
+            self?.hasNewEvent = true
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: .JXCaptainSoldierNewEventDidChange, object: self)
+            }
+        }
+        CrashSignalExceptionHandler.exceptionReceiveClosure = {[weak self] (signal, exception, info) in
+            self?.exceptionReceiveClosure?(signal, exception, info)
+            self?.hasNewEvent = true
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: .JXCaptainSoldierNewEventDidChange, object: self)
+            }
+        }
     }
 
     public func prepare() {
@@ -36,6 +55,6 @@ public class CrashSoldier: Soldier {
     }
 
     public func action(naviController: UINavigationController) {
-        naviController.pushViewController(CrashDashboardViewController(style: .plain), animated: true)
+        naviController.pushViewController(CrashDashboardViewController(soldier: self), animated: true)
     }
 }

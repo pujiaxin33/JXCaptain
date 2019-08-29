@@ -8,8 +8,8 @@
 
 import Foundation
 
-class ANRFileManager {
-    static func saveInfo(_ info: String) {
+public class ANRFileManager {
+    public static func saveInfo(_ info: String) {
         guard !info.isEmpty else {
             return
         }
@@ -27,7 +27,7 @@ class ANRFileManager {
         }
     }
 
-    static func directoryURL() -> URL? {
+    public static func directoryURL() -> URL? {
         let fileManager = FileManager.default
         guard let cacheURL = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first else {
             return nil
@@ -44,7 +44,7 @@ class ANRFileManager {
         return tempDirectoryURL
     }
 
-    static func allFiles() -> [SanboxModel] {
+    public static func allFiles() -> [SanboxModel] {
         guard let targetDirectory = directoryURL() else {
             return [SanboxModel]()
         }
@@ -70,7 +70,7 @@ class ANRFileManager {
         return sanboxInfos
     }
 
-    static func deleteAllFiles() {
+    public static func deleteAllFiles() {
         guard let targetDirectory = directoryURL() else {
             return
         }

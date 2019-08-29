@@ -13,6 +13,7 @@ public class SanboxBrowserSoldier: Soldier {
     public var team: String
     public var icon: UIImage?
     public var contentView: UIView?
+    public var hasNewEvent: Bool = false
 
     public init() {
         name = "沙盒浏览"

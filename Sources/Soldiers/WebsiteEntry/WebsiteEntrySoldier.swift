@@ -13,6 +13,7 @@ public class WebsiteEntrySoldier: Soldier {
     public var team: String
     public var icon: UIImage?
     public var contentView: UIView?
+    public var hasNewEvent: Bool = false
     public var defaultWebsite: String?
     public var webDetailControllerClosure: ((String)->(UIViewController))?
 

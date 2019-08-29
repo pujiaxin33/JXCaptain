@@ -9,12 +9,21 @@
 import Foundation
 
 private let kANRSoldierIsActive = "kANRSoldierIsActive"
+private let kANRSoldierHasNewEvent = "kANRSoldierHasNewEvent"
 
 public class ANRSoldier: Soldier {
     public var name: String
     public var team: String
     public var icon: UIImage?
     public var contentView: UIView?
+    public var hasNewEvent: Bool {
+        set(new) {
+            UserDefaults.standard.set(new, forKey: kANRSoldierHasNewEvent)
+        }
+        get {
+            return UserDefaults.standard.bool(forKey: kANRSoldierHasNewEvent)
+        }
+    }
     public var threshold: Double = 1
     var isActive: Bool {
         set(new) {
@@ -59,6 +68,8 @@ public class ANRSoldier: Soldier {
     }
 
     func dump() {
+        hasNewEvent = true
+        NotificationCenter.default.post(name: .JXCaptainSoldierNewEventDidChange, object: self)
         //todo: 主线程信息
         DispatchQueue.main.async {
             let mainThreadInfos = Thread.callStackSymbols.reduce("") { (result, item) -> String in

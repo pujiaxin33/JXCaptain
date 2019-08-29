@@ -9,6 +9,16 @@
 import UIKit
 
 class CrashDashboardViewController: UITableViewController {
+    let soldier: CrashSoldier
+
+    init(soldier: CrashSoldier) {
+        self.soldier = soldier
+        super.init(style: .plain)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +26,9 @@ class CrashDashboardViewController: UITableViewController {
         title = "Crash操作中心"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.tableFooterView = UIView()
+
+        soldier.hasNewEvent = false
+        NotificationCenter.default.post(name: .JXCaptainSoldierNewEventDidChange, object: soldier)
     }
 
     //MARK: - UITableViewDataSource & UITableViewDelegate

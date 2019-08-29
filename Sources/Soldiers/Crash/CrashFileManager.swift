@@ -8,8 +8,8 @@
 
 import Foundation
 
-class CrashFileManager {
-    static func saveCrashInfo(_ crashInfo: String, crashTypeName: String) {
+public class CrashFileManager {
+    public static func saveCrashInfo(_ crashInfo: String, crashTypeName: String) {
         guard !crashInfo.isEmpty else {
             return
         }
@@ -27,7 +27,7 @@ class CrashFileManager {
         }
     }
 
-    static func crashDirectory() -> URL? {
+    public static func crashDirectory() -> URL? {
         let fileManager = FileManager.default
         guard let cacheURL = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first else {
             return nil
@@ -44,7 +44,7 @@ class CrashFileManager {
         return directoryURL
     }
 
-    static func allCrashFiles() -> [SanboxModel] {
+    public static func allCrashFiles() -> [SanboxModel] {
         guard let targetDirectory = crashDirectory() else {
             return [SanboxModel]()
         }
@@ -70,7 +70,7 @@ class CrashFileManager {
         return sanboxInfos
     }
 
-    static func deleteAllFiles() {
+    public static func deleteAllFiles() {
         guard let targetDirectory = crashDirectory() else {
             return
         }

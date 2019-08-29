@@ -11,6 +11,7 @@ import UIKit
 class CaptainFloatingViewController: BaseViewController {
     var shieldButton: UIButton!
     let shieldWidth: CGFloat = 50
+    var newEventView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +30,38 @@ class CaptainFloatingViewController: BaseViewController {
         shieldButton.addTarget(self, action: #selector(shieldButtonDidClick), for: .touchUpInside)
         view.addSubview(shieldButton)
 
+        newEventView = UIView()
+        newEventView.isHidden = true
+        newEventView.backgroundColor = UIColor.red
+        newEventView.layer.cornerRadius = 4
+        newEventView.frame = CGRect(x: shieldButton.bounds.size.width - 8, y: 0, width: 8, height: 8)
+        shieldButton.addSubview(newEventView)
+        refreshNewEventView()
+
         let pan = UIPanGestureRecognizer(target: self, action: #selector(processPan(_:)))
         shieldButton.addGestureRecognizer(pan)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(soldierNewEventDidChange), name: .JXCaptainSoldierNewEventDidChange, object: nil)
     }
 
     @objc func shieldButtonDidClick() {
         present(BaseNavigationController(rootViewController: SoldierListViewController()), animated: true, completion: nil)
+    }
+
+    @objc func soldierNewEventDidChange() {
+        DispatchQueue.main.async {
+            self.refreshNewEventView()
+        }
+    }
+
+    func refreshNewEventView() {
+        newEventView.isHidden = true
+        for soldier in Captain.default.soldiers {
+            if soldier.hasNewEvent {
+                newEventView.isHidden = false
+                break
+            }
+        }
     }
 
     @objc func processPan(_ gesture: UIPanGestureRecognizer) {

@@ -27,6 +27,9 @@ class ANRDashboardViewController: UITableViewController {
         tableView.register(DashboardCell.self, forCellReuseIdentifier: "swithCell")
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.tableFooterView = UIView()
+
+        soldier.hasNewEvent = false
+        NotificationCenter.default.post(name: .JXCaptainSoldierNewEventDidChange, object: soldier)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

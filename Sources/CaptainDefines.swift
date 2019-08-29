@@ -13,6 +13,7 @@ public protocol Soldier {
     var team: String { get }
     var icon: UIImage? { get }
     var contentView: UIView? { get }
+    var hasNewEvent: Bool { get }
     func prepare()
     func action(naviController: UINavigationController)
 }
@@ -29,4 +30,8 @@ enum MonitorType {
     case memory
     case cpu
     case anr
+}
+
+public extension Notification.Name {
+    static let JXCaptainSoldierNewEventDidChange = Notification.Name("JXCaptainSoldierNewEventDidChange")
 }
