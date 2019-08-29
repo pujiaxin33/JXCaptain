@@ -1,50 +1,55 @@
 //
-//  ANRFileManager.swift
+//  SoldierFileManager.swift
 //  JXCaptain
 //
-//  Created by jiaxin on 2019/8/28.
+//  Created by jiaxin on 2019/8/29.
 //  Copyright © 2019 jiaxin. All rights reserved.
 //
 
 import Foundation
 
-public class ANRFileManager {
-    public static func saveInfo(_ info: String) {
+protocol SoldierFileManager {
+    static func saveInfo(_ info: String, fileName: String?, fileNamePrefix: String?)
+    static func directoryURL() -> URL?
+    static func allFiles() -> [SanboxModel]
+    static func deleteAllFiles()
+}
+
+extension SoldierFileManager {
+    static func saveInfo(_ info: String, fileName: String? = nil, fileNamePrefix: String? = nil) {
         guard !info.isEmpty else {
             return
         }
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone.current
-        dateFormatter.dateFormat = "yyyy-MM-dd_HH:mm:ss"
-        let dateString = dateFormatter.string(from: Date())
-        guard let fileURL = directoryURL()?.appendingPathComponent("\(dateString).txt") else {
+        var targetFileName: String?
+        if fileName != nil {
+            targetFileName = fileName
+        }else {
+            let dateFormatter = DateFormatter()
+            dateFormatter.timeZone = TimeZone.current
+            dateFormatter.dateFormat = "yyyy-MM-dd_HH:mm:ss"
+            let dateString = dateFormatter.string(from: Date())
+            if fileNamePrefix != nil {
+                targetFileName = "\(fileNamePrefix!)-\(dateString)"
+            }else {
+                targetFileName = dateString
+            }
+        }
+
+        guard let fileURL = directoryURL()?.appendingPathComponent("\(targetFileName!).txt") else {
             return
         }
         do {
             try info.write(to: fileURL, atomically: true, encoding: .utf8)
         } catch(let error) {
-            print("ANRFileManager write info error:\(error.localizedDescription)")
+            print("write info error:\(error.localizedDescription)")
         }
     }
 
-    public static func directoryURL() -> URL? {
-        let fileManager = FileManager.default
-        guard let cacheURL = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first else {
-            return nil
-        }
-        let tempDirectoryURL = cacheURL.appendingPathComponent("ANR", isDirectory: true)
-        if !fileManager.fileExists(atPath: tempDirectoryURL.path) {
-            do {
-                try fileManager.createDirectory(at: tempDirectoryURL, withIntermediateDirectories: true, attributes: nil)
-            }catch (let error){
-                print("ANRFileManager create ANR directory error:\(error.localizedDescription)")
-                return nil
-            }
-        }
-        return tempDirectoryURL
+    static func directoryURL() -> URL? {
+        return nil
     }
 
-    public static func allFiles() -> [SanboxModel] {
+    static func allFiles() -> [SanboxModel] {
         guard let targetDirectory = directoryURL() else {
             return [SanboxModel]()
         }
@@ -70,7 +75,7 @@ public class ANRFileManager {
         return sanboxInfos
     }
 
-    public static func deleteAllFiles() {
+    static func deleteAllFiles() {
         guard let targetDirectory = directoryURL() else {
             return
         }
@@ -78,7 +83,8 @@ public class ANRFileManager {
         do {
             try fileManager.removeItem(at: targetDirectory)
         }catch (let error) {
-            print("ANRFileManager deleteAllFiles error:\(error.localizedDescription)")
+            print("deleteAllFiles error:\(error.localizedDescription)")
         }
     }
 }
+

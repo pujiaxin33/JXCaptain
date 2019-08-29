@@ -26,6 +26,8 @@
 		199ACBC4231660A800E616CA /* ANRDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACBC3231660A800E616CA /* ANRDashboardViewController.swift */; };
 		199ACBC6231661FC00E616CA /* ANRFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACBC5231661FC00E616CA /* ANRFileManager.swift */; };
 		199ACBC82316635A00E616CA /* ANRListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACBC72316635A00E616CA /* ANRListViewController.swift */; };
+		199ACC312317731600E616CA /* SoldierFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACC302317731600E616CA /* SoldierFileManager.swift */; };
+		199ACC33231777EB00E616CA /* FileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACC32231777EB00E616CA /* FileListViewController.swift */; };
 		19ABA44C230FEBB200BF07A0 /* JXFileBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA428230FEBB200BF07A0 /* JXFileBrowserController.swift */; };
 		19ABA44D230FEBB200BF07A0 /* JXFilePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA429230FEBB200BF07A0 /* JXFilePreviewViewController.swift */; };
 		19ABA44E230FEBB200BF07A0 /* CrashListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA42B230FEBB200BF07A0 /* CrashListViewController.swift */; };
@@ -73,6 +75,8 @@
 		199ACBC3231660A800E616CA /* ANRDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANRDashboardViewController.swift; sourceTree = "<group>"; };
 		199ACBC5231661FC00E616CA /* ANRFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANRFileManager.swift; sourceTree = "<group>"; };
 		199ACBC72316635A00E616CA /* ANRListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANRListViewController.swift; sourceTree = "<group>"; };
+		199ACC302317731600E616CA /* SoldierFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldierFileManager.swift; sourceTree = "<group>"; };
+		199ACC32231777EB00E616CA /* FileListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileListViewController.swift; sourceTree = "<group>"; };
 		19ABA428230FEBB200BF07A0 /* JXFileBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFileBrowserController.swift; sourceTree = "<group>"; };
 		19ABA429230FEBB200BF07A0 /* JXFilePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFilePreviewViewController.swift; sourceTree = "<group>"; };
 		19ABA42B230FEBB200BF07A0 /* CrashListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashListViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 				199ACB0523138C8100E616CA /* DashboardCell.swift */,
 				199ACB0B2313AE1A00E616CA /* MonitorListWindow.swift */,
 				199ACB0D2313B45100E616CA /* MonitorConsoleLabel.swift */,
+				199ACC32231777EB00E616CA /* FileListViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -180,7 +185,6 @@
 				199ACBBC23165BE100E616CA /* ANRSoldier.swift */,
 				199ACBBE23165C2200E616CA /* ANRMonitor.swift */,
 				199ACBC023165C8C00E616CA /* ANRPingThread.swift */,
-				199ACBC5231661FC00E616CA /* ANRFileManager.swift */,
 			);
 			path = ANR;
 			sourceTree = "<group>";
@@ -192,6 +196,16 @@
 				199ACBC72316635A00E616CA /* ANRListViewController.swift */,
 			);
 			path = ANR;
+			sourceTree = "<group>";
+		};
+		199ACC2F2317729100E616CA /* File */ = {
+			isa = PBXGroup;
+			children = (
+				199ACC302317731600E616CA /* SoldierFileManager.swift */,
+				199ACBC5231661FC00E616CA /* ANRFileManager.swift */,
+				19ABA440230FEBB200BF07A0 /* CrashFileManager.swift */,
+			);
+			path = File;
 			sourceTree = "<group>";
 		};
 		19ABA425230FEBB200BF07A0 /* Sources */ = {
@@ -307,7 +321,6 @@
 			children = (
 				19ABA441230FEBB200BF07A0 /* CrashSoldier.swift */,
 				19ABA43F230FEBB200BF07A0 /* CrashUncaughtExceptionHandler.swift */,
-				19ABA440230FEBB200BF07A0 /* CrashFileManager.swift */,
 				19ABA442230FEBB200BF07A0 /* CrashSignalExceptionHandler.swift */,
 			);
 			path = Crash;
@@ -333,6 +346,7 @@
 		19ABA448230FEBB200BF07A0 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				199ACC2F2317729100E616CA /* File */,
 				19ABA449230FEBB200BF07A0 /* Image */,
 			);
 			path = Manager;
@@ -479,6 +493,7 @@
 				199ACBC4231660A800E616CA /* ANRDashboardViewController.swift in Sources */,
 				19ABA451230FEBB200BF07A0 /* WebDetailViewController.swift in Sources */,
 				19ABA462230FEBB200BF07A0 /* ImageManager.swift in Sources */,
+				199ACC33231777EB00E616CA /* FileListViewController.swift in Sources */,
 				19ABA458230FEBB200BF07A0 /* AppInfoViewController.swift in Sources */,
 				199ACB622313CF9100E616CA /* MemoryDashboardViewController.swift in Sources */,
 				199ACB0E2313B45100E616CA /* MonitorConsoleLabel.swift in Sources */,
@@ -493,6 +508,7 @@
 				19ABA455230FEBB200BF07A0 /* SoldierListViewController.swift in Sources */,
 				199ACB082313A7D800E616CA /* FPSMonitor.swift in Sources */,
 				19ABA454230FEBB200BF07A0 /* BaseViewController.swift in Sources */,
+				199ACC312317731600E616CA /* SoldierFileManager.swift in Sources */,
 				19ABA452230FEBB200BF07A0 /* SanboxModel.swift in Sources */,
 				19ABA450230FEBB200BF07A0 /* WebsiteEntryViewController.swift in Sources */,
 				199ACBC123165C8C00E616CA /* ANRPingThread.swift in Sources */,

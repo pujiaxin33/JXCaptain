@@ -49,7 +49,7 @@ class CrashDashboardViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            let vc = CrashListViewController(style: .plain)
+            let vc = CrashListViewController(dataSource: CrashFileManager.allFiles())
             self.navigationController?.pushViewController(vc, animated: true)
         }else if indexPath.row == 1 {
             let alert = UIAlertController(title: "提示", message: "确认删除所有Crash日志吗？", preferredStyle: .alert)

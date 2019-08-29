@@ -64,7 +64,7 @@ class ANRDashboardViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 1 {
-            let vc = ANRListViewController(style: .plain)
+            let vc = ANRListViewController(dataSource: ANRFileManager.allFiles())
             self.navigationController?.pushViewController(vc, animated: true)
         }else if indexPath.row == 2 {
             let alert = UIAlertController(title: "提示", message: "确认删除所有卡顿日志吗？", preferredStyle: .alert)
