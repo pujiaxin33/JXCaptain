@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		199ACBCA2316650600E616CA /* PerformanceTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACBC92316650600E616CA /* PerformanceTestViewController.swift */; };
+		199ACCDB2317BEAD00E616CA /* NetworkTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACCDA2317BEAD00E616CA /* NetworkTestViewController.swift */; };
 		19ABA2A0230F907900BF07A0 /* ServerEnvironmentSoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA29F230F907900BF07A0 /* ServerEnvironmentSoldier.swift */; };
 		19ABA2A4230FB4E200BF07A0 /* lufei.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 19ABA2A3230FB4E200BF07A0 /* lufei.jpg */; };
 		19ABA2A6230FB60000BF07A0 /* SanboxTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA2A5230FB60000BF07A0 /* SanboxTestViewController.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		199ACBC92316650600E616CA /* PerformanceTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTestViewController.swift; sourceTree = "<group>"; };
+		199ACCDA2317BEAD00E616CA /* NetworkTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestViewController.swift; sourceTree = "<group>"; };
 		19ABA29F230F907900BF07A0 /* ServerEnvironmentSoldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEnvironmentSoldier.swift; sourceTree = "<group>"; };
 		19ABA2A3230FB4E200BF07A0 /* lufei.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lufei.jpg; sourceTree = "<group>"; };
 		19ABA2A5230FB60000BF07A0 /* SanboxTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanboxTestViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				19ABA2A5230FB60000BF07A0 /* SanboxTestViewController.swift */,
 				19ABA2A7230FB60C00BF07A0 /* CrashTestViewController.swift */,
 				199ACBC92316650600E616CA /* PerformanceTestViewController.swift */,
+				199ACCDA2317BEAD00E616CA /* NetworkTestViewController.swift */,
 				19C1F4C5230BECCA00189B88 /* Main.storyboard */,
 				19C1F4C8230BECCE00189B88 /* Assets.xcassets */,
 				19C1F4CA230BECCE00189B88 /* LaunchScreen.storyboard */,
@@ -191,6 +194,7 @@
 				199ACBCA2316650600E616CA /* PerformanceTestViewController.swift in Sources */,
 				19ABA2A0230F907900BF07A0 /* ServerEnvironmentSoldier.swift in Sources */,
 				19C1F4C4230BECCA00189B88 /* ViewController.swift in Sources */,
+				199ACCDB2317BEAD00E616CA /* NetworkTestViewController.swift in Sources */,
 				19C1F4C2230BECCA00189B88 /* AppDelegate.swift in Sources */,
 				19ABA2A6230FB60000BF07A0 /* SanboxTestViewController.swift in Sources */,
 			);

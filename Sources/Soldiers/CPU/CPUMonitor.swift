@@ -48,6 +48,7 @@ class CPUMonitor: Monitor {
         }
 
         var thread_list: thread_act_array_t? = UnsafeMutablePointer(mutating: [thread_act_t]())
+
         var thread_count: mach_msg_type_number_t = 0
         defer {
             if let thread_list = thread_list {

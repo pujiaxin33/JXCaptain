@@ -28,6 +28,12 @@
 		199ACBC82316635A00E616CA /* ANRListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACBC72316635A00E616CA /* ANRListViewController.swift */; };
 		199ACC312317731600E616CA /* SoldierFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACC302317731600E616CA /* SoldierFileManager.swift */; };
 		199ACC33231777EB00E616CA /* FileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACC32231777EB00E616CA /* FileListViewController.swift */; };
+		199ACCD22317A9F900E616CA /* NetworkObserverSoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACCD12317A9F900E616CA /* NetworkObserverSoldier.swift */; };
+		199ACCD52317AB4F00E616CA /* NetworkObserverDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACCD42317AB4F00E616CA /* NetworkObserverDashboardViewController.swift */; };
+		199ACCD92317AC4F00E616CA /* JXCaptainURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACCD82317AC4F00E616CA /* JXCaptainURLProtocol.swift */; };
+		199ACD792317CDFF00E616CA /* NetworkFlowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACD782317CDFF00E616CA /* NetworkFlowModel.swift */; };
+		199ACD7C2317CF4E00E616CA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACD7B2317CF4E00E616CA /* NetworkManager.swift */; };
+		199ACEB62319095100E616CA /* NetworkFlowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACEB52319095100E616CA /* NetworkFlowListViewController.swift */; };
 		19ABA44C230FEBB200BF07A0 /* JXFileBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA428230FEBB200BF07A0 /* JXFileBrowserController.swift */; };
 		19ABA44D230FEBB200BF07A0 /* JXFilePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA429230FEBB200BF07A0 /* JXFilePreviewViewController.swift */; };
 		19ABA44E230FEBB200BF07A0 /* CrashListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA42B230FEBB200BF07A0 /* CrashListViewController.swift */; };
@@ -77,6 +83,12 @@
 		199ACBC72316635A00E616CA /* ANRListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANRListViewController.swift; sourceTree = "<group>"; };
 		199ACC302317731600E616CA /* SoldierFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldierFileManager.swift; sourceTree = "<group>"; };
 		199ACC32231777EB00E616CA /* FileListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileListViewController.swift; sourceTree = "<group>"; };
+		199ACCD12317A9F900E616CA /* NetworkObserverSoldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkObserverSoldier.swift; sourceTree = "<group>"; };
+		199ACCD42317AB4F00E616CA /* NetworkObserverDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkObserverDashboardViewController.swift; sourceTree = "<group>"; };
+		199ACCD82317AC4F00E616CA /* JXCaptainURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXCaptainURLProtocol.swift; sourceTree = "<group>"; };
+		199ACD782317CDFF00E616CA /* NetworkFlowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowModel.swift; sourceTree = "<group>"; };
+		199ACD7B2317CF4E00E616CA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		199ACEB52319095100E616CA /* NetworkFlowListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowListViewController.swift; sourceTree = "<group>"; };
 		19ABA428230FEBB200BF07A0 /* JXFileBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFileBrowserController.swift; sourceTree = "<group>"; };
 		19ABA429230FEBB200BF07A0 /* JXFilePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFilePreviewViewController.swift; sourceTree = "<group>"; };
 		19ABA42B230FEBB200BF07A0 /* CrashListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashListViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +220,32 @@
 			path = File;
 			sourceTree = "<group>";
 		};
+		199ACC822317A9C200E616CA /* NetworkObserver */ = {
+			isa = PBXGroup;
+			children = (
+				199ACCD12317A9F900E616CA /* NetworkObserverSoldier.swift */,
+				199ACCD82317AC4F00E616CA /* JXCaptainURLProtocol.swift */,
+			);
+			path = NetworkObserver;
+			sourceTree = "<group>";
+		};
+		199ACCD32317AB2900E616CA /* NetworkObserver */ = {
+			isa = PBXGroup;
+			children = (
+				199ACCD42317AB4F00E616CA /* NetworkObserverDashboardViewController.swift */,
+				199ACEB52319095100E616CA /* NetworkFlowListViewController.swift */,
+			);
+			path = NetworkObserver;
+			sourceTree = "<group>";
+		};
+		199ACD7A2317CF2C00E616CA /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				199ACD7B2317CF4E00E616CA /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
 		19ABA425230FEBB200BF07A0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +264,7 @@
 				19ABA433230FEBB200BF07A0 /* Main */,
 				199ACB0423138C4E00E616CA /* Common */,
 				19ABA430230FEBB200BF07A0 /* Model */,
+				199ACCD32317AB2900E616CA /* NetworkObserver */,
 				199ACBC22316608F00E616CA /* ANR */,
 				199ACBB823162CC500E616CA /* CPU */,
 				199ACB0123138BA300E616CA /* FPS */,
@@ -270,6 +309,7 @@
 			children = (
 				19ABA431230FEBB200BF07A0 /* SanboxModel.swift */,
 				19ABA432230FEBB200BF07A0 /* SoldierListSectionModel.swift */,
+				199ACD782317CDFF00E616CA /* NetworkFlowModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +336,7 @@
 		19ABA43B230FEBB200BF07A0 /* Soldiers */ = {
 			isa = PBXGroup;
 			children = (
+				199ACC822317A9C200E616CA /* NetworkObserver */,
 				199ACBBB2316598400E616CA /* ANR */,
 				199ACB652313ED6B00E616CA /* CPU */,
 				199ACB5D2313CEB600E616CA /* Memory */,
@@ -346,6 +387,7 @@
 		19ABA448230FEBB200BF07A0 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				199ACD7A2317CF2C00E616CA /* NetworkManager */,
 				199ACC2F2317729100E616CA /* File */,
 				19ABA449230FEBB200BF07A0 /* Image */,
 			);
@@ -480,6 +522,7 @@
 				199ACB0323138C0000E616CA /* FPSDashboardViewController.swift in Sources */,
 				199ACB0C2313AE1A00E616CA /* MonitorListWindow.swift in Sources */,
 				199ACB5F2313CECE00E616CA /* MemorySoldier.swift in Sources */,
+				199ACD792317CDFF00E616CA /* NetworkFlowModel.swift in Sources */,
 				199ACB0623138C8100E616CA /* DashboardCell.swift in Sources */,
 				19ABA461230FEBB200BF07A0 /* AppInfoManager.swift in Sources */,
 				19ABA45E230FEBB200BF07A0 /* CrashSignalExceptionHandler.swift in Sources */,
@@ -489,6 +532,7 @@
 				19ABA44F230FEBB200BF07A0 /* CrashDashboardViewController.swift in Sources */,
 				19ABA45A230FEBB200BF07A0 /* SanboxBrowserSoldier.swift in Sources */,
 				19ABA45B230FEBB200BF07A0 /* CrashUncaughtExceptionHandler.swift in Sources */,
+				199ACEB62319095100E616CA /* NetworkFlowListViewController.swift in Sources */,
 				199ACBC82316635A00E616CA /* ANRListViewController.swift in Sources */,
 				199ACBC4231660A800E616CA /* ANRDashboardViewController.swift in Sources */,
 				19ABA451230FEBB200BF07A0 /* WebDetailViewController.swift in Sources */,
@@ -496,6 +540,7 @@
 				199ACC33231777EB00E616CA /* FileListViewController.swift in Sources */,
 				19ABA458230FEBB200BF07A0 /* AppInfoViewController.swift in Sources */,
 				199ACB622313CF9100E616CA /* MemoryDashboardViewController.swift in Sources */,
+				199ACD7C2317CF4E00E616CA /* NetworkManager.swift in Sources */,
 				199ACB0E2313B45100E616CA /* MonitorConsoleLabel.swift in Sources */,
 				199ACBBD23165BE100E616CA /* ANRSoldier.swift in Sources */,
 				19ABA44D230FEBB200BF07A0 /* JXFilePreviewViewController.swift in Sources */,
@@ -509,6 +554,7 @@
 				199ACB082313A7D800E616CA /* FPSMonitor.swift in Sources */,
 				19ABA454230FEBB200BF07A0 /* BaseViewController.swift in Sources */,
 				199ACC312317731600E616CA /* SoldierFileManager.swift in Sources */,
+				199ACCD52317AB4F00E616CA /* NetworkObserverDashboardViewController.swift in Sources */,
 				19ABA452230FEBB200BF07A0 /* SanboxModel.swift in Sources */,
 				19ABA450230FEBB200BF07A0 /* WebsiteEntryViewController.swift in Sources */,
 				199ACBC123165C8C00E616CA /* ANRPingThread.swift in Sources */,
@@ -516,6 +562,8 @@
 				19ABA457230FEBB200BF07A0 /* CaptainFloatingWindow.swift in Sources */,
 				199ACB0A2313ABEA00E616CA /* CaptainDefines.swift in Sources */,
 				199ACB672313ED7E00E616CA /* CPUSoldier.swift in Sources */,
+				199ACCD22317A9F900E616CA /* NetworkObserverSoldier.swift in Sources */,
+				199ACCD92317AC4F00E616CA /* JXCaptainURLProtocol.swift in Sources */,
 				199ACBC6231661FC00E616CA /* ANRFileManager.swift in Sources */,
 				199ACB0023138B1700E616CA /* FPSSoldier.swift in Sources */,
 				19ABA456230FEBB200BF07A0 /* CaptainFloatingViewController.swift in Sources */,
