@@ -60,6 +60,7 @@ class NetworkObserverDashboardViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 1 {
             let vc = NetworkFlowListViewController(soldier: soldier)
             self.navigationController?.pushViewController(vc, animated: true)

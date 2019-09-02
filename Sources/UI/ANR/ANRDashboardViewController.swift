@@ -63,6 +63,7 @@ class ANRDashboardViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 1 {
             let vc = ANRListViewController(dataSource: ANRFileManager.allFiles())
             self.navigationController?.pushViewController(vc, animated: true)

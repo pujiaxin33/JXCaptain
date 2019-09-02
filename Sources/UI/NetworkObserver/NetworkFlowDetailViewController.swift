@@ -114,6 +114,7 @@ class NetworkFlowDetailViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         UIMenuController.shared.setMenuVisible(false, animated: true)
         let cellModel = dataSource[indexPath.section].items[indexPath.row]
         if cellModel.type == .requestBody {

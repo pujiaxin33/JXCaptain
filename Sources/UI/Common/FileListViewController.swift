@@ -48,6 +48,7 @@ class FileListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let model = dataSource[indexPath.row]
         let sheet = UIAlertController(title: nil, message: "请选择操作方式", preferredStyle: .actionSheet)
         sheet.addAction(UIAlertAction(title: "本地预览", style: .default, handler: { (action) in

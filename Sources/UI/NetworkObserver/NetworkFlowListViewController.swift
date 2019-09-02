@@ -78,6 +78,7 @@ class NetworkFlowListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         searchController.isActive = false
         let vc = NetworkFlowDetailViewController(flowModel: dataSource[indexPath.row])
         navigationController?.pushViewController(vc, animated: true)
