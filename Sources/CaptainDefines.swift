@@ -34,4 +34,5 @@ enum MonitorType {
 
 public extension Notification.Name {
     static let JXCaptainSoldierNewEventDidChange = Notification.Name("JXCaptainSoldierNewEventDidChange")
+    static let JXCaptainNetworkObserverSoldierNewFlowDidReceive = Notification.Name("JXCaptainNetworkObserverSoldierNewFlowDidReceive")
 }

@@ -23,7 +23,7 @@ class NetworkObserverDashboardViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "流量监控操作中心"
+        title = "流量监控"
         tableView.register(DashboardCell.self, forCellReuseIdentifier: "swithCell")
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.tableFooterView = UIView()

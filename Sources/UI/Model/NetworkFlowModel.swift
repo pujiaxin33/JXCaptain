@@ -20,10 +20,11 @@ struct NetworkFlowModel {
     let duration: TimeInterval? //单位秒
 
     let requestBody: String?
+    let requestBodySize: String?
     let responseBody: String?
     let urlString: String?
     let method: String?
-    let mineType: String?
+    let mimeType: String?
     let uploadFlow: String?
     let downFlow: String?
     let durationString: String?
@@ -40,7 +41,7 @@ struct NetworkFlowModel {
         urlString = request.url?.absoluteString
         method = request.httpMethod
         statusCode = (response as? HTTPURLResponse)?.statusCode
-        mineType = response.mimeType
+        mimeType = response.mimeType
         endDate = Date()
         duration = endDate!.timeIntervalSince(startDate)
         if duration! > 1 {
@@ -48,7 +49,7 @@ struct NetworkFlowModel {
         }else {
             durationString = String(format: "%.fms", duration! * 1000)
         }
-
+        requestBodySize = NetworkManager.flowLengthString(NetworkManager.httpBody(request: request)?.count ?? 0)
         uploadFlow = NetworkManager.flowLengthString(NetworkManager.requestFlowLength(request))
         downFlow = NetworkManager.flowLengthString(NetworkManager.responseFlowLength(response, responseData: responseData))
     }

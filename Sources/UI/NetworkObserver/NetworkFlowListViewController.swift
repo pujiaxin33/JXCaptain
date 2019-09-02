@@ -28,6 +28,8 @@ class NetworkFlowListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "请求列表"
+
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.placeholder = "搜索URL"
         searchController.hidesNavigationBarDuringPresentation = false
@@ -36,8 +38,24 @@ class NetworkFlowListViewController: UITableViewController {
 
         tableView.register(NetworkFlowListCell.self, forCellReuseIdentifier: "cell")
         tableView.tableHeaderView = searchController.searchBar
+
+        NotificationCenter.default.addObserver(self, selector: #selector(newFlowDidReceive(noti:)), name: NSNotification.Name.JXCaptainNetworkObserverSoldierNewFlowDidReceive, object: nil)
     }
-    
+
+    @objc func newFlowDidReceive(noti: Notification) {
+        guard let flowModel = noti.object as? NetworkFlowModel else {
+            return
+        }
+        dataSource.insert(flowModel, at: 0)
+        if searchController.isActive, let searchText = searchController.searchBar.text {
+            if flowModel.request.url?.absoluteString.range(of: searchText, options: .caseInsensitive) != nil {
+                filteredDataSource.insert(flowModel, at: 0)
+                tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
+            }
+        }else {
+            tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
+        }
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.isActive {
@@ -59,6 +77,11 @@ class NetworkFlowListViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        searchController.isActive = false
+        let vc = NetworkFlowDetailViewController(flowModel: dataSource[indexPath.row])
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension NetworkFlowListViewController: UISearchResultsUpdating {

@@ -23,7 +23,7 @@ class ANRDashboardViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "卡顿操作中心"
+        title = "卡顿监控"
         tableView.register(DashboardCell.self, forCellReuseIdentifier: "swithCell")
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.tableFooterView = UIView()
