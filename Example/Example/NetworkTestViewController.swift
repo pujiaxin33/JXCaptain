@@ -36,5 +36,8 @@ class NetworkTestViewController: UITableViewController {
             }
             task.resume()
         }
+        let alert = UIAlertController(title: nil, message: "发送成功", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }

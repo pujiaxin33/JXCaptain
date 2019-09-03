@@ -51,8 +51,8 @@ class CPUMonitor: Monitor {
 
         var thread_count: mach_msg_type_number_t = 0
         defer {
-            if let thread_list = thread_list {
-                vm_deallocate(mach_task_self_, vm_address_t(UnsafePointer(thread_list).pointee), vm_size_t(thread_count))
+            if thread_list != nil {
+                vm_deallocate(mach_task_self_, vm_address_t(bitPattern: thread_list), vm_size_t(Int(thread_count) * MemoryLayout<thread_act_t>.stride) )
             }
         }
         kr = task_threads(mach_task_self_, &thread_list, &thread_count)
