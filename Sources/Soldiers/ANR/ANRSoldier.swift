@@ -18,12 +18,19 @@ public class ANRSoldier: Soldier {
     public var contentView: UIView?
     public var hasNewEvent: Bool {
         set(new) {
-            UserDefaults.standard.set(new, forKey: kANRSoldierHasNewEvent)
+            if canCheckNewEvent {
+                UserDefaults.standard.set(new, forKey: kANRSoldierHasNewEvent)
+            }
         }
         get {
-            return UserDefaults.standard.bool(forKey: kANRSoldierHasNewEvent)
+            if canCheckNewEvent {
+                return UserDefaults.standard.bool(forKey: kANRSoldierHasNewEvent)
+            }else {
+                return false
+            }
         }
     }
+    public var canCheckNewEvent: Bool = true
     public var threshold: Double = 1
     var isActive: Bool {
         set(new) {

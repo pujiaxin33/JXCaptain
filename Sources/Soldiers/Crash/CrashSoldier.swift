@@ -18,12 +18,19 @@ public class CrashSoldier: Soldier {
     public var exceptionReceiveClosure: ((Int32?, NSException?, String?)->())?
     public var hasNewEvent: Bool {
         set(new) {
-            UserDefaults.standard.set(new, forKey: kCrashSoldierHasNewEvent)
+            if canCheckNewEvent {
+                UserDefaults.standard.set(new, forKey: kCrashSoldierHasNewEvent)
+            }
         }
         get {
-            return UserDefaults.standard.bool(forKey: kCrashSoldierHasNewEvent)
+            if canCheckNewEvent {
+                return UserDefaults.standard.bool(forKey: kCrashSoldierHasNewEvent)
+            }else {
+                return false
+            }
         }
     }
+    public var canCheckNewEvent: Bool = true
     let uncaughtExceptionHandler: CrashUncaughtExceptionHandler
     let signalExceptionHandler: CrashSignalExceptionHandler
 
