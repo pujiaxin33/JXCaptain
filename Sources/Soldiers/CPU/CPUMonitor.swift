@@ -52,7 +52,7 @@ class CPUMonitor: Monitor {
         var thread_count: mach_msg_type_number_t = 0
         defer {
             if thread_list != nil {
-                vm_deallocate(mach_task_self_, vm_address_t(bitPattern: thread_list), vm_size_t(Int(thread_count) * MemoryLayout<thread_act_t>.stride) )
+                vm_deallocate(mach_task_self_, unsafeBitCast(thread_list, to: vm_address_t.self), vm_size_t(Int(thread_count) * MemoryLayout<thread_act_t>.stride) )
             }
         }
         kr = task_threads(mach_task_self_, &thread_list, &thread_count)
