@@ -8,12 +8,6 @@
 
 import UIKit
 
-class BaseNavigationController: UINavigationController {
-    override var childForStatusBarStyle: UIViewController? {
-        return viewControllers.first
-    }
-}
-
 class SoldierListViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var collectionView: UICollectionView!
     var dataSource = [SoldierListSectionModel]()
@@ -70,10 +64,6 @@ class SoldierListViewController: BaseViewController, UICollectionViewDataSource,
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
-    }
-
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
     }
 
     @objc func naviRightItemDidClick() {
@@ -193,6 +183,7 @@ class SoldierListCell: UICollectionViewCell {
         super.prepareForReuse()
 
         customContentView?.removeFromSuperview()
+        customContentView = nil
     }
 
     override func layoutSubviews() {

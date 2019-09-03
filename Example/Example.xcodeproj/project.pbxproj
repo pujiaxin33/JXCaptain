@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19764D34231E6545003A89B6 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764D33231E6544003A89B6 /* BaseNavigationViewController.swift */; };
 		199ACBCA2316650600E616CA /* PerformanceTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACBC92316650600E616CA /* PerformanceTestViewController.swift */; };
 		199ACCDB2317BEAD00E616CA /* NetworkTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACCDA2317BEAD00E616CA /* NetworkTestViewController.swift */; };
 		19ABA2A0230F907900BF07A0 /* ServerEnvironmentSoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA29F230F907900BF07A0 /* ServerEnvironmentSoldier.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		19764D33231E6544003A89B6 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		199ACBC92316650600E616CA /* PerformanceTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTestViewController.swift; sourceTree = "<group>"; };
 		199ACCDA2317BEAD00E616CA /* NetworkTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestViewController.swift; sourceTree = "<group>"; };
 		19ABA29F230F907900BF07A0 /* ServerEnvironmentSoldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEnvironmentSoldier.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			children = (
 				19ABA29E230F8FB400BF07A0 /* MySoldiers */,
 				19C1F4C1230BECCA00189B88 /* AppDelegate.swift */,
+				19764D33231E6544003A89B6 /* BaseNavigationViewController.swift */,
 				19C1F4C3230BECCA00189B88 /* ViewController.swift */,
 				19ABA2A5230FB60000BF07A0 /* SanboxTestViewController.swift */,
 				19ABA2A7230FB60C00BF07A0 /* CrashTestViewController.swift */,
@@ -193,6 +196,7 @@
 				19ABA2A8230FB60C00BF07A0 /* CrashTestViewController.swift in Sources */,
 				199ACBCA2316650600E616CA /* PerformanceTestViewController.swift in Sources */,
 				19ABA2A0230F907900BF07A0 /* ServerEnvironmentSoldier.swift in Sources */,
+				19764D34231E6545003A89B6 /* BaseNavigationViewController.swift in Sources */,
 				19C1F4C4230BECCA00189B88 /* ViewController.swift in Sources */,
 				199ACCDB2317BEAD00E616CA /* NetworkTestViewController.swift in Sources */,
 				19C1F4C2230BECCA00189B88 /* AppDelegate.swift in Sources */,

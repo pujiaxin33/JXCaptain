@@ -41,6 +41,9 @@ class NetworkObserverDashboardViewController: UITableViewController {
             cell.toggleValueDidChange = {[weak self] (isOn) in
                 if isOn {
                     self?.soldier.start()
+                    let alert = UIAlertController(title: nil, message: "需要重新启动APP才能生效！", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
+                    self?.present(alert, animated: true, completion: nil)
                 }else {
                     self?.soldier.end()
                 }

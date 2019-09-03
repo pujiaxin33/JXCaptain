@@ -112,7 +112,7 @@ extension URLSession {
         })
         if result != true {
             var protocols = captainConfiguration.protocolClasses
-            protocols?.append(JXCaptainURLProtocol.self)
+            protocols?.insert(JXCaptainURLProtocol.self, at: 0)
             captainConfiguration.protocolClasses = protocols
         }
     }

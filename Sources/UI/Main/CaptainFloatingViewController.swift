@@ -42,6 +42,17 @@ class CaptainFloatingViewController: BaseViewController {
         shieldButton.addGestureRecognizer(pan)
 
         NotificationCenter.default.addObserver(self, selector: #selector(soldierNewEventDidChange), name: .JXCaptainSoldierNewEventDidChange, object: nil)
+        //FIXME:如果要保证当前的状态栏跟目标APP当前页面一直，可以不断触发setNeedsStatusBarAppearanceUpdate方法，但是经过测试会带来额外的6%CPU开销。
+//        let link = CADisplayLink(target: self, selector: #selector(processLink))
+//        link.add(to: RunLoop.current, forMode: .common)
+    }
+
+    @objc func processLink() {
+        setNeedsStatusBarAppearanceUpdate()
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIApplication.shared.keyWindow?.rootViewController?.topController()?.preferredStatusBarStyle ?? .default
     }
 
     @objc func shieldButtonDidClick() {

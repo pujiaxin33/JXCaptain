@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Base Navigation View Controller-->
         <scene sceneID="Kuw-hQ-ond">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XzJ-jn-siv" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XzJ-jn-siv" customClass="BaseNavigationViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0PO-Qx-J1Y">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

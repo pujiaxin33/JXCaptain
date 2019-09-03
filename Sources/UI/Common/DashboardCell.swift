@@ -21,6 +21,7 @@ class DashboardCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         selectionStyle = .none
+        textLabel?.backgroundColor = .clear
         toggle.translatesAutoresizingMaskIntoConstraints = false
         toggle.addTarget(self, action: #selector(toggleDidClick), for: .valueChanged)
         contentView.addSubview(toggle)
@@ -34,5 +35,11 @@ class DashboardCell: UITableViewCell {
 
     @objc func toggleDidClick() {
         toggleValueDidChange?(toggle.isOn)
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        contentView.bringSubviewToFront(toggle)
     }
 }
