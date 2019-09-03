@@ -12,8 +12,8 @@ open class JXFileBrowserController: UIViewController {
     public let path: String!
     public var tableView: UITableView!
     public var dataSource: [String]!
-    private let MainBundleResourcePath = "MainBundleResourcePath"
-    private let EmptyTips = "There are no files here."
+    private let mainBundleResourcePath = "mainBundleResourcePath"
+    private let emptyTips = "There are no files here."
 
     init(path: String) {
         self.path = path
@@ -35,7 +35,7 @@ open class JXFileBrowserController: UIViewController {
 
         dataSource = [String]()
         if path == NSHomeDirectory(), Bundle.main.resourcePath != nil {
-            dataSource.append(MainBundleResourcePath)
+            dataSource.append(mainBundleResourcePath)
         }
         do {
             let fileNames = try FileManager.default.contentsOfDirectory(atPath: path)
@@ -43,15 +43,21 @@ open class JXFileBrowserController: UIViewController {
         } catch let error {
             print("The error of contentsOfDirectory: %@", error)
         }
-        if dataSource.isEmpty {
-            dataSource.append(EmptyTips)
-        }
 
         tableView = UITableView(frame: self.view.bounds, style: .plain)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.tableFooterView = UIView()
         view.addSubview(tableView)
+
+        if dataSource.isEmpty {
+            let emptyLabel = UILabel()
+            emptyLabel.font = .systemFont(ofSize: 25)
+            emptyLabel.text = emptyTips
+            emptyLabel.textAlignment = .center
+            tableView.backgroundView = emptyLabel
+        }
     }
 
     func isImagePathExtension(filePath: String) -> Bool {
@@ -73,11 +79,8 @@ extension JXFileBrowserController: UITableViewDataSource, UITableViewDelegate {
         cell?.detailTextLabel?.textColor = UIColor.lightGray
         let source = dataSource[indexPath.row]
         cell?.textLabel?.text = source
-        if source == EmptyTips {
-            cell?.detailTextLabel?.text = nil
-        }
         var fullPath = path + "/" + source
-        if source == MainBundleResourcePath {
+        if source == mainBundleResourcePath {
             fullPath = Bundle.main.resourcePath!
         }
         do {
@@ -107,11 +110,8 @@ extension JXFileBrowserController: UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let source = dataSource[indexPath.row]
-        if source == EmptyTips {
-            return
-        }
         var fullPath = path + "/" + source
-        if source == MainBundleResourcePath {
+        if source == mainBundleResourcePath {
             fullPath = Bundle.main.resourcePath!
         }
         do {

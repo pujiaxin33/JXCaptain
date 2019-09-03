@@ -14,7 +14,7 @@ class AppInfoViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "APP基本信息"
+        title = "APP信息"
 
         tableView.register(AppInfoCell.self, forCellReuseIdentifier: "cell")
         tableView.tableFooterView = UIView()

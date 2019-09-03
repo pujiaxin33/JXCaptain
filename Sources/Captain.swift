@@ -17,7 +17,7 @@ public class Captain {
     internal let floatingWindow = CaptainFloatingWindow()
 
     init() {
-        let defaultSoldiers: [Soldier] = [AppInfoSoldier(), SanboxBrowserSoldier(), CrashSoldier(), WebsiteEntrySoldier(), FPSSoldier(), MemorySoldier(), CPUSoldier(), ANRSoldier(), NetworkObserverSoldier()]
+        let defaultSoldiers: [Soldier] = [AppInfoSoldier(), SanboxBrowserSoldier(), CrashSoldier(), WebsiteEntrySoldier(), FPSSoldier(), MemorySoldier(), CPUSoldier(), ANRSoldier(), NetworkObserverSoldier.shared]
         soldiers.append(contentsOf: defaultSoldiers)
         var topEdgeInset: CGFloat = 20
         var bottomEdgeInset: CGFloat = 12
@@ -71,20 +71,5 @@ public class Captain {
                 break
             }
         }
-    }
-}
-
-extension Captain {
-    func soldier(classType: Soldier.Type) -> Soldier? {
-        for soldier in soldiers {
-            if type(of: soldier) == classType {
-                return soldier
-            }
-        }
-        return nil
-    }
-
-    func networkSoldier() -> NetworkObserverSoldier? {
-        return soldier(classType: NetworkObserverSoldier.self) as? NetworkObserverSoldier
     }
 }

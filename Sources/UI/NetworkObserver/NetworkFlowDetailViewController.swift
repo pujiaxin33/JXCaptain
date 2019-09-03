@@ -40,26 +40,26 @@ class NetworkFlowDetailViewController: UITableViewController {
         }
 
         if let headerFileds = (response as? HTTPURLResponse)?.allHeaderFields {
-            var requestItems = [NetworkFlowDetailCellModel]()
+            var responseItems = [NetworkFlowDetailCellModel]()
             for (key, value) in headerFileds {
                 guard let keyString = key as? String else {
                     continue
                 }
                 if let valueString = value as? String {
-                    requestItems.append(cellModel(title: keyString, detail: valueString))
+                    responseItems.append(cellModel(title: keyString, detail: valueString))
                 }else if let valueArray = value as? [String] {
                     let valueString = valueArray.reduce("") { (result, item) -> String in
                         return "\(result),\(item)"
                     }
-                    requestItems.append(cellModel(title: keyString, detail: valueString))
+                    responseItems.append(cellModel(title: keyString, detail: valueString))
                 }else if let valueDict = value as? [String : String] {
                     let valueString = valueDict.reduce("") { (result, valueTuple) -> String in
                         return "\(result),\(valueTuple.key)=\(valueTuple.value)"
                     }
-                    requestItems.append(cellModel(title: keyString, detail: valueString))
+                    responseItems.append(cellModel(title: keyString, detail: valueString))
                 }
             }
-            dataSource.append(NetworkFlowDetailSectionModel(title: "Request Headers", items: requestItems))
+            dataSource.append(NetworkFlowDetailSectionModel(title: "Response Headers", items: responseItems))
         }
     }
 

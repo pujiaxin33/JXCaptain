@@ -34,7 +34,7 @@ class MemoryDashboardViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DashboardCell
-        cell.textLabel?.text = "FPS检测开关"
+        cell.textLabel?.text = "内存检测开关"
         cell.toggle.isOn = soldier.isActive
         cell.toggleValueDidChange = {[weak self] (isOn) in
             if isOn {

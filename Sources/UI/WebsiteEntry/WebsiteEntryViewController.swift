@@ -37,7 +37,7 @@ class WebsiteEntryViewController: BaseViewController {
         if soldier.defaultWebsite != nil {
             inputTextView.text = soldier.defaultWebsite
         }else {
-            inputTextView.text = "http://"
+            inputTextView.text = "https://"
         }
         inputTextView.font = .systemFont(ofSize: 17)
         inputTextView.keyboardType = .URL

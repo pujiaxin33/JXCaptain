@@ -23,7 +23,7 @@ class NetworkObserverDashboardViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "流量监控"
+        title = "流量"
         tableView.register(DashboardCell.self, forCellReuseIdentifier: "swithCell")
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.tableFooterView = UIView()
@@ -36,7 +36,7 @@ class NetworkObserverDashboardViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "swithCell", for: indexPath) as! DashboardCell
-            cell.textLabel?.text = "流量监控检测开关"
+            cell.textLabel?.text = "流量检测开关"
             cell.toggle.isOn = soldier.isActive
             cell.toggleValueDidChange = {[weak self] (isOn) in
                 if isOn {
@@ -68,7 +68,7 @@ class NetworkObserverDashboardViewController: UITableViewController {
             let alert = UIAlertController(title: "提示", message: "确认删除所有接口请求记录吗？", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "确定", style: .destructive, handler: { (action) in
-                Captain.default.networkSoldier()?.flowModels.removeAll()
+                NetworkObserverSoldier.shared.flowModels.removeAll()
             }))
             present(alert, animated: true, completion: nil)
         }

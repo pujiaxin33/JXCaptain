@@ -57,7 +57,7 @@ class JXCaptainURLProtocol: URLProtocol, URLSessionDataDelegate {
         guard let receivedResponse = receivedResponse, let receivedData = receivedData, let startDate = startDate else {
             return
         }
-        Captain.default.networkSoldier()?.recordRequest(request: request, response: receivedResponse, responseData: receivedData, startDate: startDate)
+        NetworkObserverSoldier.shared.recordRequest(request: request, response: receivedResponse, responseData: receivedData, startDate: startDate)
     }
 
     //MARK: - URLSessionDelegate

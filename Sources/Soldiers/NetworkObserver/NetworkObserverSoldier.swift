@@ -11,6 +11,7 @@ import Foundation
 private let kNetworkObserverSoldierIsActive = "kNetworkObserverSoldierIsActive"
 
 public class NetworkObserverSoldier: Soldier {
+    public static let shared = NetworkObserverSoldier()
     public var name: String
     public var team: String
     public var icon: UIImage?
@@ -29,8 +30,8 @@ public class NetworkObserverSoldier: Soldier {
     let monitor: ANRMonitor
     var flowModels = [NetworkFlowModel]()
 
-    public init() {
-        name = "流量监控"
+    init() {
+        name = "流量"
         team = "性能检测"
         icon = ImageManager.imageWithName("JXCaptain_icon_network")
         monitor = ANRMonitor()

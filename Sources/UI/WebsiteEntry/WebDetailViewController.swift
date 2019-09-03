@@ -22,7 +22,7 @@ class WebDetailViewController: BaseViewController, WKNavigationDelegate {
         if website.hasPrefix("http://") || website.hasPrefix("https://") {
             self.website = website
         }else {
-            self.website = "http://" + website
+            self.website = "https://" + website
         }
         webView = WKWebView(frame: CGRect.zero)
         progressLine = CALayer()
@@ -77,6 +77,9 @@ class WebDetailViewController: BaseViewController, WKNavigationDelegate {
     //MARK: - WKNavigationDelegate
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         print("JXCaptain H5任意门 didFail with error:\(error.localizedDescription)")
+        let alert = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -85,5 +88,11 @@ class WebDetailViewController: BaseViewController, WKNavigationDelegate {
                 self.title = title
             }
         }
+    }
+
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        let alert = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
