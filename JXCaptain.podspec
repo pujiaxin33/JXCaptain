@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "JXCaptain"
-  s.version = "0.0.5"
+  s.version = "0.0.6"
   s.summary      = "一个应用调试工具箱"
   s.homepage     = "https://github.com/pujiaxin33/JXCaptain"
   s.license      = "MIT"
