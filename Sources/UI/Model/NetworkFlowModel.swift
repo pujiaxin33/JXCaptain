@@ -28,7 +28,7 @@ struct NetworkFlowModel {
     let uploadFlow: String?
     let downFlow: String?
     let durationString: String?
-
+    let startDateString: String?
 
     init(request: URLRequest, response: URLResponse, responseData: Data, startDate: Date) {
         self.request = request
@@ -49,6 +49,10 @@ struct NetworkFlowModel {
         }else {
             durationString = String(format: "%.fms", duration! * 1000)
         }
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        startDateString = dateFormatter.string(from: startDate)
         requestBodySize = NetworkManager.flowLengthString(NetworkManager.httpBody(request: request)?.count ?? 0)
         uploadFlow = NetworkManager.flowLengthString(NetworkManager.requestFlowLength(request))
         downFlow = NetworkManager.flowLengthString(NetworkManager.responseFlowLength(response, responseData: responseData))

@@ -27,8 +27,10 @@ class CrashDashboardViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.tableFooterView = UIView()
 
-        soldier.hasNewEvent = false
-        NotificationCenter.default.post(name: .JXCaptainSoldierNewEventDidChange, object: soldier)
+        if soldier.hasNewEvent {
+            soldier.hasNewEvent = false
+            NotificationCenter.default.post(name: .JXCaptainSoldierNewEventDidChange, object: soldier)
+        }
     }
 
     //MARK: - UITableViewDataSource & UITableViewDelegate

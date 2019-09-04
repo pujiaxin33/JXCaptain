@@ -73,7 +73,7 @@ class NetworkFlowListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! NetworkFlowListCell
         let flowModel = dataSource[indexPath.row]
         cell.urlLabel.text = flowModel.urlString
-        cell.infoLabel.text = "\(flowModel.method ?? "") · \(flowModel.statusCode ?? -1) · \(flowModel.downFlow ?? "") · \(flowModel.durationString ?? "")"
+        cell.infoLabel.text = "\(flowModel.method ?? "") · \(flowModel.statusCode ?? -1) · \(flowModel.downFlow ?? "") · \(flowModel.durationString ?? "") · \(flowModel.startDateString ?? "")"
         return cell
     }
 
@@ -125,7 +125,7 @@ class NetworkFlowListCell: UITableViewCell {
         infoLabel.textColor = .lightGray
         infoLabel.font = .systemFont(ofSize: 9)
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
-        urlLabel.numberOfLines = 1
+        infoLabel.numberOfLines = 1
         contentView.addSubview(infoLabel)
         infoLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
         infoLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12).isActive = true

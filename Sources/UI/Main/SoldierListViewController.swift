@@ -135,6 +135,7 @@ class SoldierListCell: UICollectionViewCell {
             iconImageView.isHidden = customContentView != nil
             nameLabel.isHidden = customContentView != nil
             if customContentView != nil {
+                customContentView?.removeFromSuperview()
                 contentView.addSubview(customContentView!)
             }
         }
@@ -182,7 +183,6 @@ class SoldierListCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
 
-        customContentView?.removeFromSuperview()
         customContentView = nil
     }
 

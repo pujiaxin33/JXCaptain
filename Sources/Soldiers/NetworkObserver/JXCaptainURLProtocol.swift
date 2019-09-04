@@ -51,6 +51,7 @@ class JXCaptainURLProtocol: URLProtocol, URLSessionDataDelegate {
         sessionTask = nil
         receivedData = nil
         receivedResponse = nil
+        startDate = nil
     }
 
     func recordRequest() {
@@ -61,23 +62,65 @@ class JXCaptainURLProtocol: URLProtocol, URLSessionDataDelegate {
     }
 
     //MARK: - URLSessionDelegate
+    func urlSession(_ session: URLSession, task: URLSessionTask, willPerformHTTPRedirection response: HTTPURLResponse, newRequest request: URLRequest, completionHandler: @escaping (URLRequest?) -> Void) {
+        guard let redirectRequest = (request as NSURLRequest).mutableCopy() as? NSMutableURLRequest else {
+            return
+        }
+        // The new request was copied from our old request, so it has our magic property.  We actually
+        // have to remove that so that, when the client starts the new request, we see it.  If we
+        // don't do this then we never see the new request and thus don't get a chance to change
+        // its caching behaviour.
+        //
+        // We also cancel our current connection because the client is going to start a new request for
+        // us anyway.
+        URLProtocol.removeProperty(forKey: KJXCaptainURLProtocolIdentifier, in: redirectRequest)
+        // Tell the client about the redirect.
+        client?.urlProtocol(self, wasRedirectedTo: redirectRequest as URLRequest, redirectResponse: response)
+        // Stop our load.  The CFNetwork infrastructure will create a new NSURLProtocol instance to run
+        // the load of the redirect.
+
+        // The following ends up calling -URLSession:task:didCompleteWithError: with NSURLErrorDomain / NSURLErrorCancelled,
+        // which specificallys traps and ignores the error.
+        sessionTask?.cancel()
+        client?.urlProtocol(self, didFailWithError: NSError(domain: NSCocoaErrorDomain, code: NSUserCancelledError, userInfo: nil))
+    }
+
+    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        client?.urlProtocol(self, didReceive: URLAuthenticationChallenge(authenticationChallenge: challenge, sender: JXCaptainURLSessionChallengeSender(completionHandler: completionHandler)))
+    }
+
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
-        client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+        client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .allowed)
         receivedData = Data()
         receivedResponse = response
         completionHandler(.allow)
     }
 
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, willCacheResponse proposedResponse: CachedURLResponse, completionHandler: @escaping (CachedURLResponse?) -> Void) {
+        completionHandler(proposedResponse)
+    }
+
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
         receivedData?.append(data)
+        client?.urlProtocol(self, didLoad: data)
     }
 
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        if let localError = error as NSError?, localError.code != NSURLErrorCancelled {
-            client?.urlProtocol(self, didFailWithError: error!)
-        }else {
+        if error == nil {
             recordRequest()
             client?.urlProtocolDidFinishLoading(self)
+        }else if let localError = error as NSError? {
+            if localError.domain == NSURLErrorDomain && localError.code == NSURLErrorCancelled {
+                // Do nothing.  This happens in two cases:
+                //
+                // o during a redirect, in which case the redirect code has already told the client about
+                //   the failure
+                //
+                // o if the request is cancelled by a call to -stopLoading, in which case the client doesn't
+                //   want to know about the failure
+            }else {
+                client?.urlProtocol(self, didFailWithError: error!)
+            }
         }
     }
 }
@@ -115,5 +158,34 @@ extension URLSession {
             protocols?.insert(JXCaptainURLProtocol.self, at: 0)
             captainConfiguration.protocolClasses = protocols
         }
+    }
+}
+
+class JXCaptainURLSessionChallengeSender: NSObject, URLAuthenticationChallengeSender {
+    let completionHandler: (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
+
+    init(completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        self.completionHandler = completionHandler
+        super.init()
+    }
+
+    func use(_ credential: URLCredential, for challenge: URLAuthenticationChallenge) {
+        completionHandler(.useCredential, credential)
+    }
+
+    func continueWithoutCredential(for challenge: URLAuthenticationChallenge) {
+        completionHandler(.useCredential, nil)
+    }
+
+    func cancel(_ challenge: URLAuthenticationChallenge) {
+        completionHandler(.cancelAuthenticationChallenge, nil)
+    }
+
+    func performDefaultHandling(for challenge: URLAuthenticationChallenge) {
+        completionHandler(.performDefaultHandling, nil)
+    }
+
+    func rejectProtectionSpaceAndContinue(with challenge: URLAuthenticationChallenge) {
+        completionHandler(.rejectProtectionSpace, nil)
     }
 }

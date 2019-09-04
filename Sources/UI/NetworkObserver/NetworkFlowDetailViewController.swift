@@ -31,7 +31,7 @@ class NetworkFlowDetailViewController: UITableViewController {
         let generalSection = NetworkFlowDetailSectionModel(title: "General", items: generalItems)
         dataSource.append(generalSection)
 
-        if let headerFileds = request.allHTTPHeaderFields {
+        if let headerFileds = request.allHTTPHeaderFields, !headerFileds.isEmpty {
             var requestItems = [NetworkFlowDetailCellModel]()
             for (key, value) in headerFileds {
                 requestItems.append(cellModel(title: key, detail: value))
@@ -39,7 +39,7 @@ class NetworkFlowDetailViewController: UITableViewController {
             dataSource.append(NetworkFlowDetailSectionModel(title: "Request Headers", items: requestItems))
         }
 
-        if let headerFileds = (response as? HTTPURLResponse)?.allHeaderFields {
+        if let headerFileds = (response as? HTTPURLResponse)?.allHeaderFields, !headerFileds.isEmpty {
             var responseItems = [NetworkFlowDetailCellModel]()
             for (key, value) in headerFileds {
                 guard let keyString = key as? String else {
