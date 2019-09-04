@@ -52,7 +52,11 @@ class CaptainFloatingViewController: BaseViewController {
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return UIApplication.shared.keyWindow?.rootViewController?.topController()?.preferredStatusBarStyle ?? .default
+        if UIApplication.shared.keyWindow?.rootViewController?.topController() == self {
+            return .default
+        }else {
+            return UIApplication.shared.keyWindow?.rootViewController?.topController()?.preferredStatusBarStyle ?? .default
+        }
     }
 
     @objc func shieldButtonDidClick() {
