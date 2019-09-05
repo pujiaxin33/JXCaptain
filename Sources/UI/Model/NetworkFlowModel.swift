@@ -11,43 +11,73 @@ import Foundation
 //@property (nonatomic, copy) NSString *requestId;
 struct NetworkFlowModel {
     let request: URLRequest
-    let response: URLResponse
-    let responseData: Data
+    let response: URLResponse?
+    let responseData: Data?
+    let error: NSError?
 
     let statusCode: Int?
-    let startDate: Date?
-    let endDate: Date?
-    let duration: TimeInterval? //单位秒
+    let startDate: Date
+    let endDate: Date
+    let duration: TimeInterval //单位秒
 
-    let requestBody: String?
-    let requestBodySize: String?
-    let responseBody: String?
+    let requestBody: String
+    let requestBodySize: String
+    let responseBody: String
     let urlString: String?
-    let method: String?
-    let mimeType: String?
-    let uploadFlow: String?
-    let downFlow: String?
-    let durationString: String?
-    let startDateString: String?
+    let method: String
+    let mimeType: String
+    let uploadFlow: String
+    let downFlow: String
+    let durationString: String
+    let startDateString: String
+    let statusCodeString: String
+    let errorString: String?
+    let isStatusCodeError: Bool
 
-    init(request: URLRequest, response: URLResponse, responseData: Data, startDate: Date) {
+    init(request: URLRequest, response: URLResponse?, responseData: Data?, error: NSError?, startDate: Date) {
         self.request = request
         self.response = response
         self.responseData = responseData
         self.startDate = startDate
+        self.error = error
 
-        requestBody = NetworkManager.jsonString(from: NetworkManager.httpBody(request: request) ?? Data())
-        responseBody = NetworkManager.jsonString(from: responseData)
-        urlString = request.url?.absoluteString
-        method = request.httpMethod
-        statusCode = (response as? HTTPURLResponse)?.statusCode
-        mimeType = response.mimeType
-        endDate = Date()
-        duration = endDate!.timeIntervalSince(startDate)
-        if duration! > 1 {
-            durationString = String(format: "%.1fs", duration!)
+        let defaultString = "Unknown"
+        requestBody = NetworkManager.jsonString(from: NetworkManager.httpBody(request: request) ?? Data()) ?? defaultString
+        if response != nil && responseData != nil {
+            responseBody = NetworkManager.jsonString(from: responseData!) ?? defaultString
+            mimeType = response!.mimeType ?? defaultString
+            downFlow = NetworkManager.flowLengthString(NetworkManager.responseFlowLength(response!, responseData: responseData!))
         }else {
-            durationString = String(format: "%.fms", duration! * 1000)
+            responseBody = defaultString
+            mimeType = defaultString
+            downFlow = defaultString
+        }
+        if error != nil {
+            errorString = error?.localizedDescription
+        }else {
+            errorString = nil
+        }
+        urlString = request.url?.absoluteString
+        method = request.httpMethod ?? defaultString
+        statusCode = (response as? HTTPURLResponse)?.statusCode
+        if statusCode != nil {
+            statusCodeString = "\(statusCode!) \(HTTPURLResponse.localizedString(forStatusCode: statusCode!))"
+            let errorStatusCodes = IndexSet(integersIn: Range.init(NSRange(location: 400, length: 200))!)
+            if errorStatusCodes.contains(statusCode!) {
+                isStatusCodeError = true
+            }else {
+                isStatusCodeError = false
+            }
+        }else {
+            statusCodeString = defaultString
+            isStatusCodeError = false
+        }
+        endDate = Date()
+        duration = endDate.timeIntervalSince(startDate)
+        if duration > 1 {
+            durationString = String(format: "%.1fs", duration)
+        }else {
+            durationString = String(format: "%.fms", duration * 1000)
         }
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone.current
@@ -55,7 +85,6 @@ struct NetworkFlowModel {
         startDateString = dateFormatter.string(from: startDate)
         requestBodySize = NetworkManager.flowLengthString(NetworkManager.httpBody(request: request)?.count ?? 0)
         uploadFlow = NetworkManager.flowLengthString(NetworkManager.requestFlowLength(request))
-        downFlow = NetworkManager.flowLengthString(NetworkManager.responseFlowLength(response, responseData: responseData))
     }
 
 

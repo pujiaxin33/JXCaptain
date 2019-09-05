@@ -66,14 +66,28 @@ class NetworkFlowListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 55
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! NetworkFlowListCell
         let flowModel = dataSource[indexPath.row]
+        if flowModel.errorString != nil {
+            cell.urlLabel.textColor = .red
+            cell.infoLabel.text = "\(flowModel.method) · \(flowModel.downFlow) · \(flowModel.durationString) · \(flowModel.startDateString)"
+        }else {
+            cell.urlLabel.textColor = .black
+            let infoString = "\(flowModel.method) · \(flowModel.statusCode ?? -1) · \(flowModel.downFlow) · \(flowModel.durationString) · \(flowModel.startDateString)"
+            if flowModel.isStatusCodeError {
+                let statusCodeString = "\(flowModel.statusCode ?? -1)"
+                let infoText = NSMutableAttributedString(string: infoString, attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
+                infoText.addAttribute(.foregroundColor, value: UIColor.red, range: NSString(string: infoString).range(of: statusCodeString))
+                cell.infoLabel.attributedText = infoText
+            }else {
+                cell.infoLabel.text = infoString
+            }
+        }
         cell.urlLabel.text = flowModel.urlString
-        cell.infoLabel.text = "\(flowModel.method ?? "") · \(flowModel.statusCode ?? -1) · \(flowModel.downFlow ?? "") · \(flowModel.durationString ?? "") · \(flowModel.startDateString ?? "")"
         return cell
     }
 
@@ -114,7 +128,7 @@ class NetworkFlowListCell: UITableViewCell {
         accessoryType = .disclosureIndicator
 
         urlLabel.textColor = .black
-        urlLabel.font = .systemFont(ofSize: 12)
+        urlLabel.font = .systemFont(ofSize: 13)
         urlLabel.translatesAutoresizingMaskIntoConstraints = false
         urlLabel.numberOfLines = 2
         contentView.addSubview(urlLabel)
@@ -122,8 +136,8 @@ class NetworkFlowListCell: UITableViewCell {
         urlLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12).isActive = true
         urlLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12).isActive = true
 
-        infoLabel.textColor = .lightGray
-        infoLabel.font = .systemFont(ofSize: 9)
+        infoLabel.textColor = .gray
+        infoLabel.font = .systemFont(ofSize: 10)
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
         infoLabel.numberOfLines = 1
         contentView.addSubview(infoLabel)
@@ -136,4 +150,10 @@ class NetworkFlowListCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        infoLabel.attributedText = nil
+        infoLabel.text = nil
+    }
 }

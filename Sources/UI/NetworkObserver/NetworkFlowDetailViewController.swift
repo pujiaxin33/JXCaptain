@@ -18,16 +18,19 @@ class NetworkFlowDetailViewController: UITableViewController {
 
         let request = flowModel.request
         let response = flowModel.response
-        let generalItems = [cellModel(title: "Request URL", detail: request.url?.absoluteString),
+        var generalItems = [cellModel(title: "Request URL", detail: request.url?.absoluteString),
                             cellModel(title: "Request Method", detail: request.httpMethod),
                             cellModel(title: "Request Body Size", detail: flowModel.requestBodySize),
                             cellModel(type: .requestBody,title: "Request Body", detail: "tap to view"),
-                            cellModel(title: "Status Code", detail: "\(flowModel.statusCode ?? -1)"),
+                            cellModel(title: "Status Code", detail: flowModel.statusCodeString),
                             cellModel(type: .responseBody, title: "Response Body", detail: "tap to view"),
                             cellModel(title: "Response Size", detail: flowModel.downFlow),
                             cellModel(title: "MIME Type", detail: flowModel.mimeType),
-                            cellModel(title: "Start Time", detail: flowModel.startDate?.description),
+                            cellModel(title: "Start Time", detail: flowModel.startDate.description),
                             cellModel(title: "Total Duration", detail: flowModel.durationString)]
+        if flowModel.errorString != nil {
+            generalItems.insert(cellModel(title: "Error", detail: flowModel.errorString), at: 2)
+        }
         let generalSection = NetworkFlowDetailSectionModel(title: "General", items: generalItems)
         dataSource.append(generalSection)
 
@@ -81,7 +84,7 @@ class NetworkFlowDetailViewController: UITableViewController {
     func cellText(title: String, detail: String?) -> NSAttributedString {
         let wholeString = "\(title):\(detail ?? "unknown")"
         let text = NSMutableAttributedString(string: wholeString, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 13), NSAttributedString.Key.foregroundColor : UIColor.black])
-        text.addAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15), NSAttributedString.Key.foregroundColor : UIColor.gray], range: NSString(string: wholeString).range(of: "\(title):"))
+        text.addAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15, weight: .medium), NSAttributedString.Key.foregroundColor : UIColor.gray], range: NSString(string: wholeString).range(of: "\(title):"))
         return text
     }
 
@@ -118,11 +121,11 @@ class NetworkFlowDetailViewController: UITableViewController {
         UIMenuController.shared.setMenuVisible(false, animated: true)
         let cellModel = dataSource[indexPath.section].items[indexPath.row]
         if cellModel.type == .requestBody {
-            let vc = NetworkFlowDetailTextViewController(text: flowModel.requestBody ?? "none")
+            let vc = NetworkFlowDetailTextViewController(text: flowModel.requestBody)
             vc.title = "Request"
             navigationController?.pushViewController(vc, animated: true)
         }else if cellModel.type == .responseBody {
-            let vc = NetworkFlowDetailTextViewController(text: flowModel.responseBody ?? "none")
+            let vc = NetworkFlowDetailTextViewController(text: flowModel.responseBody)
             vc.title = "Response"
             navigationController?.pushViewController(vc, animated: true)
         }

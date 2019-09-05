@@ -16,6 +16,7 @@ class JXCaptainURLProtocol: URLProtocol, URLSessionDataDelegate {
     var receivedData: Data?
     var receivedResponse: URLResponse?
     var startDate: Date?
+    var receivedError: Error?
 
     override init(request: URLRequest, cachedResponse: CachedURLResponse?, client: URLProtocolClient?) {
         super.init(request: request, cachedResponse: cachedResponse, client: client)
@@ -52,13 +53,14 @@ class JXCaptainURLProtocol: URLProtocol, URLSessionDataDelegate {
         receivedData = nil
         receivedResponse = nil
         startDate = nil
+        receivedError = nil
     }
 
     func recordRequest() {
         guard let receivedResponse = receivedResponse, let receivedData = receivedData, let startDate = startDate else {
             return
         }
-        NetworkObserverSoldier.shared.recordRequest(request: request, response: receivedResponse, responseData: receivedData, startDate: startDate)
+        NetworkObserverSoldier.shared.recordRequest(request: request, response: receivedResponse, responseData: receivedData, error: receivedError as NSError?, startDate: startDate)
     }
 
     //MARK: - URLSessionDelegate
@@ -82,7 +84,9 @@ class JXCaptainURLProtocol: URLProtocol, URLSessionDataDelegate {
         // The following ends up calling -URLSession:task:didCompleteWithError: with NSURLErrorDomain / NSURLErrorCancelled,
         // which specificallys traps and ignores the error.
         sessionTask?.cancel()
-        client?.urlProtocol(self, didFailWithError: NSError(domain: NSCocoaErrorDomain, code: NSUserCancelledError, userInfo: nil))
+        let error = NSError(domain: NSCocoaErrorDomain, code: NSUserCancelledError, userInfo: nil)
+        receivedError = error
+        client?.urlProtocol(self, didFailWithError: error)
     }
 
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
@@ -110,6 +114,7 @@ class JXCaptainURLProtocol: URLProtocol, URLSessionDataDelegate {
             recordRequest()
             client?.urlProtocolDidFinishLoading(self)
         }else if let localError = error as NSError? {
+            receivedError = error
             if localError.domain == NSURLErrorDomain && localError.code == NSURLErrorCancelled {
                 // Do nothing.  This happens in two cases:
                 //

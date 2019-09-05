@@ -58,8 +58,8 @@ public class NetworkObserverSoldier: Soldier {
         isActive = false
     }
 
-    func recordRequest(request: URLRequest, response: URLResponse, responseData: Data, startDate: Date) {
-        let flowModel = NetworkFlowModel(request: request, response: response, responseData: responseData, startDate: startDate)
+    func recordRequest(request: URLRequest, response: URLResponse?, responseData: Data?, error: NSError?, startDate: Date) {
+        let flowModel = NetworkFlowModel(request: request, response: response, responseData: responseData, error: error, startDate: startDate)
         flowModels.insert(flowModel, at: 0)
         DispatchQueue.main.async {
             NotificationCenter.default.post(name: NSNotification.Name.JXCaptainNetworkObserverSoldierNewFlowDidReceive, object: flowModel)
