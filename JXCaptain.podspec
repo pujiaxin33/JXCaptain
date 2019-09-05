@@ -13,5 +13,6 @@ Pod::Spec.new do |s|
   s.source_files  = "Sources", "Sources/**/*.{swift}"
   s.resource = 'Resources/Resource.bundle'
   s.requires_arc = true
-  s.dependency = 'BSBacktraceLogger'
+  
+  s.dependency 'BSBacktraceLogger'
 end
