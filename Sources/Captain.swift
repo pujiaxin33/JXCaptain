@@ -48,8 +48,8 @@ public class Captain {
         soldiers.forEach { $0.prepare() }
     }
 
-    public func enqueueSoldier(_ soldier: Soldier) {
-        soldiers.append(soldier)
+    public func enqueueSoldiers(_ soldiers: [Soldier]) {
+        self.soldiers.append(contentsOf: soldiers)
     }
 
     public func removeAllSoldiers() {

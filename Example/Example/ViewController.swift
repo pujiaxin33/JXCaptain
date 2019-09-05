@@ -18,7 +18,7 @@ class ViewController: UITableViewController {
         tableView.tableFooterView = UIView()
 
         //在prepare之前添加自定义Soldier
-        Captain.default.enqueueSoldier(ServerEnvironmentSoldier())
+        Captain.default.enqueueSoldiers([ServerEnvironmentSoldier()])
         //在prepare之前赋值自定义Soldier闭包
         Captain.default.configSoldierClosure = { (soldier) in
             /*
