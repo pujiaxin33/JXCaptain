@@ -26,7 +26,7 @@ class NetworkFlowDetailViewController: UITableViewController {
                             cellModel(type: .responseBody, title: "Response Body", detail: "tap to view"),
                             cellModel(title: "Response Size", detail: flowModel.downFlow),
                             cellModel(title: "MIME Type", detail: flowModel.mimeType),
-                            cellModel(title: "Start Time", detail: flowModel.startDate.description),
+                            cellModel(title: "Start Time", detail: flowModel.startDateString),
                             cellModel(title: "Total Duration", detail: flowModel.durationString)]
         if flowModel.errorString != nil {
             generalItems.insert(cellModel(title: "Error", detail: flowModel.errorString), at: 2)
