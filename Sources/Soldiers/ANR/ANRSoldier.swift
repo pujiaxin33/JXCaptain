@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import BSBacktraceLogger
 
 private let kANRSoldierIsActive = "kANRSoldierIsActive"
 private let kANRSoldierHasNewEvent = "kANRSoldierHasNewEvent"
@@ -75,14 +76,11 @@ public class ANRSoldier: Soldier {
     }
 
     func dump() {
-        hasNewEvent = true
-        NotificationCenter.default.post(name: .JXCaptainSoldierNewEventDidChange, object: self)
-        //todo: 主线程信息
-        DispatchQueue.main.async {
-            let mainThreadInfos = Thread.callStackSymbols.reduce("") { (result, item) -> String in
-                return "\(result)\(item)\n"
-            }
-            ANRFileManager.saveInfo(mainThreadInfos)
+        guard let threadInfo = BSBacktraceLogger.bs_backtraceOfMainThread() else {
+            return
         }
+        hasNewEvent = true
+        ANRFileManager.saveInfo(threadInfo)
+        NotificationCenter.default.post(name: .JXCaptainSoldierNewEventDidChange, object: self)
     }
 }

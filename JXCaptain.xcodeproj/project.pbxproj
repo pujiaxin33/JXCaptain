@@ -66,6 +66,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1966D9AD23210D520025DEDA /* BSBacktraceLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BSBacktraceLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		19764B57231CE929003A89B6 /* NetworkFlowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowDetailViewController.swift; sourceTree = "<group>"; };
 		19764B59231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowDetailCellModel.swift; sourceTree = "<group>"; };
 		19764B5B231CEB3A003A89B6 /* NetworkFlowDetailSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowDetailSectionModel.swift; sourceTree = "<group>"; };
@@ -137,6 +138,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1966D9AC23210D520025DEDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1966D9AD23210D520025DEDA /* BSBacktraceLogger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		199ACAFE23138B0500E616CA /* FPS */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +436,7 @@
 			children = (
 				19C1F4AB230BEC8C00189B88 /* JXCaptain */,
 				19C1F4AA230BEC8C00189B88 /* Products */,
+				1966D9AC23210D520025DEDA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
