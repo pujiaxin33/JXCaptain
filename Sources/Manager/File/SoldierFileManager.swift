@@ -26,7 +26,7 @@ extension SoldierFileManager {
         }else {
             let dateFormatter = DateFormatter()
             dateFormatter.timeZone = TimeZone.current
-            dateFormatter.dateFormat = "yyyy-MM-dd_HH:mm:ss"
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             let dateString = dateFormatter.string(from: Date())
             if fileNamePrefix != nil {
                 targetFileName = "\(fileNamePrefix!)-\(dateString)"

@@ -29,7 +29,7 @@ func SoldierUncaughtExceptionHandler(exception: NSException) -> Void {
     }
     let exceptionInfo = name + "\n" + (reason ?? "no reason") + "\n" + stackInfo
     CrashUncaughtExceptionHandler.exceptionReceiveClosure?(nil, exception, exceptionInfo)
-    CrashFileManager.saveInfo(exceptionInfo, fileNamePrefix: "Crash(uncaught)")
+    CrashFileManager.saveInfo(exceptionInfo, fileNamePrefix: "Uncaught:")
     preUncaughtExceptionHandler?(exception)
     kill(getpid(), SIGKILL)
 }

@@ -82,7 +82,7 @@ func SoldierSignalHandler(signal: Int32, info: UnsafeMutablePointer<__siginfo>?,
     }
     exceptionInfo.append(Thread.current.description)
     CrashSignalExceptionHandler.exceptionReceiveClosure?(signal, nil, exceptionInfo)
-    CrashFileManager.saveInfo(exceptionInfo, fileNamePrefix: "Crash(Signal)")
+    CrashFileManager.saveInfo(exceptionInfo, fileNamePrefix: "Signal:")
     ClearSignalRigister()
     //调用之前的handler
     let handler = preHandlers[signal]

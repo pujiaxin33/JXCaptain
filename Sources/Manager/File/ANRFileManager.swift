@@ -14,7 +14,7 @@ public class ANRFileManager: SoldierFileManager {
         guard let cacheURL = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first else {
             return nil
         }
-        let tempDirectoryURL = cacheURL.appendingPathComponent("ANR", isDirectory: true)
+        let tempDirectoryURL = cacheURL.appendingPathComponent("com.JXCaptain.anr", isDirectory: true)
         if !fileManager.fileExists(atPath: tempDirectoryURL.path) {
             do {
                 try fileManager.createDirectory(at: tempDirectoryURL, withIntermediateDirectories: true, attributes: nil)
