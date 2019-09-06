@@ -83,7 +83,7 @@ class JXFilePreviewViewController: UIViewController, UIScrollViewDelegate {
                     initTextView(with: "该文件没有内容")
                 }
             }
-        }else if ["mp4", "mov", "3gp", "m4v", ".avi"].contains(fileExtension) {
+        }else if ["mp4", "mov", "3gp", "m4v", "avi", "aac", "mp3", "m4a", "flac", "wav", "ac3", "aa", "aax"].contains(fileExtension) {
             let player = AVPlayer(url: URL(fileURLWithPath: filePath))
             previewPlayerController = AVPlayerViewController()
             previewPlayerController?.player = player

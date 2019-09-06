@@ -63,11 +63,20 @@ class NetworkTestViewController: UITableViewController {
             }
             task.resume()
         }else if indexPath.row == 5 {
+            let url = URL(string: "https://gitee.com/xiansanyee/codes/saix3etdh0bywm4pr9gzl38/raw?blob_name=News.mp3")!
+            let request = URLRequest(url: url)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                if response != nil {
+                    print(response!)
+                }
+            }
+            task.resume()
+        }else if indexPath.row == 6 {
             let vc = UIWebViewViewController()
             navigationController?.pushViewController(vc, animated: true)
         }
 
-        if indexPath.row != 5 {
+        if indexPath.row != 6 {
             let alert = UIAlertController(title: nil, message: "发送成功", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
             present(alert, animated: true, completion: nil)

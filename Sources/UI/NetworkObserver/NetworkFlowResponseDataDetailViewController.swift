@@ -15,7 +15,7 @@ class NetworkFlowResponseDataDetailViewController: BaseViewController, UIScrollV
     let cellType: NetworkFlowDetailCellType
     var text: String?
     var image: UIImage?
-    var vedioURL: URL?
+    var mediaURL: URL?
     var previewImageView: UIImageView?
     var previewScrollView: UIScrollView?
     var previewTextView: UITextView?
@@ -26,20 +26,18 @@ class NetworkFlowResponseDataDetailViewController: BaseViewController, UIScrollV
         self.cellType = cellType
         self.text = nil
         self.image = nil
-        self.vedioURL = nil
+        self.mediaURL = nil
         if cellType == .requestBody {
             self.text = flowModel.requestBodyString
         }else if cellType == .responseBody {
             if flowModel.isImageResponseData {
                 self.image = NetworkManager.responseImage(requestID: flowModel.requestID)
-            }else if flowModel.isVedio {
-                let vedioData = NetworkManager.responseData(requestID: flowModel.requestID)
+            }else if flowModel.isVedio || flowModel.isAudio {
+                let mediaData = NetworkManager.responseData(requestID: flowModel.requestID)
                 let tempDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
-                if let vedoPathComponent = flowModel.request.url?.pathComponents.last {
-                    let tempVedioURL = tempDirectoryURL.appendingPathComponent(vedoPathComponent)
-                    if (try? vedioData?.write(to: tempVedioURL)) != nil {
-                        self.vedioURL = tempVedioURL
-                    }
+                let tempMediaURL = tempDirectoryURL.appendingPathComponent(flowModel.mediaFileName)
+                if (try? mediaData?.write(to: tempMediaURL)) != nil {
+                    self.mediaURL = tempMediaURL
                 }
             }else {
                 self.text =  NetworkManager.responseJSON(requestID: flowModel.requestID)
@@ -88,9 +86,9 @@ class NetworkFlowResponseDataDetailViewController: BaseViewController, UIScrollV
            initTextView(with: text!)
 
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(copyItemDidClick))
-        }else if vedioURL != nil {
+        }else if mediaURL != nil {
             previewPlayerController = AVPlayerViewController()
-            previewPlayerController?.player = AVPlayer(url: vedioURL!)
+            previewPlayerController?.player = AVPlayer(url: mediaURL!)
             addChild(previewPlayerController!)
             view.addSubview(previewPlayerController!.view)
         }

@@ -34,7 +34,9 @@ struct NetworkFlowModel {
     let isStatusCodeError: Bool
     let isImageResponseData: Bool
     let isGif: Bool
+    let mediaFileName: String
     let isVedio: Bool
+    let isAudio: Bool
 
     init(request: URLRequest, response: URLResponse?, responseData: Data?, error: NSError?, startDate: Date) {
         self.requestID = UUID().uuidString
@@ -55,6 +57,26 @@ struct NetworkFlowModel {
         isImageResponseData = mimeType.hasPrefix("image/")
         isGif = mimeType.contains("gif")
         isVedio = mimeType.hasPrefix("video/")
+        isAudio = mimeType.hasPrefix("audio/")
+        if request.url?.pathExtension.isEmpty == false {
+            mediaFileName = request.url?.pathComponents.last ?? "unknown"
+        }else {
+            if let disposition = (response as? HTTPURLResponse)?.allHeaderFields["Content-Disposition"] as? String {
+                let scanner = Scanner(string: disposition)
+                scanner.scanUpTo("filename=\"", into: nil)
+                scanner.scanString("filename=\"", into: nil)
+                var result: NSString?
+                scanner.scanUpTo("\"", into: &result)
+                if result != nil {
+                    mediaFileName = result! as String
+                }else {
+                    mediaFileName = "unknown"
+                }
+            }else {
+                mediaFileName = "unknown"
+            }
+        }
+
         errorString = error?.localizedDescription
         urlString = request.url?.absoluteString
         method = request.httpMethod ?? defaultString

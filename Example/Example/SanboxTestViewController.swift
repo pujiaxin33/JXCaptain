@@ -74,7 +74,7 @@ class SanboxTestViewController: UITableViewController {
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
                 if data != nil {
                     if let documentURL = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true) {
-                        let imageURL = documentURL.appendingPathComponent("duck.mp4")
+                        let imageURL = documentURL.appendingPathComponent("temp.mp4")
                         let result = FileManager.default.createFile(atPath: imageURL.path, contents: data, attributes: nil)
                         DispatchQueue.main.async {
                             if !result {
@@ -83,6 +83,34 @@ class SanboxTestViewController: UITableViewController {
                                 self.showText("添加视频成功")
                             }
                         }
+                    }
+                }else {
+                    DispatchQueue.main.async {
+                        self.showText("添加视频失败")
+                    }
+                }
+            }
+            task.resume()
+        }else if indexPath.row == 5 {
+            toastText = "正在下载"
+            let url = URL(string: "https://gitee.com/xiansanyee/codes/saix3etdh0bywm4pr9gzl38/raw?blob_name=News.mp3")!
+            let request = URLRequest(url: url)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                if data != nil {
+                    if let documentURL = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true) {
+                        let imageURL = documentURL.appendingPathComponent("temp.mp3")
+                        let result = FileManager.default.createFile(atPath: imageURL.path, contents: data, attributes: nil)
+                        DispatchQueue.main.async {
+                            if !result {
+                                self.showText("添加音频失败")
+                            }else {
+                                self.showText("添加音频成功")
+                            }
+                        }
+                    }
+                }else {
+                    DispatchQueue.main.async {
+                        self.showText("添加音频失败")
                     }
                 }
             }
@@ -93,10 +121,15 @@ class SanboxTestViewController: UITableViewController {
 
     func showText(_ text: String) {
         if presentedViewController != nil {
-            dismiss(animated: false, completion: nil)
+            dismiss(animated: false) {
+                let alert = UIAlertController(title: nil, message: text, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }else {
+            let alert = UIAlertController(title: nil, message: text, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
-        let alert = UIAlertController(title: nil, message: text, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
-        present(alert, animated: true, completion: nil)
     }
 }
