@@ -10,7 +10,7 @@
 		19764B58231CE929003A89B6 /* NetworkFlowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764B57231CE929003A89B6 /* NetworkFlowDetailViewController.swift */; };
 		19764B5A231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764B59231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift */; };
 		19764B5C231CEB3A003A89B6 /* NetworkFlowDetailSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764B5B231CEB3A003A89B6 /* NetworkFlowDetailSectionModel.swift */; };
-		19764B5E231CF6A8003A89B6 /* NetworkFlowDetailTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764B5D231CF6A8003A89B6 /* NetworkFlowDetailTextViewController.swift */; };
+		19764B5E231CF6A8003A89B6 /* NetworkFlowResponseDataDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764B5D231CF6A8003A89B6 /* NetworkFlowResponseDataDetailViewController.swift */; };
 		199ACB0023138B1700E616CA /* FPSSoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACAFF23138B1700E616CA /* FPSSoldier.swift */; };
 		199ACB0323138C0000E616CA /* FPSDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACB0223138C0000E616CA /* FPSDashboardViewController.swift */; };
 		199ACB0623138C8100E616CA /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACB0523138C8100E616CA /* DashboardCell.swift */; };
@@ -69,7 +69,7 @@
 		19764B57231CE929003A89B6 /* NetworkFlowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowDetailViewController.swift; sourceTree = "<group>"; };
 		19764B59231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowDetailCellModel.swift; sourceTree = "<group>"; };
 		19764B5B231CEB3A003A89B6 /* NetworkFlowDetailSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowDetailSectionModel.swift; sourceTree = "<group>"; };
-		19764B5D231CF6A8003A89B6 /* NetworkFlowDetailTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowDetailTextViewController.swift; sourceTree = "<group>"; };
+		19764B5D231CF6A8003A89B6 /* NetworkFlowResponseDataDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowResponseDataDetailViewController.swift; sourceTree = "<group>"; };
 		199ACAFF23138B1700E616CA /* FPSSoldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPSSoldier.swift; sourceTree = "<group>"; };
 		199ACB0223138C0000E616CA /* FPSDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPSDashboardViewController.swift; sourceTree = "<group>"; };
 		199ACB0523138C8100E616CA /* DashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
@@ -250,7 +250,7 @@
 				199ACCD42317AB4F00E616CA /* NetworkObserverDashboardViewController.swift */,
 				199ACEB52319095100E616CA /* NetworkFlowListViewController.swift */,
 				19764B57231CE929003A89B6 /* NetworkFlowDetailViewController.swift */,
-				19764B5D231CF6A8003A89B6 /* NetworkFlowDetailTextViewController.swift */,
+				19764B5D231CF6A8003A89B6 /* NetworkFlowResponseDataDetailViewController.swift */,
 			);
 			path = NetworkObserver;
 			sourceTree = "<group>";
@@ -552,7 +552,7 @@
 				19ABA44C230FEBB200BF07A0 /* JXFileBrowserController.swift in Sources */,
 				19ABA44F230FEBB200BF07A0 /* CrashDashboardViewController.swift in Sources */,
 				19ABA45A230FEBB200BF07A0 /* SanboxBrowserSoldier.swift in Sources */,
-				19764B5E231CF6A8003A89B6 /* NetworkFlowDetailTextViewController.swift in Sources */,
+				19764B5E231CF6A8003A89B6 /* NetworkFlowResponseDataDetailViewController.swift in Sources */,
 				19ABA45B230FEBB200BF07A0 /* CrashUncaughtExceptionHandler.swift in Sources */,
 				199ACEB62319095100E616CA /* NetworkFlowListViewController.swift in Sources */,
 				199ACBC82316635A00E616CA /* ANRListViewController.swift in Sources */,

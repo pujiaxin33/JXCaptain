@@ -120,15 +120,8 @@ class NetworkFlowDetailViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         UIMenuController.shared.setMenuVisible(false, animated: true)
         let cellModel = dataSource[indexPath.section].items[indexPath.row]
-        if cellModel.type == .requestBody {
-            let vc = NetworkFlowDetailTextViewController(text: flowModel.requestBody)
-            vc.title = "Request"
-            navigationController?.pushViewController(vc, animated: true)
-        }else if cellModel.type == .responseBody {
-            let vc = NetworkFlowDetailTextViewController(text: flowModel.responseBody)
-            vc.title = "Response"
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        let vc = NetworkFlowResponseDataDetailViewController(flowModel: flowModel, cellType: cellModel.type)
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     override func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {

@@ -27,7 +27,8 @@ class NetworkTestViewController: UITableViewController {
                 }
             }
         }else if indexPath.row == 1 {
-            let url = URL(string: "https://www.jd.com/")!
+//            let url = URL(string: "https://www.jd.com/")!
+            let url = URL(string: "https://cn.bing.com/th?id=OIP.MehRXMQpJaV17DMm_MySxgHaFR&pid=Api&rs=1")!
             let request = URLRequest(url: url)
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
                 if response != nil {

@@ -33,6 +33,7 @@ struct NetworkFlowModel {
     let statusCodeString: String
     let errorString: String?
     let isStatusCodeError: Bool
+    let isImageResponseData: Bool
 
     init(request: URLRequest, response: URLResponse?, responseData: Data?, error: NSError?, startDate: Date) {
         self.request = request
@@ -51,6 +52,11 @@ struct NetworkFlowModel {
             responseBody = defaultString
             mimeType = defaultString
             downFlow = defaultString
+        }
+        if mimeType.hasPrefix("image/") {
+            isImageResponseData = true
+        }else {
+            isImageResponseData = false
         }
         if error != nil {
             errorString = error?.localizedDescription
@@ -87,5 +93,10 @@ struct NetworkFlowModel {
         uploadFlow = NetworkManager.flowLengthString(NetworkManager.requestFlowLength(request))
     }
 
-
+    func responseImage() -> UIImage? {
+        if isImageResponseData && responseData != nil {
+            return UIImage(data: responseData!, scale: UIScreen.main.scale)
+        }
+        return nil
+    }
 }
