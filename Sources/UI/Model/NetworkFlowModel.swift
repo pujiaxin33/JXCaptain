@@ -34,6 +34,7 @@ struct NetworkFlowModel {
     let isStatusCodeError: Bool
     let isImageResponseData: Bool
     let isGif: Bool
+    let isVedio: Bool
 
     init(request: URLRequest, response: URLResponse?, responseData: Data?, error: NSError?, startDate: Date) {
         self.requestID = UUID().uuidString
@@ -53,6 +54,7 @@ struct NetworkFlowModel {
         }
         isImageResponseData = mimeType.hasPrefix("image/")
         isGif = mimeType.contains("gif")
+        isVedio = mimeType.hasPrefix("video/")
         errorString = error?.localizedDescription
         urlString = request.url?.absoluteString
         method = request.httpMethod ?? defaultString

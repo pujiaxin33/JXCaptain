@@ -95,6 +95,10 @@ class NetworkManager {
  */
     }
 
+    static func responseData(requestID: String) -> Data? {
+        return NetworkObserverSoldier.shared.cache.object(forKey: requestID as AnyObject) as? Data
+    }
+
     static func responseImage(requestID: String) -> UIImage? {
         let responseData = NetworkObserverSoldier.shared.cache.object(forKey: requestID as AnyObject) as? Data
         if responseData != nil {

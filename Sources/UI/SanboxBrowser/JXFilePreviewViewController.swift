@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 class JXFilePreviewViewController: UIViewController, UIScrollViewDelegate {
     let filePath: String
     var previewImageView: UIImageView?
     var previewScrollView: UIScrollView?
     var previewTextView: UITextView?
+    var previewPlayerController: AVPlayerViewController?
 
     init(filePath: String) {
         self.filePath = filePath
@@ -80,9 +83,21 @@ class JXFilePreviewViewController: UIViewController, UIScrollViewDelegate {
                     initTextView(with: "该文件没有内容")
                 }
             }
+        }else if ["mp4", "mov", "3gp", "m4v", ".avi"].contains(fileExtension) {
+            let player = AVPlayer(url: URL(fileURLWithPath: filePath))
+            previewPlayerController = AVPlayerViewController()
+            previewPlayerController?.player = player
+            addChild(previewPlayerController!)
+            view.addSubview(previewPlayerController!.view)
         }else {
             initTextView(with: "不支持该文件类型\(URL(fileURLWithPath: filePath).pathExtension)")
         }
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        previewPlayerController?.player?.pause()
     }
 
     override func viewDidLayoutSubviews() {
@@ -101,6 +116,7 @@ class JXFilePreviewViewController: UIViewController, UIScrollViewDelegate {
         let imageViewHeight = min(imageHeight, view.bounds.size.height)
         previewImageView?.bounds = CGRect(x: 0, y: 0, width: imageViewWidth, height: imageViewHeight)
         previewImageView?.center = CGPoint(x: view.bounds.size.width/2, y: view.bounds.size.height/2)
+        previewPlayerController?.view.frame = view.bounds
     }
 
     func initTextView(with text: String) {

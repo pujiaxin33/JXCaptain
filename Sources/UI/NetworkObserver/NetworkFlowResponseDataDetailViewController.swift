@@ -7,33 +7,43 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 class NetworkFlowResponseDataDetailViewController: BaseViewController, UIScrollViewDelegate {
     let flowModel: NetworkFlowModel
     let cellType: NetworkFlowDetailCellType
-    let text: String?
-    let image: UIImage?
+    var text: String?
+    var image: UIImage?
+    var vedioURL: URL?
     var previewImageView: UIImageView?
     var previewScrollView: UIScrollView?
     var previewTextView: UITextView?
+    var previewPlayerController: AVPlayerViewController?
 
     init(flowModel: NetworkFlowModel, cellType: NetworkFlowDetailCellType) {
         self.flowModel = flowModel
         self.cellType = cellType
+        self.text = nil
+        self.image = nil
+        self.vedioURL = nil
         if cellType == .requestBody {
             self.text = flowModel.requestBodyString
-            self.image = nil
         }else if cellType == .responseBody {
             if flowModel.isImageResponseData {
-                self.text = nil
                 self.image = NetworkManager.responseImage(requestID: flowModel.requestID)
+            }else if flowModel.isVedio {
+                let vedioData = NetworkManager.responseData(requestID: flowModel.requestID)
+                let tempDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
+                if let vedoPathComponent = flowModel.request.url?.pathComponents.last {
+                    let tempVedioURL = tempDirectoryURL.appendingPathComponent(vedoPathComponent)
+                    if (try? vedioData?.write(to: tempVedioURL)) != nil {
+                        self.vedioURL = tempVedioURL
+                    }
+                }
             }else {
                 self.text =  NetworkManager.responseJSON(requestID: flowModel.requestID)
-                self.image = nil
             }
-        }else {
-            self.text = nil
-            self.image = nil
         }
         super.init(nibName: nil, bundle: nil)
     }
@@ -72,11 +82,18 @@ class NetworkFlowResponseDataDetailViewController: BaseViewController, UIScrollV
             }
             previewImageView?.contentMode = .scaleAspectFit
             previewScrollView?.addSubview(previewImageView!)
+
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(copyItemDidClick))
         }else if text != nil {
            initTextView(with: text!)
-        }
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(copyItemDidClick))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(copyItemDidClick))
+        }else if vedioURL != nil {
+            previewPlayerController = AVPlayerViewController()
+            previewPlayerController?.player = AVPlayer(url: vedioURL!)
+            addChild(previewPlayerController!)
+            view.addSubview(previewPlayerController!.view)
+        }
     }
 
     @objc func copyItemDidClick() {
@@ -103,6 +120,7 @@ class NetworkFlowResponseDataDetailViewController: BaseViewController, UIScrollV
         let imageViewHeight = min(imageHeight, view.bounds.size.height)
         previewImageView?.bounds = CGRect(x: 0, y: 0, width: imageViewWidth, height: imageViewHeight)
         previewImageView?.center = CGPoint(x: view.bounds.size.width/2, y: view.bounds.size.height/2)
+        previewPlayerController?.view.frame = view.bounds
     }
 
     func initTextView(with text: String) {

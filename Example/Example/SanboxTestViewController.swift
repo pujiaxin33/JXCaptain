@@ -67,8 +67,35 @@ class SanboxTestViewController: UITableViewController {
             task.resume()
             let waitResult = semaphore.wait(timeout: .distantFuture)
             print(waitResult)
+        }else if indexPath.row == 4 {
+            toastText = "正在下载"
+            let url = URL(string: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")!
+            let request = URLRequest(url: url)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                if data != nil {
+                    if let documentURL = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true) {
+                        let imageURL = documentURL.appendingPathComponent("duck.mp4")
+                        let result = FileManager.default.createFile(atPath: imageURL.path, contents: data, attributes: nil)
+                        DispatchQueue.main.async {
+                            if !result {
+                                self.showText("添加视频失败")
+                            }else {
+                                self.showText("添加视频成功")
+                            }
+                        }
+                    }
+                }
+            }
+            task.resume()
         }
-        let alert = UIAlertController(title: nil, message: toastText, preferredStyle: .alert)
+        showText(toastText)
+    }
+
+    func showText(_ text: String) {
+        if presentedViewController != nil {
+            dismiss(animated: false, completion: nil)
+        }
+        let alert = UIAlertController(title: nil, message: text, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }
