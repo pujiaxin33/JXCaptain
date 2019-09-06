@@ -63,7 +63,13 @@ class NetworkFlowResponseDataDetailViewController: BaseViewController, UIScrollV
             previewScrollView?.maximumZoomScale = max(2, imageWidthScale)
             view.addSubview(previewScrollView!)
 
-            previewImageView = UIImageView(image: image)
+            previewImageView = UIImageView()
+            if flowModel.isGif {
+                previewImageView?.animationImages = flowModel.responseImages()
+                previewImageView?.startAnimating()
+            }else {
+                previewImageView?.image = image
+            }
             previewImageView?.contentMode = .scaleAspectFit
             previewScrollView?.addSubview(previewImageView!)
         }else if text != nil {
@@ -87,8 +93,12 @@ class NetworkFlowResponseDataDetailViewController: BaseViewController, UIScrollV
         previewTextView?.frame = view.bounds
         previewScrollView?.frame = view.bounds
         previewScrollView?.contentSize = CGSize(width: view.bounds.size.width, height: view.bounds.size.height)
-        let imageWidth = previewImageView?.image?.size.width ?? 0
-        let imageHeight = previewImageView?.image?.size.width ?? 0
+        var imageWidth = previewImageView?.image?.size.width ?? 0
+        var imageHeight = previewImageView?.image?.size.width ?? 0
+        if previewImageView?.animationImages?.isEmpty == false {
+            imageWidth = previewImageView?.animationImages?.first?.size.width ?? 0
+            imageHeight = previewImageView?.animationImages?.first?.size.height ?? 0
+        }
         let imageViewWidth = min(imageWidth, view.bounds.size.width)
         let imageViewHeight = min(imageHeight, view.bounds.size.height)
         previewImageView?.bounds = CGRect(x: 0, y: 0, width: imageViewWidth, height: imageViewHeight)

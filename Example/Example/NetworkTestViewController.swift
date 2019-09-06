@@ -27,8 +27,25 @@ class NetworkTestViewController: UITableViewController {
                 }
             }
         }else if indexPath.row == 1 {
-//            let url = URL(string: "https://www.jd.com/")!
+            let url = URL(string: "https://www.jd.com/")!
+            let request = URLRequest(url: url)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                if response != nil {
+                    print(response!)
+                }
+            }
+            task.resume()
+        }else if indexPath.row == 2 {
             let url = URL(string: "https://cn.bing.com/th?id=OIP.MehRXMQpJaV17DMm_MySxgHaFR&pid=Api&rs=1")!
+            let request = URLRequest(url: url)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                if response != nil {
+                    print(response!)
+                }
+            }
+            task.resume()
+        }else if indexPath.row == 3 {
+            let url = URL(string: "http://pic38.nipic.com/20140217/14150008_155520585000_2.gif")!
             let request = URLRequest(url: url)
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
                 if response != nil {

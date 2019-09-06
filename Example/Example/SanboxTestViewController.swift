@@ -48,6 +48,25 @@ class SanboxTestViewController: UITableViewController {
             if !result {
                 toastText = "添加失败"
             }
+        }else if indexPath.row == 3 {
+            let url = URL(string: "http://pic38.nipic.com/20140217/14150008_155520585000_2.gif")!
+            let request = URLRequest(url: url)
+            let semaphore = DispatchSemaphore(value: 0)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                if data != nil {
+                    if let documentURL = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true) {
+                        let imageURL = documentURL.appendingPathComponent("lufei.gif")
+                        let result = FileManager.default.createFile(atPath: imageURL.path, contents: data, attributes: nil)
+                        if !result {
+                            toastText = "添加失败"
+                        }
+                    }
+                }
+                semaphore.signal()
+            }
+            task.resume()
+            let waitResult = semaphore.wait(timeout: .distantFuture)
+            print(waitResult)
         }
         let alert = UIAlertController(title: nil, message: toastText, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))

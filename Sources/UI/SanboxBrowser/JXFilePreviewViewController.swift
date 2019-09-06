@@ -29,8 +29,8 @@ class JXFilePreviewViewController: UIViewController, UIScrollViewDelegate {
         title = "File Preview"
         view.backgroundColor = .white
 
-        let fileExtension = URL(fileURLWithPath: filePath).pathExtension
-        if ["png", "PNG", "jpg", "JPG", "jpeg", "JPEG", "gif", "GIF"].contains(fileExtension) {
+        let fileExtension = URL(fileURLWithPath: filePath).pathExtension.lowercased()
+        if ["png", "jpg", "jpeg", "gif"].contains(fileExtension) {
             let image = UIImage(contentsOfFile: filePath)
             previewScrollView = UIScrollView()
             previewScrollView?.delegate = self
@@ -42,7 +42,25 @@ class JXFilePreviewViewController: UIViewController, UIScrollViewDelegate {
             previewScrollView?.maximumZoomScale = max(2, imageWidthScale)
             view.addSubview(previewScrollView!)
 
-            previewImageView = UIImageView(image: image)
+            previewImageView = UIImageView()
+            if fileExtension == "gif" {
+                let url = URL(fileURLWithPath: filePath)
+                if let imageSource = CGImageSourceCreateWithURL(url as CFURL, nil) {
+                    let imageCount = CGImageSourceGetCount(imageSource)
+                    var images = [UIImage]()
+                    for index in 0..<imageCount {
+                        if let cgimage = CGImageSourceCreateImageAtIndex(imageSource, index, nil) {
+                            images.append(UIImage(cgImage: cgimage))
+                        }
+                    }
+                    previewImageView?.animationImages = images
+                    previewImageView?.startAnimating()
+                }else {
+                    previewImageView?.image = image
+                }
+            }else {
+                previewImageView?.image = image
+            }
             previewImageView?.contentMode = .scaleAspectFit
             previewScrollView?.addSubview(previewImageView!)
         }else if ["strings", "plist", "txt", "log", "csv"].contains(fileExtension) {
@@ -73,8 +91,12 @@ class JXFilePreviewViewController: UIViewController, UIScrollViewDelegate {
         previewTextView?.frame = view.bounds
         previewScrollView?.frame = view.bounds
         previewScrollView?.contentSize = CGSize(width: view.bounds.size.width, height: view.bounds.size.height)
-        let imageWidth = previewImageView?.image?.size.width ?? 0
-        let imageHeight = previewImageView?.image?.size.width ?? 0
+        var imageWidth = previewImageView?.image?.size.width ?? 0
+        var imageHeight = previewImageView?.image?.size.width ?? 0
+        if previewImageView?.animationImages?.isEmpty == false {
+            imageWidth = previewImageView?.animationImages?.first?.size.width ?? 0
+            imageHeight = previewImageView?.animationImages?.first?.size.height ?? 0
+        }
         let imageViewWidth = min(imageWidth, view.bounds.size.width)
         let imageViewHeight = min(imageHeight, view.bounds.size.height)
         previewImageView?.bounds = CGRect(x: 0, y: 0, width: imageViewWidth, height: imageViewHeight)

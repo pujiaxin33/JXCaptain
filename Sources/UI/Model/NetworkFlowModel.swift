@@ -34,6 +34,7 @@ struct NetworkFlowModel {
     let errorString: String?
     let isStatusCodeError: Bool
     let isImageResponseData: Bool
+    let isGif: Bool
 
     init(request: URLRequest, response: URLResponse?, responseData: Data?, error: NSError?, startDate: Date) {
         self.request = request
@@ -53,27 +54,16 @@ struct NetworkFlowModel {
             mimeType = defaultString
             downFlow = defaultString
         }
-        if mimeType.hasPrefix("image/") {
-            isImageResponseData = true
-        }else {
-            isImageResponseData = false
-        }
-        if error != nil {
-            errorString = error?.localizedDescription
-        }else {
-            errorString = nil
-        }
+        isImageResponseData = mimeType.hasPrefix("image/")
+        isGif = mimeType.contains("gif")
+        errorString = error?.localizedDescription
         urlString = request.url?.absoluteString
         method = request.httpMethod ?? defaultString
         statusCode = (response as? HTTPURLResponse)?.statusCode
         if statusCode != nil {
             statusCodeString = "\(statusCode!) \(HTTPURLResponse.localizedString(forStatusCode: statusCode!))"
             let errorStatusCodes = IndexSet(integersIn: Range.init(NSRange(location: 400, length: 200))!)
-            if errorStatusCodes.contains(statusCode!) {
-                isStatusCodeError = true
-            }else {
-                isStatusCodeError = false
-            }
+            isStatusCodeError = errorStatusCodes.contains(statusCode!)
         }else {
             statusCodeString = defaultString
             isStatusCodeError = false
@@ -96,6 +86,20 @@ struct NetworkFlowModel {
     func responseImage() -> UIImage? {
         if isImageResponseData && responseData != nil {
             return UIImage(data: responseData!, scale: UIScreen.main.scale)
+        }
+        return nil
+    }
+
+    func responseImages() -> [UIImage]? {
+        if responseData != nil, let imageSource = CGImageSourceCreateWithData(responseData! as CFData, nil) {
+            let imagesCount = CGImageSourceGetCount(imageSource)
+            var images = [UIImage]()
+            for index in 0..<imagesCount {
+                if let cgimage = CGImageSourceCreateImageAtIndex(imageSource, index, nil) {
+                    images.append(UIImage(cgImage: cgimage))
+                }
+            }
+            return images
         }
         return nil
     }
