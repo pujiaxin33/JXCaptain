@@ -18,12 +18,18 @@ class NetworkFlowDetailViewController: UITableViewController {
 
         let request = flowModel.request
         let response = flowModel.response
+        var responseBodyCellModel: NetworkFlowDetailCellModel?
+        if NetworkObserverSoldier.shared.cache.object(forKey: flowModel.requestID as AnyObject) == nil {
+            responseBodyCellModel = cellModel(title: "Response Body", detail: "no in cache")
+        }else {
+            responseBodyCellModel = cellModel(type: .responseBody, title: "Response Body", detail: "tap to view")
+        }
         var generalItems = [cellModel(title: "Request URL", detail: request.url?.absoluteString),
                             cellModel(title: "Request Method", detail: request.httpMethod),
                             cellModel(title: "Request Body Size", detail: flowModel.requestBodySize),
-                            cellModel(type: .requestBody,title: "Request Body", detail: "tap to view"),
+                            cellModel(type: .requestBody, title: "Request Body", detail: "tap to view"),
                             cellModel(title: "Status Code", detail: flowModel.statusCodeString),
-                            cellModel(type: .responseBody, title: "Response Body", detail: "tap to view"),
+                            responseBodyCellModel!,
                             cellModel(title: "Response Size", detail: flowModel.downFlow),
                             cellModel(title: "MIME Type", detail: flowModel.mimeType),
                             cellModel(title: "Start Time", detail: flowModel.startDateString),
@@ -120,8 +126,10 @@ class NetworkFlowDetailViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         UIMenuController.shared.setMenuVisible(false, animated: true)
         let cellModel = dataSource[indexPath.section].items[indexPath.row]
-        let vc = NetworkFlowResponseDataDetailViewController(flowModel: flowModel, cellType: cellModel.type)
-        navigationController?.pushViewController(vc, animated: true)
+        if cellModel.type != .normal {
+            let vc = NetworkFlowResponseDataDetailViewController(flowModel: flowModel, cellType: cellModel.type)
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
     override func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {

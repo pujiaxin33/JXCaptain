@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1966D9C1232114820025DEDA /* BSBacktraceLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1966D9C0232114820025DEDA /* BSBacktraceLogger.framework */; };
 		1966D9C2232114820025DEDA /* BSBacktraceLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1966D9C0232114820025DEDA /* BSBacktraceLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1966DA68232227D10025DEDA /* UIWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1966DA67232227D10025DEDA /* UIWebViewViewController.swift */; };
 		19764D34231E6545003A89B6 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764D33231E6544003A89B6 /* BaseNavigationViewController.swift */; };
 		199ACBCA2316650600E616CA /* PerformanceTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACBC92316650600E616CA /* PerformanceTestViewController.swift */; };
 		199ACCDB2317BEAD00E616CA /* NetworkTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACCDA2317BEAD00E616CA /* NetworkTestViewController.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		1966D9C0232114820025DEDA /* BSBacktraceLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BSBacktraceLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1966DA67232227D10025DEDA /* UIWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWebViewViewController.swift; sourceTree = "<group>"; };
 		19764D33231E6544003A89B6 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		199ACBC92316650600E616CA /* PerformanceTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTestViewController.swift; sourceTree = "<group>"; };
 		199ACCDA2317BEAD00E616CA /* NetworkTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				19ABA2A7230FB60C00BF07A0 /* CrashTestViewController.swift */,
 				199ACBC92316650600E616CA /* PerformanceTestViewController.swift */,
 				199ACCDA2317BEAD00E616CA /* NetworkTestViewController.swift */,
+				1966DA67232227D10025DEDA /* UIWebViewViewController.swift */,
 				19C1F4C5230BECCA00189B88 /* Main.storyboard */,
 				19C1F4C8230BECCE00189B88 /* Assets.xcassets */,
 				19C1F4CA230BECCE00189B88 /* LaunchScreen.storyboard */,
@@ -204,6 +207,7 @@
 				199ACBCA2316650600E616CA /* PerformanceTestViewController.swift in Sources */,
 				19ABA2A0230F907900BF07A0 /* ServerEnvironmentSoldier.swift in Sources */,
 				19764D34231E6545003A89B6 /* BaseNavigationViewController.swift in Sources */,
+				1966DA68232227D10025DEDA /* UIWebViewViewController.swift in Sources */,
 				19C1F4C4230BECCA00189B88 /* ViewController.swift in Sources */,
 				199ACCDB2317BEAD00E616CA /* NetworkTestViewController.swift in Sources */,
 				19C1F4C2230BECCA00189B88 /* AppDelegate.swift in Sources */,

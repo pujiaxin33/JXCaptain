@@ -95,6 +95,36 @@ class NetworkManager {
  */
     }
 
+    static func responseImage(requestID: String) -> UIImage? {
+        let responseData = NetworkObserverSoldier.shared.cache.object(forKey: requestID as AnyObject) as? Data
+        if responseData != nil {
+            return UIImage(data: responseData!, scale: UIScreen.main.scale)
+        }
+        return nil
+    }
+
+    static func responseImages(requestID: String) -> [UIImage]? {
+        let responseData = NetworkObserverSoldier.shared.cache.object(forKey: requestID as AnyObject) as? Data
+        if responseData != nil, let imageSource = CGImageSourceCreateWithData(responseData! as CFData, nil) {
+            let imagesCount = CGImageSourceGetCount(imageSource)
+            var images = [UIImage]()
+            for index in 0..<imagesCount {
+                if let cgimage = CGImageSourceCreateImageAtIndex(imageSource, index, nil) {
+                    images.append(UIImage(cgImage: cgimage))
+                }
+            }
+            return images
+        }
+        return nil
+    }
+
+    static func responseJSON(requestID: String) -> String? {
+        let responseData = NetworkObserverSoldier.shared.cache.object(forKey: requestID as AnyObject) as? Data
+        if responseData != nil {
+            return NetworkManager.jsonString(from: responseData!)
+        }
+        return nil
+    }
 
     //MARK: - Private
 

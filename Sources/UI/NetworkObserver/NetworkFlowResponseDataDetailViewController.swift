@@ -21,14 +21,14 @@ class NetworkFlowResponseDataDetailViewController: BaseViewController, UIScrollV
         self.flowModel = flowModel
         self.cellType = cellType
         if cellType == .requestBody {
-            self.text = flowModel.requestBody
+            self.text = flowModel.requestBodyString
             self.image = nil
         }else if cellType == .responseBody {
             if flowModel.isImageResponseData {
                 self.text = nil
-                self.image = flowModel.responseImage()
+                self.image = NetworkManager.responseImage(requestID: flowModel.requestID)
             }else {
-                self.text = flowModel.responseBody
+                self.text =  NetworkManager.responseJSON(requestID: flowModel.requestID)
                 self.image = nil
             }
         }else {
@@ -65,7 +65,7 @@ class NetworkFlowResponseDataDetailViewController: BaseViewController, UIScrollV
 
             previewImageView = UIImageView()
             if flowModel.isGif {
-                previewImageView?.animationImages = flowModel.responseImages()
+                previewImageView?.animationImages = NetworkManager.responseImages(requestID: flowModel.requestID)
                 previewImageView?.startAnimating()
             }else {
                 previewImageView?.image = image

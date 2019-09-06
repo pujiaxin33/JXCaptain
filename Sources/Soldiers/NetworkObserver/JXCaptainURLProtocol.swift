@@ -127,6 +127,7 @@ class JXCaptainURLProtocol: URLProtocol, URLSessionDataDelegate {
                 client?.urlProtocol(self, didFailWithError: error!)
             }
         }
+        session.finishTasksAndInvalidate()
     }
 }
 

@@ -17,7 +17,12 @@ public class NetworkObserverSoldier: Soldier {
     public var icon: UIImage?
     public var contentView: UIView?
     public var hasNewEvent: Bool = false
-    public var threshold: Double = 1
+    /// responseData数据缓存最大容量，默认：50MB
+    public var responseCacheByteLimit: Int = 50 * 1024 * 1024 {
+        didSet {
+            cache.countLimit = responseCacheByteLimit
+        }
+    }
     var isActive: Bool {
         set(new) {
             UserDefaults.standard.set(new, forKey: kNetworkObserverSoldierIsActive)
@@ -29,12 +34,14 @@ public class NetworkObserverSoldier: Soldier {
     var monitorView: MonitorConsoleLabel?
     let monitor: ANRMonitor
     var flowModels = [NetworkFlowModel]()
+    let cache = NSCache<AnyObject, AnyObject>()
 
     init() {
         name = "流量"
         team = "性能检测"
         icon = ImageManager.imageWithName("JXCaptain_icon_network")
         monitor = ANRMonitor()
+        cache.countLimit = responseCacheByteLimit
     }
 
     public func prepare() {
@@ -61,6 +68,9 @@ public class NetworkObserverSoldier: Soldier {
     func recordRequest(request: URLRequest, response: URLResponse?, responseData: Data?, error: NSError?, startDate: Date) {
         let flowModel = NetworkFlowModel(request: request, response: response, responseData: responseData, error: error, startDate: startDate)
         flowModels.insert(flowModel, at: 0)
+        if let data = responseData {
+            cache.setObject(data as AnyObject, forKey: flowModel.requestID as AnyObject, cost: data.count)
+        }
         DispatchQueue.main.async {
             NotificationCenter.default.post(name: NSNotification.Name.JXCaptainNetworkObserverSoldierNewFlowDidReceive, object: flowModel)
         }

@@ -10,9 +10,9 @@ import Foundation
 
 //@property (nonatomic, copy) NSString *requestId;
 struct NetworkFlowModel {
+    let requestID: String
     let request: URLRequest
     let response: URLResponse?
-    let responseData: Data?
     let error: NSError?
 
     let statusCode: Int?
@@ -20,9 +20,8 @@ struct NetworkFlowModel {
     let endDate: Date
     let duration: TimeInterval //单位秒
 
-    let requestBody: String
+    let requestBodyString: String
     let requestBodySize: String
-    let responseBody: String
     let urlString: String?
     let method: String
     let mimeType: String
@@ -37,20 +36,18 @@ struct NetworkFlowModel {
     let isGif: Bool
 
     init(request: URLRequest, response: URLResponse?, responseData: Data?, error: NSError?, startDate: Date) {
+        self.requestID = UUID().uuidString
         self.request = request
         self.response = response
-        self.responseData = responseData
         self.startDate = startDate
         self.error = error
 
         let defaultString = "Unknown"
-        requestBody = NetworkManager.jsonString(from: NetworkManager.httpBody(request: request) ?? Data()) ?? defaultString
+        requestBodyString = NetworkManager.jsonString(from: NetworkManager.httpBody(request: request) ?? Data()) ?? defaultString
         if response != nil && responseData != nil {
-            responseBody = NetworkManager.jsonString(from: responseData!) ?? defaultString
             mimeType = response!.mimeType ?? defaultString
             downFlow = NetworkManager.flowLengthString(NetworkManager.responseFlowLength(response!, responseData: responseData!))
         }else {
-            responseBody = defaultString
             mimeType = defaultString
             downFlow = defaultString
         }
@@ -81,26 +78,5 @@ struct NetworkFlowModel {
         startDateString = dateFormatter.string(from: startDate)
         requestBodySize = NetworkManager.flowLengthString(NetworkManager.httpBody(request: request)?.count ?? 0)
         uploadFlow = NetworkManager.flowLengthString(NetworkManager.requestFlowLength(request))
-    }
-
-    func responseImage() -> UIImage? {
-        if isImageResponseData && responseData != nil {
-            return UIImage(data: responseData!, scale: UIScreen.main.scale)
-        }
-        return nil
-    }
-
-    func responseImages() -> [UIImage]? {
-        if responseData != nil, let imageSource = CGImageSourceCreateWithData(responseData! as CFData, nil) {
-            let imagesCount = CGImageSourceGetCount(imageSource)
-            var images = [UIImage]()
-            for index in 0..<imagesCount {
-                if let cgimage = CGImageSourceCreateImageAtIndex(imageSource, index, nil) {
-                    images.append(UIImage(cgImage: cgimage))
-                }
-            }
-            return images
-        }
-        return nil
     }
 }

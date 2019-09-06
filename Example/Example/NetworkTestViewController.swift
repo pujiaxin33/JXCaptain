@@ -53,9 +53,14 @@ class NetworkTestViewController: UITableViewController {
                 }
             }
             task.resume()
+        }else if indexPath.row == 4 {
+            let vc = UIWebViewViewController()
+            navigationController?.pushViewController(vc, animated: true)
         }
-        let alert = UIAlertController(title: nil, message: "发送成功", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
-        present(alert, animated: true, completion: nil)
+        if indexPath.row != 4 {
+            let alert = UIAlertController(title: nil, message: "发送成功", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
     }
 }
