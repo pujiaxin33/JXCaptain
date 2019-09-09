@@ -71,7 +71,12 @@ class NetworkFlowListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! NetworkFlowListCell
-        let flowModel = dataSource[indexPath.row]
+        var flowModel: NetworkFlowModel!
+        if searchController.isActive {
+            flowModel = filteredDataSource[indexPath.row]
+        }else {
+            flowModel = dataSource[indexPath.row]
+        }
         if flowModel.errorString != nil {
             cell.urlLabel.textColor = .red
             cell.infoLabel.text = "\(flowModel.method) · \(flowModel.downFlow) · \(flowModel.durationString) · \(flowModel.startDateString)"
@@ -93,16 +98,22 @@ class NetworkFlowListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        var flowModel: NetworkFlowModel!
+        if searchController.isActive {
+            flowModel = filteredDataSource[indexPath.row]
+        }else {
+            flowModel = dataSource[indexPath.row]
+        }
         searchController.isActive = false
-        let vc = NetworkFlowDetailViewController(flowModel: dataSource[indexPath.row])
+        let vc = NetworkFlowDetailViewController(flowModel: flowModel)
         navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 extension NetworkFlowListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        filteredDataSource.removeAll()
         if searchController.searchBar.text?.isEmpty == false {
+            filteredDataSource.removeAll()
             for flowModel in dataSource {
                 if flowModel.urlString?.range(of: searchController.searchBar.text!, options: .caseInsensitive) != nil {
                     filteredDataSource.append(flowModel)

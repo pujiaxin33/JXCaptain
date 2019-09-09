@@ -17,7 +17,7 @@ public class Captain {
     internal let floatingWindow = CaptainFloatingWindow()
 
     init() {
-        let defaultSoldiers: [Soldier] = [AppInfoSoldier(), SanboxBrowserSoldier(), CrashSoldier(), WebsiteEntrySoldier(), FPSSoldier(), MemorySoldier(), CPUSoldier(), ANRSoldier(), NetworkObserverSoldier.shared]
+        let defaultSoldiers: [Soldier] = [AppInfoSoldier(), SanboxBrowserSoldier(), CrashSoldier(), WebsiteEntrySoldier(), FPSSoldier(), MemorySoldier(), CPUSoldier(), ANRSoldier(), NetworkObserverSoldier.shared, UserDefaultsSoldier()]
         soldiers.append(contentsOf: defaultSoldiers)
         var topEdgeInset: CGFloat = 20
         var bottomEdgeInset: CGFloat = 12

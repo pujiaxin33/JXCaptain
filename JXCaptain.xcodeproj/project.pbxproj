@@ -63,6 +63,11 @@
 		19ABA462230FEBB200BF07A0 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA44A230FEBB200BF07A0 /* ImageManager.swift */; };
 		19ABA466230FF3F500BF07A0 /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 19ABA464230FF3F500BF07A0 /* Resource.bundle */; };
 		19C1F4AE230BEC8C00189B88 /* JXCaptain.h in Headers */ = {isa = PBXBuildFile; fileRef = 19C1F4AC230BEC8C00189B88 /* JXCaptain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		19DAB40B23261C840086CAC9 /* UserDefaultsSoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAB40A23261C840086CAC9 /* UserDefaultsSoldier.swift */; };
+		19DAB40E23261D060086CAC9 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAB40D23261D060086CAC9 /* BaseTableViewController.swift */; };
+		19DAB41023261D6B0086CAC9 /* UserDefaultsKeyValuesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAB40F23261D6B0086CAC9 /* UserDefaultsKeyValuesListViewController.swift */; };
+		19DAB41223261FE10086CAC9 /* UserDefaultsKeyValueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAB41123261FE10086CAC9 /* UserDefaultsKeyValueModel.swift */; };
+		19DAB41423262BC90086CAC9 /* UserDefaultsKeyValueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAB41323262BC90086CAC9 /* UserDefaultsKeyValueDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +129,11 @@
 		19C1F4A9230BEC8C00189B88 /* JXCaptain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JXCaptain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C1F4AC230BEC8C00189B88 /* JXCaptain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXCaptain.h; sourceTree = "<group>"; };
 		19C1F4AD230BEC8C00189B88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19DAB40A23261C840086CAC9 /* UserDefaultsSoldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSoldier.swift; sourceTree = "<group>"; };
+		19DAB40D23261D060086CAC9 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		19DAB40F23261D6B0086CAC9 /* UserDefaultsKeyValuesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyValuesListViewController.swift; sourceTree = "<group>"; };
+		19DAB41123261FE10086CAC9 /* UserDefaultsKeyValueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyValueModel.swift; sourceTree = "<group>"; };
+		19DAB41323262BC90086CAC9 /* UserDefaultsKeyValueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyValueDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +291,7 @@
 				19ABA433230FEBB200BF07A0 /* Main */,
 				199ACB0423138C4E00E616CA /* Common */,
 				19ABA430230FEBB200BF07A0 /* Model */,
+				19DAB40C23261CCE0086CAC9 /* UserDefaults */,
 				199ACCD32317AB2900E616CA /* NetworkObserver */,
 				199ACBC22316608F00E616CA /* ANR */,
 				199ACBB823162CC500E616CA /* CPU */,
@@ -329,6 +340,7 @@
 				199ACD782317CDFF00E616CA /* NetworkFlowModel.swift */,
 				19764B5B231CEB3A003A89B6 /* NetworkFlowDetailSectionModel.swift */,
 				19764B59231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift */,
+				19DAB41123261FE10086CAC9 /* UserDefaultsKeyValueModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				19ABA434230FEBB200BF07A0 /* BaseViewController.swift */,
+				19DAB40D23261D060086CAC9 /* BaseTableViewController.swift */,
 				19ABA435230FEBB200BF07A0 /* SoldierListViewController.swift */,
 				19ABA436230FEBB200BF07A0 /* CaptainFloatingViewController.swift */,
 				19ABA437230FEBB200BF07A0 /* CaptainFloatingWindow.swift */,
@@ -355,6 +368,7 @@
 		19ABA43B230FEBB200BF07A0 /* Soldiers */ = {
 			isa = PBXGroup;
 			children = (
+				19DAB40923261C650086CAC9 /* UserDefaults */,
 				199ACC822317A9C200E616CA /* NetworkObserver */,
 				199ACBBB2316598400E616CA /* ANR */,
 				199ACB652313ED6B00E616CA /* CPU */,
@@ -457,6 +471,23 @@
 			path = JXCaptain;
 			sourceTree = "<group>";
 		};
+		19DAB40923261C650086CAC9 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				19DAB40A23261C840086CAC9 /* UserDefaultsSoldier.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		19DAB40C23261CCE0086CAC9 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				19DAB40F23261D6B0086CAC9 /* UserDefaultsKeyValuesListViewController.swift */,
+				19DAB41323262BC90086CAC9 /* UserDefaultsKeyValueDetailViewController.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -547,11 +578,13 @@
 				199ACB0623138C8100E616CA /* DashboardCell.swift in Sources */,
 				19ABA461230FEBB200BF07A0 /* AppInfoManager.swift in Sources */,
 				19ABA45E230FEBB200BF07A0 /* CrashSignalExceptionHandler.swift in Sources */,
+				19DAB40E23261D060086CAC9 /* BaseTableViewController.swift in Sources */,
 				199ACBBF23165C2200E616CA /* ANRMonitor.swift in Sources */,
 				199ACBBA23162CFA00E616CA /* CPUDashboardViewController.swift in Sources */,
 				19ABA44C230FEBB200BF07A0 /* JXFileBrowserController.swift in Sources */,
 				19ABA44F230FEBB200BF07A0 /* CrashDashboardViewController.swift in Sources */,
 				19ABA45A230FEBB200BF07A0 /* SanboxBrowserSoldier.swift in Sources */,
+				19DAB41023261D6B0086CAC9 /* UserDefaultsKeyValuesListViewController.swift in Sources */,
 				19764B5E231CF6A8003A89B6 /* NetworkFlowResponseDataDetailViewController.swift in Sources */,
 				19ABA45B230FEBB200BF07A0 /* CrashUncaughtExceptionHandler.swift in Sources */,
 				199ACEB62319095100E616CA /* NetworkFlowListViewController.swift in Sources */,
@@ -568,9 +601,11 @@
 				199ACBBD23165BE100E616CA /* ANRSoldier.swift in Sources */,
 				19ABA44D230FEBB200BF07A0 /* JXFilePreviewViewController.swift in Sources */,
 				19ABA460230FEBB200BF07A0 /* AppInfoSoldier.swift in Sources */,
+				19DAB40B23261C840086CAC9 /* UserDefaultsSoldier.swift in Sources */,
 				199ACB642313CFAC00E616CA /* MemoryMonitor.swift in Sources */,
 				19ABA45C230FEBB200BF07A0 /* CrashFileManager.swift in Sources */,
 				19ABA453230FEBB200BF07A0 /* SoldierListSectionModel.swift in Sources */,
+				19DAB41423262BC90086CAC9 /* UserDefaultsKeyValueDetailViewController.swift in Sources */,
 				19ABA45F230FEBB200BF07A0 /* WebsiteEntrySoldier.swift in Sources */,
 				19ABA459230FEBB200BF07A0 /* Captain.swift in Sources */,
 				19ABA455230FEBB200BF07A0 /* SoldierListViewController.swift in Sources */,
@@ -588,6 +623,7 @@
 				199ACB672313ED7E00E616CA /* CPUSoldier.swift in Sources */,
 				199ACCD22317A9F900E616CA /* NetworkObserverSoldier.swift in Sources */,
 				199ACCD92317AC4F00E616CA /* JXCaptainURLProtocol.swift in Sources */,
+				19DAB41223261FE10086CAC9 /* UserDefaultsKeyValueModel.swift in Sources */,
 				199ACBC6231661FC00E616CA /* ANRFileManager.swift in Sources */,
 				199ACB0023138B1700E616CA /* FPSSoldier.swift in Sources */,
 				19ABA456230FEBB200BF07A0 /* CaptainFloatingViewController.swift in Sources */,
