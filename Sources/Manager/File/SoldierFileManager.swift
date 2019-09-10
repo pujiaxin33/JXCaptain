@@ -8,14 +8,14 @@
 
 import Foundation
 
-protocol SoldierFileManager {
+public protocol SoldierFileManager {
     static func saveInfo(_ info: String, fileName: String?, fileNamePrefix: String?)
     static func directoryURL() -> URL?
     static func allFiles() -> [SanboxModel]
     static func deleteAllFiles()
 }
 
-extension SoldierFileManager {
+public extension SoldierFileManager {
     static func saveInfo(_ info: String, fileName: String? = nil, fileNamePrefix: String? = nil) {
         guard !info.isEmpty else {
             return
