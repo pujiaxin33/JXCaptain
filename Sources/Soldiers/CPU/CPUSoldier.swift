@@ -44,7 +44,7 @@ class CPUSoldier: Soldier {
         naviController.pushViewController(CPUDashboardViewController(soldier: self), animated: true)
     }
 
-    func start() {
+    public func start() {
         monitor.start()
         monitorView = MonitorConsoleLabel()
         monitor.valueDidUpdateClosure = {[weak self] (value) in
@@ -54,7 +54,7 @@ class CPUSoldier: Soldier {
         isActive = true
     }
 
-    func end() {
+    public func end() {
         monitor.end()
         MonitorListWindow.shared.dequeue(monitorView: monitorView!)
         isActive = false

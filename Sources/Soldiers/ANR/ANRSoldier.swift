@@ -61,7 +61,7 @@ public class ANRSoldier: Soldier {
         naviController.pushViewController(ANRDashboardViewController(soldier: self), animated: true)
     }
 
-    func start() {
+    public func start() {
         monitor.threshold = threshold
         monitor.start()
         monitor.valueDidUpdateClosure = {[weak self] (value) in
@@ -70,7 +70,7 @@ public class ANRSoldier: Soldier {
         isActive = true
     }
 
-    func end() {
+    public func end() {
         monitor.end()
         isActive = false
     }

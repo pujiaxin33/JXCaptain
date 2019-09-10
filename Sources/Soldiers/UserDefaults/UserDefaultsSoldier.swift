@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UserDefaultsSoldier: Soldier {
+public class UserDefaultsSoldier: Soldier {
     public static let shared = UserDefaultsSoldier()
     public var name: String
     public var team: String
@@ -16,7 +16,7 @@ class UserDefaultsSoldier: Soldier {
     public var contentView: UIView?
     public var hasNewEvent: Bool = false
 
-    init() {
+    public init() {
         name = "UserDefaults"
         team = "常用工具"
         icon = ImageManager.imageWithName("JXCaptain_icon_app_user_defaults")

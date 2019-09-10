@@ -15,8 +15,8 @@ import Photos
 import Contacts
 import EventKit
 
-class AppInfoManager {
-    static func iphoneName() -> String {
+public class AppInfoManager {
+    public static func iphoneName() -> String {
         var systemInfo = utsname()
         uname(&systemInfo)
         let machineMirror = Mirror(reflecting: systemInfo.machine)
@@ -27,23 +27,23 @@ class AppInfoManager {
         return mapToDevice(identifier: identifier)
     }
 
-    static func iOSVersion() -> String {
+    public static func iOSVersion() -> String {
         return UIDevice.current.systemVersion
     }
 
-    static func bundleID() -> String {
+    public static func bundleID() -> String {
         return Bundle.main.bundleIdentifier ?? "Unknown"
     }
 
-    static func bundleVersion() -> String {
+    public static func bundleVersion() -> String {
         return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"
     }
 
-    static func bundleCode() -> String {
+    public static func bundleCode() -> String {
         return Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "Unknown"
     }
 
-    static func locationAuthority() -> String {
+    public static func locationAuthority() -> String {
         guard CLLocationManager.locationServicesEnabled() else {
             return "NoEnabled"
         }
@@ -57,7 +57,7 @@ class AppInfoManager {
         }
     }
 
-    static func networkAuthority() -> String {
+    public static func networkAuthority() -> String {
         switch CTCellularData().restrictedState {
         case .notRestricted: return "NotRestricted"
         case .restricted: return "Restricted"
@@ -66,7 +66,7 @@ class AppInfoManager {
         }
     }
 
-    static func notificationAuthority() -> String {
+    public static func notificationAuthority() -> String {
         if #available(iOS 10.0, *) {
             var result = "Unknown"
             let semaphore = DispatchSemaphore(value: 0)
@@ -91,7 +91,7 @@ class AppInfoManager {
         }
     }
 
-    static func cameraAuthority() -> String {
+    public static func cameraAuthority() -> String {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized: return "Authorized"
         case .notDetermined: return "NotDetermined"
@@ -101,7 +101,7 @@ class AppInfoManager {
         }
     }
 
-    static func audioAuthority() -> String {
+    public static func audioAuthority() -> String {
         switch AVCaptureDevice.authorizationStatus(for: .audio) {
         case .authorized: return "Authorized"
         case .notDetermined: return "NotDetermined"
@@ -111,7 +111,7 @@ class AppInfoManager {
         }
     }
 
-    static func photosAuthority() -> String {
+    public static func photosAuthority() -> String {
         switch PHPhotoLibrary.authorizationStatus() {
         case .authorized: return "Authorized"
         case .notDetermined: return "NotDetermined"
@@ -121,7 +121,7 @@ class AppInfoManager {
         }
     }
 
-    static func contactsAuthority() -> String {
+    public static func contactsAuthority() -> String {
         switch CNContactStore.authorizationStatus(for: .contacts) {
         case .authorized: return "Authorized"
         case .notDetermined: return "NotDetermined"
@@ -131,7 +131,7 @@ class AppInfoManager {
         }
     }
 
-    static func calendarAuthority() -> String {
+    public static func calendarAuthority() -> String {
         switch EKEventStore.authorizationStatus(for: .event) {
         case .authorized: return "Authorized"
         case .notDetermined: return "NotDetermined"
@@ -141,7 +141,7 @@ class AppInfoManager {
         }
     }
 
-    static func reminderAuthority() -> String {
+    public static func reminderAuthority() -> String {
         switch EKEventStore.authorizationStatus(for: .reminder) {
         case .authorized: return "Authorized"
         case .notDetermined: return "NotDetermined"

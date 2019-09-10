@@ -40,7 +40,7 @@ public class NetworkObserverSoldier: Soldier {
     var flowModels = [NetworkFlowModel]()
     let cache = NSCache<AnyObject, AnyObject>()
 
-    init() {
+    public init() {
         name = "流量"
         team = "性能检测"
         icon = ImageManager.imageWithName("JXCaptain_icon_network")
