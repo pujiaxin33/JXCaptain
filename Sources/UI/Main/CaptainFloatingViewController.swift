@@ -60,7 +60,9 @@ class CaptainFloatingViewController: BaseViewController {
     }
 
     @objc func shieldButtonDidClick() {
-        present(BaseNavigationController(rootViewController: SoldierListViewController()), animated: true, completion: nil)
+        let navi = BaseNavigationController(rootViewController: SoldierListViewController())
+        navi.modalPresentationStyle = .fullScreen
+        present(navi, animated: true, completion: nil)
     }
 
     @objc func soldierNewEventDidChange() {
