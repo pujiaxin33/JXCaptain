@@ -9,13 +9,13 @@
 import UIKit
 
 class MonitorListWindow: UIWindow {
-    static let `shared` = MonitorListWindow()
+    static let `shared` = MonitorListWindow(frame: CGRect.zero)
     private var monitorViews: [UIView] = [UIView]()
     private let contentHeight: CGFloat = 20
     private let containerView = UIView()
 
     override init(frame: CGRect) {
-        super.init(frame: frame)
+        super.init(frame: UIScreen.main.bounds)
 
         self.windowLevel = .alert
         if rootViewController == nil {

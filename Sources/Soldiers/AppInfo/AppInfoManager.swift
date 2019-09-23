@@ -83,7 +83,7 @@ public class AppInfoManager {
             _ = semaphore.wait(timeout: .distantFuture)
             return result
         } else {
-            if UIApplication.shared.currentUserNotificationSettings?.types == .none {
+            if UIApplication.shared.currentUserNotificationSettings?.types == Optional.none {
                 return "Denied"
             }else {
                 return "Authorized"

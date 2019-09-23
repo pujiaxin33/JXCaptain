@@ -13,7 +13,7 @@ class CaptainFloatingWindow: UIWindow {
 
     override init(frame: CGRect) {
         floatingVC = CaptainFloatingViewController()
-        super.init(frame: frame)
+        super.init(frame: UIScreen.main.bounds)
 
         windowLevel = UIWindow.Level(rawValue: UIWindow.Level.statusBar.rawValue - 1)
         rootViewController = floatingVC

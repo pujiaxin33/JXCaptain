@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		193329E723348178005E6F1E /* JXDatabaseConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193329E623348178005E6F1E /* JXDatabaseConnector.swift */; };
 		19764B58231CE929003A89B6 /* NetworkFlowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764B57231CE929003A89B6 /* NetworkFlowDetailViewController.swift */; };
 		19764B5A231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764B59231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift */; };
 		19764B5C231CEB3A003A89B6 /* NetworkFlowDetailSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764B5B231CEB3A003A89B6 /* NetworkFlowDetailSectionModel.swift */; };
@@ -68,9 +69,13 @@
 		19DAB41023261D6B0086CAC9 /* UserDefaultsKeyValuesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAB40F23261D6B0086CAC9 /* UserDefaultsKeyValuesListViewController.swift */; };
 		19DAB41223261FE10086CAC9 /* UserDefaultsKeyValueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAB41123261FE10086CAC9 /* UserDefaultsKeyValueModel.swift */; };
 		19DAB41423262BC90086CAC9 /* UserDefaultsKeyValueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAB41323262BC90086CAC9 /* UserDefaultsKeyValueDetailViewController.swift */; };
+		19E7B60D2334DDA700E2D125 /* ExcelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E7B60C2334DDA700E2D125 /* ExcelView.swift */; };
+		19E7B60F2334DFDE00E2D125 /* JXTableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E7B60E2334DFDE00E2D125 /* JXTableListViewController.swift */; };
+		19E7B6112334DFF300E2D125 /* JXTableContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E7B6102334DFF300E2D125 /* JXTableContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		193329E623348178005E6F1E /* JXDatabaseConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXDatabaseConnector.swift; sourceTree = "<group>"; };
 		19764B57231CE929003A89B6 /* NetworkFlowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowDetailViewController.swift; sourceTree = "<group>"; };
 		19764B59231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowDetailCellModel.swift; sourceTree = "<group>"; };
 		19764B5B231CEB3A003A89B6 /* NetworkFlowDetailSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowDetailSectionModel.swift; sourceTree = "<group>"; };
@@ -134,6 +139,9 @@
 		19DAB40F23261D6B0086CAC9 /* UserDefaultsKeyValuesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyValuesListViewController.swift; sourceTree = "<group>"; };
 		19DAB41123261FE10086CAC9 /* UserDefaultsKeyValueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyValueModel.swift; sourceTree = "<group>"; };
 		19DAB41323262BC90086CAC9 /* UserDefaultsKeyValueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyValueDetailViewController.swift; sourceTree = "<group>"; };
+		19E7B60C2334DDA700E2D125 /* ExcelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcelView.swift; sourceTree = "<group>"; };
+		19E7B60E2334DFDE00E2D125 /* JXTableListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXTableListViewController.swift; sourceTree = "<group>"; };
+		19E7B6102334DFF300E2D125 /* JXTableContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXTableContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +318,10 @@
 			children = (
 				19ABA428230FEBB200BF07A0 /* JXFileBrowserController.swift */,
 				19ABA429230FEBB200BF07A0 /* JXFilePreviewViewController.swift */,
+				19E7B60E2334DFDE00E2D125 /* JXTableListViewController.swift */,
+				19E7B6102334DFF300E2D125 /* JXTableContentViewController.swift */,
+				19E7B60C2334DDA700E2D125 /* ExcelView.swift */,
+				193329E623348178005E6F1E /* JXDatabaseConnector.swift */,
 			);
 			path = SanboxBrowser;
 			sourceTree = "<group>";
@@ -574,6 +586,7 @@
 				199ACB0C2313AE1A00E616CA /* MonitorListWindow.swift in Sources */,
 				199ACB5F2313CECE00E616CA /* MemorySoldier.swift in Sources */,
 				199ACD792317CDFF00E616CA /* NetworkFlowModel.swift in Sources */,
+				19E7B6112334DFF300E2D125 /* JXTableContentViewController.swift in Sources */,
 				19764B5A231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift in Sources */,
 				199ACB0623138C8100E616CA /* DashboardCell.swift in Sources */,
 				19ABA461230FEBB200BF07A0 /* AppInfoManager.swift in Sources */,
@@ -590,6 +603,7 @@
 				199ACEB62319095100E616CA /* NetworkFlowListViewController.swift in Sources */,
 				199ACBC82316635A00E616CA /* ANRListViewController.swift in Sources */,
 				199ACBC4231660A800E616CA /* ANRDashboardViewController.swift in Sources */,
+				193329E723348178005E6F1E /* JXDatabaseConnector.swift in Sources */,
 				19ABA451230FEBB200BF07A0 /* WebDetailViewController.swift in Sources */,
 				19ABA462230FEBB200BF07A0 /* ImageManager.swift in Sources */,
 				199ACC33231777EB00E616CA /* FileListViewController.swift in Sources */,
@@ -600,9 +614,11 @@
 				199ACB0E2313B45100E616CA /* MonitorConsoleLabel.swift in Sources */,
 				199ACBBD23165BE100E616CA /* ANRSoldier.swift in Sources */,
 				19ABA44D230FEBB200BF07A0 /* JXFilePreviewViewController.swift in Sources */,
+				19E7B60F2334DFDE00E2D125 /* JXTableListViewController.swift in Sources */,
 				19ABA460230FEBB200BF07A0 /* AppInfoSoldier.swift in Sources */,
 				19DAB40B23261C840086CAC9 /* UserDefaultsSoldier.swift in Sources */,
 				199ACB642313CFAC00E616CA /* MemoryMonitor.swift in Sources */,
+				19E7B60D2334DDA700E2D125 /* ExcelView.swift in Sources */,
 				19ABA45C230FEBB200BF07A0 /* CrashFileManager.swift in Sources */,
 				19ABA453230FEBB200BF07A0 /* SoldierListSectionModel.swift in Sources */,
 				19DAB41423262BC90086CAC9 /* UserDefaultsKeyValueDetailViewController.swift in Sources */,

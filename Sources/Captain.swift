@@ -14,7 +14,7 @@ public class Captain {
     public var screenEdgeInsets: UIEdgeInsets
     public var logoImage: UIImage 
     internal var soldiers = [Soldier]()
-    internal let floatingWindow = CaptainFloatingWindow()
+    internal let floatingWindow = CaptainFloatingWindow(frame: CGRect.zero)
 
     init() {
         let defaultSoldiers: [Soldier] = [AppInfoSoldier(), SanboxBrowserSoldier(), CrashSoldier(), WebsiteEntrySoldier(), FPSSoldier(), MemorySoldier(), CPUSoldier(), ANRSoldier(), NetworkObserverSoldier.shared, UserDefaultsSoldier()]

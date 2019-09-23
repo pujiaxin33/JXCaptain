@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		195AC3802338740700181212 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19C1F4C8230BECCE00189B88 /* Assets.xcassets */; };
 		1966D9C1232114820025DEDA /* BSBacktraceLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1966D9C0232114820025DEDA /* BSBacktraceLogger.framework */; };
 		1966D9C2232114820025DEDA /* BSBacktraceLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1966D9C0232114820025DEDA /* BSBacktraceLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1966DA68232227D10025DEDA /* UIWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1966DA67232227D10025DEDA /* UIWebViewViewController.swift */; };
@@ -20,7 +21,6 @@
 		19C1F4C2230BECCA00189B88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1F4C1230BECCA00189B88 /* AppDelegate.swift */; };
 		19C1F4C4230BECCA00189B88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C1F4C3230BECCA00189B88 /* ViewController.swift */; };
 		19C1F4C7230BECCA00189B88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C1F4C5230BECCA00189B88 /* Main.storyboard */; };
-		19C1F4C9230BECCE00189B88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19C1F4C8230BECCE00189B88 /* Assets.xcassets */; };
 		19C1F4CC230BECCE00189B88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C1F4CA230BECCE00189B88 /* LaunchScreen.storyboard */; };
 		19C1F4E6230CE97C00189B88 /* JXCaptain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C1F4DA230BED9A00189B88 /* JXCaptain.framework */; };
 		19C1F4E7230CE97C00189B88 /* JXCaptain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 19C1F4DA230BED9A00189B88 /* JXCaptain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -191,8 +191,8 @@
 			files = (
 				19C1F4CC230BECCE00189B88 /* LaunchScreen.storyboard in Resources */,
 				19ABA2A4230FB4E200BF07A0 /* lufei.jpg in Resources */,
-				19C1F4C9230BECCE00189B88 /* Assets.xcassets in Resources */,
 				19C1F4C7230BECCA00189B88 /* Main.storyboard in Resources */,
+				195AC3802338740700181212 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
