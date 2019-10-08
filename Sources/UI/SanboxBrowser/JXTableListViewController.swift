@@ -30,6 +30,11 @@ class JXTableListViewController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share", style: .plain, target: self, action: #selector(didNaviShareItemClick))
     }
 
+    class func supportsExtension(_ extension: String) -> Bool {
+        let extensions = ["db", "sqlite", "sqlite3"]
+        return extensions.contains(`extension`)
+    }
+
     @objc func didNaviShareItemClick() {
         let activityController = UIActivityViewController(activityItems: [URL(fileURLWithPath: filePath)], applicationActivities: nil)
         self.present(activityController, animated: true, completion: nil)

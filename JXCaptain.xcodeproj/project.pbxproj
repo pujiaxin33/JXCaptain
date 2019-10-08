@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		190089C8234C5DFD00F56E57 /* JXTextPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190089C7234C5DFD00F56E57 /* JXTextPreviewViewController.swift */; };
-		193329E723348178005E6F1E /* JXDatabaseConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193329E623348178005E6F1E /* JXDatabaseConnector.swift */; };
+		19008A41234C76E500F56E57 /* JXTableContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19008A3A234C76E400F56E57 /* JXTableContentViewController.swift */; };
+		19008A42234C76E500F56E57 /* JXFilePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19008A3B234C76E400F56E57 /* JXFilePreviewViewController.swift */; };
+		19008A43234C76E500F56E57 /* JXTextPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19008A3C234C76E400F56E57 /* JXTextPreviewViewController.swift */; };
+		19008A44234C76E500F56E57 /* JXTableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19008A3D234C76E400F56E57 /* JXTableListViewController.swift */; };
+		19008A45234C76E500F56E57 /* JXDatabaseConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19008A3E234C76E500F56E57 /* JXDatabaseConnector.swift */; };
+		19008A46234C76E500F56E57 /* JXFileBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19008A3F234C76E500F56E57 /* JXFileBrowserController.swift */; };
+		19008A47234C76E500F56E57 /* ExcelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19008A40234C76E500F56E57 /* ExcelView.swift */; };
 		19764B58231CE929003A89B6 /* NetworkFlowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764B57231CE929003A89B6 /* NetworkFlowDetailViewController.swift */; };
 		19764B5A231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764B59231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift */; };
 		19764B5C231CEB3A003A89B6 /* NetworkFlowDetailSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764B5B231CEB3A003A89B6 /* NetworkFlowDetailSectionModel.swift */; };
@@ -40,8 +45,6 @@
 		199ACD792317CDFF00E616CA /* NetworkFlowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACD782317CDFF00E616CA /* NetworkFlowModel.swift */; };
 		199ACD7C2317CF4E00E616CA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACD7B2317CF4E00E616CA /* NetworkManager.swift */; };
 		199ACEB62319095100E616CA /* NetworkFlowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACEB52319095100E616CA /* NetworkFlowListViewController.swift */; };
-		19ABA44C230FEBB200BF07A0 /* JXFileBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA428230FEBB200BF07A0 /* JXFileBrowserController.swift */; };
-		19ABA44D230FEBB200BF07A0 /* JXFilePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA429230FEBB200BF07A0 /* JXFilePreviewViewController.swift */; };
 		19ABA44E230FEBB200BF07A0 /* CrashListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA42B230FEBB200BF07A0 /* CrashListViewController.swift */; };
 		19ABA44F230FEBB200BF07A0 /* CrashDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA42C230FEBB200BF07A0 /* CrashDashboardViewController.swift */; };
 		19ABA450230FEBB200BF07A0 /* WebsiteEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA42E230FEBB200BF07A0 /* WebsiteEntryViewController.swift */; };
@@ -70,14 +73,16 @@
 		19DAB41023261D6B0086CAC9 /* UserDefaultsKeyValuesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAB40F23261D6B0086CAC9 /* UserDefaultsKeyValuesListViewController.swift */; };
 		19DAB41223261FE10086CAC9 /* UserDefaultsKeyValueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAB41123261FE10086CAC9 /* UserDefaultsKeyValueModel.swift */; };
 		19DAB41423262BC90086CAC9 /* UserDefaultsKeyValueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAB41323262BC90086CAC9 /* UserDefaultsKeyValueDetailViewController.swift */; };
-		19E7B60D2334DDA700E2D125 /* ExcelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E7B60C2334DDA700E2D125 /* ExcelView.swift */; };
-		19E7B60F2334DFDE00E2D125 /* JXTableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E7B60E2334DFDE00E2D125 /* JXTableListViewController.swift */; };
-		19E7B6112334DFF300E2D125 /* JXTableContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E7B6102334DFF300E2D125 /* JXTableContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		190089C7234C5DFD00F56E57 /* JXTextPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXTextPreviewViewController.swift; sourceTree = "<group>"; };
-		193329E623348178005E6F1E /* JXDatabaseConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXDatabaseConnector.swift; sourceTree = "<group>"; };
+		19008A3A234C76E400F56E57 /* JXTableContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXTableContentViewController.swift; sourceTree = "<group>"; };
+		19008A3B234C76E400F56E57 /* JXFilePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFilePreviewViewController.swift; sourceTree = "<group>"; };
+		19008A3C234C76E400F56E57 /* JXTextPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXTextPreviewViewController.swift; sourceTree = "<group>"; };
+		19008A3D234C76E400F56E57 /* JXTableListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXTableListViewController.swift; sourceTree = "<group>"; };
+		19008A3E234C76E500F56E57 /* JXDatabaseConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXDatabaseConnector.swift; sourceTree = "<group>"; };
+		19008A3F234C76E500F56E57 /* JXFileBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFileBrowserController.swift; sourceTree = "<group>"; };
+		19008A40234C76E500F56E57 /* ExcelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcelView.swift; sourceTree = "<group>"; };
 		19764B57231CE929003A89B6 /* NetworkFlowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowDetailViewController.swift; sourceTree = "<group>"; };
 		19764B59231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowDetailCellModel.swift; sourceTree = "<group>"; };
 		19764B5B231CEB3A003A89B6 /* NetworkFlowDetailSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowDetailSectionModel.swift; sourceTree = "<group>"; };
@@ -109,8 +114,6 @@
 		199ACD782317CDFF00E616CA /* NetworkFlowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowModel.swift; sourceTree = "<group>"; };
 		199ACD7B2317CF4E00E616CA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		199ACEB52319095100E616CA /* NetworkFlowListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowListViewController.swift; sourceTree = "<group>"; };
-		19ABA428230FEBB200BF07A0 /* JXFileBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFileBrowserController.swift; sourceTree = "<group>"; };
-		19ABA429230FEBB200BF07A0 /* JXFilePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFilePreviewViewController.swift; sourceTree = "<group>"; };
 		19ABA42B230FEBB200BF07A0 /* CrashListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashListViewController.swift; sourceTree = "<group>"; };
 		19ABA42C230FEBB200BF07A0 /* CrashDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashDashboardViewController.swift; sourceTree = "<group>"; };
 		19ABA42E230FEBB200BF07A0 /* WebsiteEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebsiteEntryViewController.swift; sourceTree = "<group>"; };
@@ -141,9 +144,6 @@
 		19DAB40F23261D6B0086CAC9 /* UserDefaultsKeyValuesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyValuesListViewController.swift; sourceTree = "<group>"; };
 		19DAB41123261FE10086CAC9 /* UserDefaultsKeyValueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyValueModel.swift; sourceTree = "<group>"; };
 		19DAB41323262BC90086CAC9 /* UserDefaultsKeyValueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyValueDetailViewController.swift; sourceTree = "<group>"; };
-		19E7B60C2334DDA700E2D125 /* ExcelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcelView.swift; sourceTree = "<group>"; };
-		19E7B60E2334DFDE00E2D125 /* JXTableListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXTableListViewController.swift; sourceTree = "<group>"; };
-		19E7B6102334DFF300E2D125 /* JXTableContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXTableContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,13 +318,13 @@
 		19ABA427230FEBB200BF07A0 /* SanboxBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				19ABA428230FEBB200BF07A0 /* JXFileBrowserController.swift */,
-				19ABA429230FEBB200BF07A0 /* JXFilePreviewViewController.swift */,
-				19E7B60E2334DFDE00E2D125 /* JXTableListViewController.swift */,
-				19E7B6102334DFF300E2D125 /* JXTableContentViewController.swift */,
-				190089C7234C5DFD00F56E57 /* JXTextPreviewViewController.swift */,
-				19E7B60C2334DDA700E2D125 /* ExcelView.swift */,
-				193329E623348178005E6F1E /* JXDatabaseConnector.swift */,
+				19008A40234C76E500F56E57 /* ExcelView.swift */,
+				19008A3E234C76E500F56E57 /* JXDatabaseConnector.swift */,
+				19008A3F234C76E500F56E57 /* JXFileBrowserController.swift */,
+				19008A3B234C76E400F56E57 /* JXFilePreviewViewController.swift */,
+				19008A3A234C76E400F56E57 /* JXTableContentViewController.swift */,
+				19008A3D234C76E400F56E57 /* JXTableListViewController.swift */,
+				19008A3C234C76E400F56E57 /* JXTextPreviewViewController.swift */,
 			);
 			path = SanboxBrowser;
 			sourceTree = "<group>";
@@ -590,7 +590,6 @@
 				199ACB0C2313AE1A00E616CA /* MonitorListWindow.swift in Sources */,
 				199ACB5F2313CECE00E616CA /* MemorySoldier.swift in Sources */,
 				199ACD792317CDFF00E616CA /* NetworkFlowModel.swift in Sources */,
-				19E7B6112334DFF300E2D125 /* JXTableContentViewController.swift in Sources */,
 				19764B5A231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift in Sources */,
 				199ACB0623138C8100E616CA /* DashboardCell.swift in Sources */,
 				19ABA461230FEBB200BF07A0 /* AppInfoManager.swift in Sources */,
@@ -598,7 +597,6 @@
 				19DAB40E23261D060086CAC9 /* BaseTableViewController.swift in Sources */,
 				199ACBBF23165C2200E616CA /* ANRMonitor.swift in Sources */,
 				199ACBBA23162CFA00E616CA /* CPUDashboardViewController.swift in Sources */,
-				19ABA44C230FEBB200BF07A0 /* JXFileBrowserController.swift in Sources */,
 				19ABA44F230FEBB200BF07A0 /* CrashDashboardViewController.swift in Sources */,
 				19ABA45A230FEBB200BF07A0 /* SanboxBrowserSoldier.swift in Sources */,
 				19DAB41023261D6B0086CAC9 /* UserDefaultsKeyValuesListViewController.swift in Sources */,
@@ -607,28 +605,27 @@
 				199ACEB62319095100E616CA /* NetworkFlowListViewController.swift in Sources */,
 				199ACBC82316635A00E616CA /* ANRListViewController.swift in Sources */,
 				199ACBC4231660A800E616CA /* ANRDashboardViewController.swift in Sources */,
-				193329E723348178005E6F1E /* JXDatabaseConnector.swift in Sources */,
 				19ABA451230FEBB200BF07A0 /* WebDetailViewController.swift in Sources */,
 				19ABA462230FEBB200BF07A0 /* ImageManager.swift in Sources */,
 				199ACC33231777EB00E616CA /* FileListViewController.swift in Sources */,
 				19ABA458230FEBB200BF07A0 /* AppInfoViewController.swift in Sources */,
 				199ACB622313CF9100E616CA /* MemoryDashboardViewController.swift in Sources */,
+				19008A45234C76E500F56E57 /* JXDatabaseConnector.swift in Sources */,
 				199ACD7C2317CF4E00E616CA /* NetworkManager.swift in Sources */,
 				19764B58231CE929003A89B6 /* NetworkFlowDetailViewController.swift in Sources */,
 				199ACB0E2313B45100E616CA /* MonitorConsoleLabel.swift in Sources */,
 				199ACBBD23165BE100E616CA /* ANRSoldier.swift in Sources */,
-				19ABA44D230FEBB200BF07A0 /* JXFilePreviewViewController.swift in Sources */,
-				19E7B60F2334DFDE00E2D125 /* JXTableListViewController.swift in Sources */,
 				19ABA460230FEBB200BF07A0 /* AppInfoSoldier.swift in Sources */,
 				19DAB40B23261C840086CAC9 /* UserDefaultsSoldier.swift in Sources */,
+				19008A46234C76E500F56E57 /* JXFileBrowserController.swift in Sources */,
+				19008A43234C76E500F56E57 /* JXTextPreviewViewController.swift in Sources */,
 				199ACB642313CFAC00E616CA /* MemoryMonitor.swift in Sources */,
-				19E7B60D2334DDA700E2D125 /* ExcelView.swift in Sources */,
 				19ABA45C230FEBB200BF07A0 /* CrashFileManager.swift in Sources */,
 				19ABA453230FEBB200BF07A0 /* SoldierListSectionModel.swift in Sources */,
 				19DAB41423262BC90086CAC9 /* UserDefaultsKeyValueDetailViewController.swift in Sources */,
+				19008A44234C76E500F56E57 /* JXTableListViewController.swift in Sources */,
 				19ABA45F230FEBB200BF07A0 /* WebsiteEntrySoldier.swift in Sources */,
 				19ABA459230FEBB200BF07A0 /* Captain.swift in Sources */,
-				190089C8234C5DFD00F56E57 /* JXTextPreviewViewController.swift in Sources */,
 				19ABA455230FEBB200BF07A0 /* SoldierListViewController.swift in Sources */,
 				199ACB082313A7D800E616CA /* FPSMonitor.swift in Sources */,
 				19ABA454230FEBB200BF07A0 /* BaseViewController.swift in Sources */,
@@ -641,13 +638,16 @@
 				19ABA44E230FEBB200BF07A0 /* CrashListViewController.swift in Sources */,
 				19ABA457230FEBB200BF07A0 /* CaptainFloatingWindow.swift in Sources */,
 				199ACB0A2313ABEA00E616CA /* CaptainDefines.swift in Sources */,
+				19008A47234C76E500F56E57 /* ExcelView.swift in Sources */,
 				199ACB672313ED7E00E616CA /* CPUSoldier.swift in Sources */,
 				199ACCD22317A9F900E616CA /* NetworkObserverSoldier.swift in Sources */,
 				199ACCD92317AC4F00E616CA /* JXCaptainURLProtocol.swift in Sources */,
 				19DAB41223261FE10086CAC9 /* UserDefaultsKeyValueModel.swift in Sources */,
+				19008A42234C76E500F56E57 /* JXFilePreviewViewController.swift in Sources */,
 				199ACBC6231661FC00E616CA /* ANRFileManager.swift in Sources */,
 				199ACB0023138B1700E616CA /* FPSSoldier.swift in Sources */,
 				19ABA456230FEBB200BF07A0 /* CaptainFloatingViewController.swift in Sources */,
+				19008A41234C76E500F56E57 /* JXTableContentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

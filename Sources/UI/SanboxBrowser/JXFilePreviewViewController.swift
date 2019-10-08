@@ -67,7 +67,16 @@ class JXFilePreviewViewController: UIViewController, UIScrollViewDelegate {
             previewImageView?.contentMode = .scaleAspectFit
             previewScrollView?.addSubview(previewImageView!)
         }else if ["strings", "plist", "txt", "log", "csv"].contains(fileExtension) {
-            if ["strings", "plist"].contains(fileExtension) {
+            if "plist" == fileExtension {
+                if let data = FileManager.default.contents(atPath: filePath), let keyValues = try? PropertyListSerialization.propertyList(from: data, options: .mutableContainersAndLeaves, format: nil) as? [String:Any] {
+                    let text = keyValues.reduce("") { (result, item) -> String in
+                        return "\(result)\n\(item.key):\(item.value)"
+                    }
+                    initTextView(with: text)
+                }else {
+                    initTextView(with: "该文件没有内容")
+                }
+            }else if "strings" == fileExtension {
                 if let data = FileManager.default.contents(atPath: filePath), let keyValues = try? PropertyListSerialization.propertyList(from: data, options: .mutableContainersAndLeaves, format: nil) as? [String] {
                     let text = keyValues.reduce("") { (result, item) -> String in
                         return "\(result)\n\(item)"
@@ -92,6 +101,18 @@ class JXFilePreviewViewController: UIViewController, UIScrollViewDelegate {
         }else {
             initTextView(with: "不支持该文件类型\(URL(fileURLWithPath: filePath).pathExtension)")
         }
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share", style: .plain, target: self, action: #selector(didNaviShareItemClick))
+    }
+
+    @objc func didNaviShareItemClick() {
+        let activityController = UIActivityViewController(activityItems: [URL(fileURLWithPath: filePath)], applicationActivities: nil)
+        self.present(activityController, animated: true, completion: nil)
+    }
+
+    class func supportsExtension(_ extension: String) -> Bool {
+        let extensions = ["png", "jpg", "jpeg", "gif", "strings", "plist", "txt", "log", "csv", "mp4", "mov", "3gp", "m4v", "avi", "aac", "mp3", "m4a", "flac", "wav", "ac3", "aa", "aax"]
+        return extensions.contains(`extension`)
     }
 
     override func viewDidDisappear(_ animated: Bool) {
