@@ -69,6 +69,8 @@ class JXTableContentViewController: UIViewController {
 
 extension JXTableContentViewController: ExcelViewDelegate {
     func excelView(_ excelView: ExcelView, didTapGridWith content: String) {
+        let vc = JXTextPreviewViewController(text: content)
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     func excelView(_ excelView: ExcelView, didTapColumnNameWith name: String) {

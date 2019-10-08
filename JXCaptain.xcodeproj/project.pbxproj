@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		190089C8234C5DFD00F56E57 /* JXTextPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190089C7234C5DFD00F56E57 /* JXTextPreviewViewController.swift */; };
 		193329E723348178005E6F1E /* JXDatabaseConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193329E623348178005E6F1E /* JXDatabaseConnector.swift */; };
 		19764B58231CE929003A89B6 /* NetworkFlowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764B57231CE929003A89B6 /* NetworkFlowDetailViewController.swift */; };
 		19764B5A231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764B59231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift */; };
@@ -75,6 +76,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		190089C7234C5DFD00F56E57 /* JXTextPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXTextPreviewViewController.swift; sourceTree = "<group>"; };
 		193329E623348178005E6F1E /* JXDatabaseConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXDatabaseConnector.swift; sourceTree = "<group>"; };
 		19764B57231CE929003A89B6 /* NetworkFlowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowDetailViewController.swift; sourceTree = "<group>"; };
 		19764B59231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowDetailCellModel.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				19ABA429230FEBB200BF07A0 /* JXFilePreviewViewController.swift */,
 				19E7B60E2334DFDE00E2D125 /* JXTableListViewController.swift */,
 				19E7B6102334DFF300E2D125 /* JXTableContentViewController.swift */,
+				190089C7234C5DFD00F56E57 /* JXTextPreviewViewController.swift */,
 				19E7B60C2334DDA700E2D125 /* ExcelView.swift */,
 				193329E623348178005E6F1E /* JXDatabaseConnector.swift */,
 			);
@@ -625,6 +628,7 @@
 				19DAB41423262BC90086CAC9 /* UserDefaultsKeyValueDetailViewController.swift in Sources */,
 				19ABA45F230FEBB200BF07A0 /* WebsiteEntrySoldier.swift in Sources */,
 				19ABA459230FEBB200BF07A0 /* Captain.swift in Sources */,
+				190089C8234C5DFD00F56E57 /* JXTextPreviewViewController.swift in Sources */,
 				19ABA455230FEBB200BF07A0 /* SoldierListViewController.swift in Sources */,
 				199ACB082313A7D800E616CA /* FPSMonitor.swift in Sources */,
 				19ABA454230FEBB200BF07A0 /* BaseViewController.swift in Sources */,

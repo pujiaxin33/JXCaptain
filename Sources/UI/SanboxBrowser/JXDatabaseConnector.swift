@@ -35,12 +35,29 @@ public class JXDatabaseConnector {
         guard let db = db else {
             return true
         }
-        let resultCode = sqlite3_close(db)
-        if resultCode == SQLITE_OK {
-            return true
-        }
-        print("close \(databasePath) error:\(resultCode)")
-        return false
+        var resultCode: Int32 = 0
+        var retry = false
+        var triedFinalizingOpenStatements = false
+        repeat {
+            retry = false
+            resultCode = sqlite3_close(db)
+            if SQLITE_BUSY == resultCode || SQLITE_LOCKED == resultCode {
+                if !triedFinalizingOpenStatements {
+                    triedFinalizingOpenStatements = true
+                    var pStmt: OpaquePointer?
+                    pStmt = sqlite3_next_stmt(db, nil)
+                    while pStmt != nil {
+                        sqlite3_finalize(pStmt)
+                        retry = true
+                        pStmt = sqlite3_next_stmt(db, nil)
+                    }
+                }else if SQLITE_OK != resultCode {
+                    print("close \(databasePath) error:\(resultCode)")
+                }
+            }
+        } while retry
+        self.db = nil
+        return true
     }
 
     public func allTables() -> [String] {
