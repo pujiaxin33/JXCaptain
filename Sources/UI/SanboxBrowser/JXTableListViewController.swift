@@ -27,7 +27,15 @@ class JXTableListViewController: UITableViewController {
         super.viewDidLoad()
 
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share", style: .plain, target: self, action: #selector(didNaviShareItemClick))
     }
+
+    @objc func didNaviShareItemClick() {
+        let activityController = UIActivityViewController(activityItems: [URL(fileURLWithPath: filePath)], applicationActivities: nil)
+        self.present(activityController, animated: true, completion: nil)
+    }
+
+    //MARK: - UITableViewDataSource & UITableViewDelegate
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableNames.count

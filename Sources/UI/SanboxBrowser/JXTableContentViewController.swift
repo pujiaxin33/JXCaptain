@@ -51,18 +51,27 @@ class JXTableContentViewController: UIViewController {
         excelView.delegate = self
         excelView.dataSource = self
         view.addSubview(excelView)
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share", style: .plain, target: self, action: #selector(didNaviShareItemClick))
     }
 
+    @objc func didNaviShareItemClick() {
+        let activityController = UIActivityViewController(activityItems: [URL(fileURLWithPath: filePath)], applicationActivities: nil)
+        self.present(activityController, animated: true, completion: nil)
+    }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        excelView.frame = view.bounds
+    }
 }
 
 extension JXTableContentViewController: ExcelViewDelegate {
     func excelView(_ excelView: ExcelView, didTapGridWith content: String) {
-
     }
 
     func excelView(_ excelView: ExcelView, didTapColumnNameWith name: String) {
-
     }
 }
 
@@ -102,6 +111,4 @@ extension JXTableContentViewController: ExcelViewDataSource {
     func heightOfTopHeader(in excelView: ExcelView) -> CGFloat {
         return 40
     }
-
-
 }
