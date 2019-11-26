@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		195AC3802338740700181212 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19C1F4C8230BECCE00189B88 /* Assets.xcassets */; };
-		1966D9C1232114820025DEDA /* BSBacktraceLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1966D9C0232114820025DEDA /* BSBacktraceLogger.framework */; };
-		1966D9C2232114820025DEDA /* BSBacktraceLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1966D9C0232114820025DEDA /* BSBacktraceLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1966DA68232227D10025DEDA /* UIWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1966DA67232227D10025DEDA /* UIWebViewViewController.swift */; };
 		19764D34231E6545003A89B6 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764D33231E6544003A89B6 /* BaseNavigationViewController.swift */; };
 		199ACBCA2316650600E616CA /* PerformanceTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACBC92316650600E616CA /* PerformanceTestViewController.swift */; };
@@ -33,7 +31,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1966D9C2232114820025DEDA /* BSBacktraceLogger.framework in Embed Frameworks */,
 				19C1F4E7230CE97C00189B88 /* JXCaptain.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -42,7 +39,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1966D9C0232114820025DEDA /* BSBacktraceLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BSBacktraceLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1966DA67232227D10025DEDA /* UIWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWebViewViewController.swift; sourceTree = "<group>"; };
 		19764D33231E6544003A89B6 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		199ACBC92316650600E616CA /* PerformanceTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTestViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +55,7 @@
 		19C1F4CB230BECCE00189B88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19C1F4CD230BECCE00189B88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19C1F4DA230BED9A00189B88 /* JXCaptain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JXCaptain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19F15596238D1ED40043A86E /* BSBacktraceLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BSBacktraceLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1966D9C1232114820025DEDA /* BSBacktraceLogger.framework in Frameworks */,
 				19C1F4E6230CE97C00189B88 /* JXCaptain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,7 +81,6 @@
 		19C1F4B5230BECCA00189B88 = {
 			isa = PBXGroup;
 			children = (
-				1966D9C0232114820025DEDA /* BSBacktraceLogger.framework */,
 				19C1F4C0230BECCA00189B88 /* Example */,
 				19C1F4BF230BECCA00189B88 /* Products */,
 				19C1F4D9230BED9A00189B88 /* Frameworks */,
@@ -124,6 +119,7 @@
 		19C1F4D9230BED9A00189B88 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				19F15596238D1ED40043A86E /* BSBacktraceLogger.framework */,
 				19C1F4DA230BED9A00189B88 /* JXCaptain.framework */,
 			);
 			name = Frameworks;

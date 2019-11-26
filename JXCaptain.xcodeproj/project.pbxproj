@@ -73,7 +73,23 @@
 		19DAB41023261D6B0086CAC9 /* UserDefaultsKeyValuesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAB40F23261D6B0086CAC9 /* UserDefaultsKeyValuesListViewController.swift */; };
 		19DAB41223261FE10086CAC9 /* UserDefaultsKeyValueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAB41123261FE10086CAC9 /* UserDefaultsKeyValueModel.swift */; };
 		19DAB41423262BC90086CAC9 /* UserDefaultsKeyValueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAB41323262BC90086CAC9 /* UserDefaultsKeyValueDetailViewController.swift */; };
+		19F1559A238D1F1E0043A86E /* BSBacktraceLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F15599238D1F1E0043A86E /* BSBacktraceLogger.framework */; };
+		19F1559B238D1F1E0043A86E /* BSBacktraceLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 19F15599238D1F1E0043A86E /* BSBacktraceLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		19F1559C238D1F1E0043A86E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				19F1559B238D1F1E0043A86E /* BSBacktraceLogger.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		19008A3A234C76E400F56E57 /* JXTableContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXTableContentViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +160,7 @@
 		19DAB40F23261D6B0086CAC9 /* UserDefaultsKeyValuesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyValuesListViewController.swift; sourceTree = "<group>"; };
 		19DAB41123261FE10086CAC9 /* UserDefaultsKeyValueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyValueModel.swift; sourceTree = "<group>"; };
 		19DAB41323262BC90086CAC9 /* UserDefaultsKeyValueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyValueDetailViewController.swift; sourceTree = "<group>"; };
+		19F15599238D1F1E0043A86E /* BSBacktraceLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BSBacktraceLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19F1559A238D1F1E0043A86E /* BSBacktraceLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +178,7 @@
 		1966D9AC23210D520025DEDA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				19F15599238D1F1E0043A86E /* BSBacktraceLogger.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -525,6 +544,7 @@
 				19C1F4A5230BEC8C00189B88 /* Sources */,
 				19C1F4A6230BEC8C00189B88 /* Frameworks */,
 				19C1F4A7230BEC8C00189B88 /* Resources */,
+				19F1559C238D1F1E0043A86E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
