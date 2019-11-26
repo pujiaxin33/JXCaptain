@@ -11,7 +11,7 @@
 
 # 预览
 
-![](https://github.com/pujiaxin33/JXExampleImages/blob/master/JXCaptain/JXCaptain.png)
+<div align=center><img src="https://github.com/pujiaxin33/JXExampleImages/blob/master/JXCaptain/JXCaptain.png" width="364" height="761" /></div>
 
 # 功能模块
 
