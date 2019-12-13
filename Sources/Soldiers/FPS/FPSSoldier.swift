@@ -8,21 +8,13 @@
 
 import Foundation
 
-private let kFPSSoldierIsActive = "kFPSSoldierIsActive"
-
 public class FPSSoldier: Soldier {
     public var name: String
     public var team: String
     public var icon: UIImage?
-    public var contentView: UIView?
-    public var hasNewEvent: Bool = false
     var isActive: Bool {
-        set(new) {
-            UserDefaults.standard.set(new, forKey: kFPSSoldierIsActive)
-        }
-        get {
-            return UserDefaults.standard.bool(forKey: kFPSSoldierIsActive)
-        }
+        set { UserDefaults.standard.isFPSSoldierActive = newValue }
+        get { UserDefaults.standard.isFPSSoldierActive }
     }
     var monitorView: MonitorConsoleLabel?
     let monitor: FPSMonitor

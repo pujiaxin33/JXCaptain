@@ -8,21 +8,13 @@
 
 import Foundation
 
-private let kCPUSoldierIsActive = "kCPUSoldierIsActive"
-
 class CPUSoldier: Soldier {
     public var name: String
     public var team: String
     public var icon: UIImage?
-    public var contentView: UIView?
-    public var hasNewEvent: Bool = false
     var isActive: Bool {
-        set(new) {
-            UserDefaults.standard.set(new, forKey: kCPUSoldierIsActive)
-        }
-        get {
-            return UserDefaults.standard.bool(forKey: kCPUSoldierIsActive)
-        }
+        set { UserDefaults.standard.isCPUSoldierActive = newValue }
+        get { UserDefaults.standard.isCPUSoldierActive }
     }
     var monitorView: MonitorConsoleLabel?
     let monitor: CPUMonitor

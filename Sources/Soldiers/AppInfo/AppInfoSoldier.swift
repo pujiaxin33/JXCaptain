@@ -12,8 +12,6 @@ public class AppInfoSoldier: Soldier {
     public var name: String
     public var team: String
     public var icon: UIImage?
-    public var contentView: UIView?
-    public var hasNewEvent: Bool = false
     
     public init() {
         name = "APP信息"

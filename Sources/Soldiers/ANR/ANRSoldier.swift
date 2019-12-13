@@ -9,23 +9,19 @@
 import Foundation
 import BSBacktraceLogger
 
-private let kANRSoldierIsActive = "kANRSoldierIsActive"
-private let kANRSoldierHasNewEvent = "kANRSoldierHasNewEvent"
-
 public class ANRSoldier: Soldier {
     public var name: String
     public var team: String
     public var icon: UIImage?
-    public var contentView: UIView?
     public var hasNewEvent: Bool {
-        set(new) {
+        set {
             if canCheckNewEvent {
-                UserDefaults.standard.set(new, forKey: kANRSoldierHasNewEvent)
+                UserDefaults.standard.isANRSoldierHasNewEvent = newValue
             }
         }
         get {
             if canCheckNewEvent {
-                return UserDefaults.standard.bool(forKey: kANRSoldierHasNewEvent)
+                return UserDefaults.standard.isANRSoldierHasNewEvent
             }else {
                 return false
             }
@@ -34,12 +30,8 @@ public class ANRSoldier: Soldier {
     public var canCheckNewEvent: Bool = true
     public var threshold: Double = 1
     var isActive: Bool {
-        set(new) {
-            UserDefaults.standard.set(new, forKey: kANRSoldierIsActive)
-        }
-        get {
-            return UserDefaults.standard.bool(forKey: kANRSoldierIsActive)
-        }
+        set { UserDefaults.standard.isANRSoldierActive = newValue }
+        get { UserDefaults.standard.isANRSoldierActive }
     }
     var monitorView: MonitorConsoleLabel?
     let monitor: ANRMonitor

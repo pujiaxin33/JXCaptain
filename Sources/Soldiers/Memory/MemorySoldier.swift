@@ -8,21 +8,13 @@
 
 import Foundation
 
-private let kMemorySoldierIsActive = "kMemorySoldierIsActive"
-
 class MemorySoldier: Soldier {
     public var name: String
     public var team: String
     public var icon: UIImage?
-    public var contentView: UIView?
-    public var hasNewEvent: Bool = false
     var isActive: Bool {
-        set(new) {
-            UserDefaults.standard.set(new, forKey: kMemorySoldierIsActive)
-        }
-        get {
-            return UserDefaults.standard.bool(forKey: kMemorySoldierIsActive)
-        }
+        set { UserDefaults.standard.isMemorySoldierActive = newValue }
+        get { UserDefaults.standard.isMemorySoldierActive }
     }
     var monitorView: MonitorConsoleLabel?
     let monitor: MemoryMonitor

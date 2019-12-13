@@ -14,6 +14,7 @@
 		19008A45234C76E500F56E57 /* JXDatabaseConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19008A3E234C76E500F56E57 /* JXDatabaseConnector.swift */; };
 		19008A46234C76E500F56E57 /* JXFileBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19008A3F234C76E500F56E57 /* JXFileBrowserController.swift */; };
 		19008A47234C76E500F56E57 /* ExcelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19008A40234C76E500F56E57 /* ExcelView.swift */; };
+		194CABD423A3328E00550CFE /* UserDefaults+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194CABD323A3328E00550CFE /* UserDefaults+Access.swift */; };
 		19764B58231CE929003A89B6 /* NetworkFlowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764B57231CE929003A89B6 /* NetworkFlowDetailViewController.swift */; };
 		19764B5A231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764B59231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift */; };
 		19764B5C231CEB3A003A89B6 /* NetworkFlowDetailSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764B5B231CEB3A003A89B6 /* NetworkFlowDetailSectionModel.swift */; };
@@ -99,6 +100,7 @@
 		19008A3E234C76E500F56E57 /* JXDatabaseConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXDatabaseConnector.swift; sourceTree = "<group>"; };
 		19008A3F234C76E500F56E57 /* JXFileBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXFileBrowserController.swift; sourceTree = "<group>"; };
 		19008A40234C76E500F56E57 /* ExcelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcelView.swift; sourceTree = "<group>"; };
+		194CABD323A3328E00550CFE /* UserDefaults+Access.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Access.swift"; sourceTree = "<group>"; };
 		19764B57231CE929003A89B6 /* NetworkFlowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowDetailViewController.swift; sourceTree = "<group>"; };
 		19764B59231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowDetailCellModel.swift; sourceTree = "<group>"; };
 		19764B5B231CEB3A003A89B6 /* NetworkFlowDetailSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowDetailSectionModel.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 			children = (
 				19ABA43A230FEBB200BF07A0 /* Captain.swift */,
 				199ACB092313ABEA00E616CA /* CaptainDefines.swift */,
+				194CABD323A3328E00550CFE /* UserDefaults+Access.swift */,
 				19ABA426230FEBB200BF07A0 /* UI */,
 				19ABA43B230FEBB200BF07A0 /* Soldiers */,
 				19ABA448230FEBB200BF07A0 /* Manager */,
@@ -654,6 +657,7 @@
 				19764B5C231CEB3A003A89B6 /* NetworkFlowDetailSectionModel.swift in Sources */,
 				19ABA452230FEBB200BF07A0 /* SanboxModel.swift in Sources */,
 				19ABA450230FEBB200BF07A0 /* WebsiteEntryViewController.swift in Sources */,
+				194CABD423A3328E00550CFE /* UserDefaults+Access.swift in Sources */,
 				199ACBC123165C8C00E616CA /* ANRPingThread.swift in Sources */,
 				19ABA44E230FEBB200BF07A0 /* CrashListViewController.swift in Sources */,
 				19ABA457230FEBB200BF07A0 /* CaptainFloatingWindow.swift in Sources */,

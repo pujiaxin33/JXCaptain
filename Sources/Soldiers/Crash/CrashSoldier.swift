@@ -8,23 +8,20 @@
 
 import Foundation
 
-private let kCrashSoldierHasNewEvent = "kCrashSoldierHasNewEvent"
-
 public class CrashSoldier: Soldier {
     public var name: String
     public var team: String
     public var icon: UIImage?
-    public var contentView: UIView?
     public var exceptionReceiveClosure: ((Int32?, NSException?, String?)->())?
     public var hasNewEvent: Bool {
-        set(new) {
+        set {
             if canCheckNewEvent {
-                UserDefaults.standard.set(new, forKey: kCrashSoldierHasNewEvent)
+                UserDefaults.standard.isCrashSoldierHasNewEvent = newValue
             }
         }
         get {
             if canCheckNewEvent {
-                return UserDefaults.standard.bool(forKey: kCrashSoldierHasNewEvent)
+                return UserDefaults.standard.isCrashSoldierHasNewEvent
             }else {
                 return false
             }

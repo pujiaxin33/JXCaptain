@@ -18,6 +18,12 @@ public protocol Soldier {
     func action(naviController: UINavigationController)
 }
 
+//hasNewEvent、contentView添加默认实现，有需要的Soldier才添加。
+public extension Soldier {
+    var hasNewEvent: Bool { return false }
+    var contentView: UIView? { return nil }
+}
+
 protocol Monitor {
     associatedtype ValueType
     var valueDidUpdateClosure: ((ValueType) -> Void)? { set get }

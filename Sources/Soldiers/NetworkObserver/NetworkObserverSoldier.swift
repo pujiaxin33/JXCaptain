@@ -9,15 +9,11 @@
 import Foundation
 import WebKit
 
-private let kNetworkObserverSoldierIsActive = "kNetworkObserverSoldierIsActive"
-
 public class NetworkObserverSoldier: Soldier {
     public static let shared = NetworkObserverSoldier()
     public var name: String
     public var team: String
     public var icon: UIImage?
-    public var contentView: UIView?
-    public var hasNewEvent: Bool = false
     /// responseData数据缓存最大容量，默认：50MB
     public var responseCacheByteLimit: Int = 50 * 1024 * 1024 {
         didSet {
@@ -28,12 +24,8 @@ public class NetworkObserverSoldier: Soldier {
     /// 拦截的原理参考文章：https://blog.moecoder.com/2016/10/26/support-nsurlprotocol-in-wkwebview/ 因为WKWebView是一个单独的进程，如果要通过自定义的协议进行拦截，就会导致进程间通信，降低性能。所以，需要拦截WKWebView时，需要自己设置为true。
     public var canInterceptWKWebView: Bool = false
     var isActive: Bool {
-        set(new) {
-            UserDefaults.standard.set(new, forKey: kNetworkObserverSoldierIsActive)
-        }
-        get {
-            return UserDefaults.standard.bool(forKey: kNetworkObserverSoldierIsActive)
-        }
+        set { UserDefaults.standard.isNetworkObserverSoldierActive = newValue }
+        get { UserDefaults.standard.isNetworkObserverSoldierActive }
     }
     var monitorView: MonitorConsoleLabel?
     let monitor: ANRMonitor
