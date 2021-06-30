@@ -54,6 +54,12 @@ class SoldierListViewController: BaseViewController, UICollectionViewDataSource,
         NotificationCenter.default.addObserver(self, selector: #selector(soldierNewEventDidChange), name: .JXCaptainSoldierNewEventDidChange, object: nil)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        Captain.default.soldiers.forEach { $0.willAppear() }
+    }
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 

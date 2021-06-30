@@ -15,6 +15,7 @@ public protocol Soldier {
     var contentView: UIView? { get }
     var hasNewEvent: Bool { get }
     func prepare()
+    func willAppear()
     func action(naviController: UINavigationController)
 }
 
@@ -22,6 +23,7 @@ public protocol Soldier {
 public extension Soldier {
     var hasNewEvent: Bool { return false }
     var contentView: UIView? { return nil }
+    func willAppear() { }
 }
 
 protocol Monitor {
