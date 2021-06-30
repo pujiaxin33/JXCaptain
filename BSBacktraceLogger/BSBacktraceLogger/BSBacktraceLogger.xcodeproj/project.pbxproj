@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1966D9A423210C7F0025DEDA /* BSBacktraceLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1966D9A223210C7F0025DEDA /* BSBacktraceLogger.m */; };
-		1966D9A523210C7F0025DEDA /* BSBacktraceLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 1966D9A323210C7F0025DEDA /* BSBacktraceLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		19890B3F268C45EC00AB237A /* BSBacktraceLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 19890B34268C451700AB237A /* BSBacktraceLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1966D99723210C680025DEDA /* BSBacktraceLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BSBacktraceLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1966D99B23210C680025DEDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1966D9A223210C7F0025DEDA /* BSBacktraceLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBacktraceLogger.m; sourceTree = "<group>"; };
-		1966D9A323210C7F0025DEDA /* BSBacktraceLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSBacktraceLogger.h; path = "../../../../../../Downloads/BSBacktraceLogger-master/Sources/BSBacktraceLogger.h"; sourceTree = "<group>"; };
+		19890B34268C451700AB237A /* BSBacktraceLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBacktraceLogger.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,8 +48,8 @@
 		1966D99923210C680025DEDA /* BSBacktraceLogger */ = {
 			isa = PBXGroup;
 			children = (
-				1966D9A323210C7F0025DEDA /* BSBacktraceLogger.h */,
 				1966D9A223210C7F0025DEDA /* BSBacktraceLogger.m */,
+				19890B34268C451700AB237A /* BSBacktraceLogger.h */,
 				1966D99B23210C680025DEDA /* Info.plist */,
 			);
 			path = BSBacktraceLogger;
@@ -62,7 +62,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1966D9A523210C7F0025DEDA /* BSBacktraceLogger.h in Headers */,
+				19890B3F268C45EC00AB237A /* BSBacktraceLogger.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

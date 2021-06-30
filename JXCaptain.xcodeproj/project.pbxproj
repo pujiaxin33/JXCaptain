@@ -19,6 +19,8 @@
 		19764B5A231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764B59231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift */; };
 		19764B5C231CEB3A003A89B6 /* NetworkFlowDetailSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764B5B231CEB3A003A89B6 /* NetworkFlowDetailSectionModel.swift */; };
 		19764B5E231CF6A8003A89B6 /* NetworkFlowResponseDataDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19764B5D231CF6A8003A89B6 /* NetworkFlowResponseDataDetailViewController.swift */; };
+		19890B3A268C457300AB237A /* BSBacktraceLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19890B39268C457300AB237A /* BSBacktraceLogger.framework */; };
+		19890B3B268C457300AB237A /* BSBacktraceLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 19890B39268C457300AB237A /* BSBacktraceLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		199ACB0023138B1700E616CA /* FPSSoldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACAFF23138B1700E616CA /* FPSSoldier.swift */; };
 		199ACB0323138C0000E616CA /* FPSDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACB0223138C0000E616CA /* FPSDashboardViewController.swift */; };
 		199ACB0623138C8100E616CA /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199ACB0523138C8100E616CA /* DashboardCell.swift */; };
@@ -74,18 +76,16 @@
 		19DAB41023261D6B0086CAC9 /* UserDefaultsKeyValuesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAB40F23261D6B0086CAC9 /* UserDefaultsKeyValuesListViewController.swift */; };
 		19DAB41223261FE10086CAC9 /* UserDefaultsKeyValueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAB41123261FE10086CAC9 /* UserDefaultsKeyValueModel.swift */; };
 		19DAB41423262BC90086CAC9 /* UserDefaultsKeyValueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAB41323262BC90086CAC9 /* UserDefaultsKeyValueDetailViewController.swift */; };
-		19F1559A238D1F1E0043A86E /* BSBacktraceLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F15599238D1F1E0043A86E /* BSBacktraceLogger.framework */; };
-		19F1559B238D1F1E0043A86E /* BSBacktraceLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 19F15599238D1F1E0043A86E /* BSBacktraceLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		19F1559C238D1F1E0043A86E /* Embed Frameworks */ = {
+		19890B3C268C457300AB237A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				19F1559B238D1F1E0043A86E /* BSBacktraceLogger.framework in Embed Frameworks */,
+				19890B3B268C457300AB237A /* BSBacktraceLogger.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +105,8 @@
 		19764B59231CEA21003A89B6 /* NetworkFlowDetailCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowDetailCellModel.swift; sourceTree = "<group>"; };
 		19764B5B231CEB3A003A89B6 /* NetworkFlowDetailSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowDetailSectionModel.swift; sourceTree = "<group>"; };
 		19764B5D231CF6A8003A89B6 /* NetworkFlowResponseDataDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlowResponseDataDetailViewController.swift; sourceTree = "<group>"; };
+		19890B37268C454D00AB237A /* BSBacktraceLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BSBacktraceLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19890B39268C457300AB237A /* BSBacktraceLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BSBacktraceLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		199ACAFF23138B1700E616CA /* FPSSoldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPSSoldier.swift; sourceTree = "<group>"; };
 		199ACB0223138C0000E616CA /* FPSDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPSDashboardViewController.swift; sourceTree = "<group>"; };
 		199ACB0523138C8100E616CA /* DashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
@@ -170,7 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19F1559A238D1F1E0043A86E /* BSBacktraceLogger.framework in Frameworks */,
+				19890B3A268C457300AB237A /* BSBacktraceLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +182,8 @@
 		1966D9AC23210D520025DEDA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				19890B39268C457300AB237A /* BSBacktraceLogger.framework */,
+				19890B37268C454D00AB237A /* BSBacktraceLogger.framework */,
 				19F15599238D1F1E0043A86E /* BSBacktraceLogger.framework */,
 			);
 			name = Frameworks;
@@ -547,7 +551,7 @@
 				19C1F4A5230BEC8C00189B88 /* Sources */,
 				19C1F4A6230BEC8C00189B88 /* Frameworks */,
 				19C1F4A7230BEC8C00189B88 /* Resources */,
-				19F1559C238D1F1E0043A86E /* Embed Frameworks */,
+				19890B3C268C457300AB237A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
